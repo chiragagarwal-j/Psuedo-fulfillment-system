@@ -30,7 +30,6 @@
    - 5.1 [Test Strategy](#51-test-strategy)
    - 5.2 [Test Cases](#52-test-cases)
 6. [References](#6-references)
-7. [Appendix](#7-appendix)
 
 ### 1. Introduction
 
@@ -152,9 +151,5 @@ A comprehensive testing strategy will be employed, including unit tests, integra
 Detailed test cases will be developed to cover various scenarios, including plan selection, payment processing, error handling, and more.
 
 ### 6. References
-
-N/A
-
-### 7. Appendix
 
 N/A
