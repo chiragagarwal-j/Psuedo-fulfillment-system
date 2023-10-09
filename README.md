@@ -1,48 +1,50 @@
-# Psuedo-fulfillment-system
-Building a fulfillment system for mobile change order handling.
+# Software Requirements Specification (SRS) - Pseudo Fulfillment System
 
 ## Table of Contents
-1. Introduction
-   1.1. Purpose
-   1.2. Scope
-   1.3. Technologies Used
-2. System Overview
-   2.1. System Architecture
-   2.2. User Roles
-   2.3. Use Cases
-3. Functional Requirements
-   3.1. User Interface
-   3.2. Plan Selection
-   3.3. Phone Number Validation
-   3.4. SIM Card Activation
-   3.5. Billing Information
-   3.6. Payment Processing
-   3.7. Confirmation
-   3.8. Plan Activation
-   3.9. Error Handling
-4. Non-Functional Requirements
-   4.1. Performance
-   4.2. Security
-   4.3. Usability
-   4.4. Availability
-   4.5. Scalability
-5. Testing
-   5.1. Test Strategy
-   5.2. Test Cases
-6. References
-7. Appendix
+
+1. [Introduction](#1-introduction)
+   1.1. [Purpose](#11-purpose)
+   1.2. [Scope](#12-scope)
+   1.3. [Technologies Used](#13-technologies-used)
+2. [System Overview](#2-system-overview)
+   2.1. [System Architecture](#21-system-architecture)
+   2.2. [User Roles](#22-user-roles)
+   2.3. [Use Cases](#23-use-cases)
+3. [Functional Requirements](#3-functional-requirements)
+   3.1. [User Interface](#31-user-interface)
+   3.2. [Plan Selection](#32-plan-selection)
+   3.3. [Phone Number Validation](#33-phone-number-validation)
+   3.4. [SIM Card Activation](#34-sim-card-activation)
+   3.5. [Billing Information](#35-billing-information)
+   3.6. [Payment Processing](#36-payment-processing)
+   3.7. [Confirmation](#37-confirmation)
+   3.8. [Plan Activation](#38-plan-activation)
+   3.9. [Error Handling](#39-error-handling)
+4. [Non-Functional Requirements](#4-non-functional-requirements)
+   4.1. [Performance](#41-performance)
+   4.2. [Security](#42-security)
+   4.3. [Usability](#43-usability)
+   4.4. [Availability](#44-availability)
+   4.5. [Scalability](#45-scalability)
+5. [Testing](#5-testing)
+   5.1. [Test Strategy](#51-test-strategy)
+   5.2. [Test Cases](#52-test-cases)
+6. [References](#6-references)
+7. [Appendix](#7-appendix)
 
 ## 1. Introduction
 
 ### 1.1. Purpose
 
-The purpose of this Software Requirements Specification (SRS) document is to outline the requirements for the development of the Pseudo Fulfillment System, a mobile plan change order handling system for a Telco company.
+The purpose of this Software Requirements Specification (SRS) document is to define the requirements for the development of the Pseudo Fulfillment System, a mobile plan change order handling system for a Telco company. The system aims to streamline the process of activating new mobile plans for customers.
 
 ### 1.2. Scope
 
-This document encompasses the functional and non-functional requirements of the Pseudo Fulfillment System. It provides an overview of the system architecture and the technologies used in its development.
+The scope of this project includes the design and development of both the frontend and backend components. It covers the creation of a user-friendly interface, plan selection, phone number validation, SIM card activation, billing information collection, payment processing, confirmation, plan activation, and error handling.
 
 ### 1.3. Technologies Used
+
+The technologies used for this project are as follows:
 
 - Frontend: Angular
 - Backend: Spring Boot
@@ -52,92 +54,101 @@ This document encompasses the functional and non-functional requirements of the 
 
 ### 2.1. System Architecture
 
-[Provide a high-level overview of the system's architecture.]
+The Pseudo Fulfillment System follows a client-server architecture, with Angular serving as the frontend client and Spring Boot as the backend server. The system communicates with a MySQL database for data storage and retrieval.
 
 ### 2.2. User Roles
 
 The system involves the following user roles:
-- Telco Customer
+
+- Telco Customer: End-users who want to activate a new mobile plan.
 
 ### 2.3. Use Cases
 
-[List and briefly describe the main use cases of the system.]
+The main use cases of the system include:
+
+- User selects a mobile plan.
+- User enters and validates their phone number.
+- User requests a new SIM card if needed.
+- User provides billing information and selects a payment method.
+- System processes the payment and confirms the transaction.
+- User receives a confirmation email or SMS.
+- User's selected mobile plan is activated immediately upon successful payment.
+- System handles errors gracefully.
 
 ## 3. Functional Requirements
 
 ### 3.1. User Interface
 
-[Describe the user-friendly interface with options to enter necessary information.]
+The user interface should be designed to be intuitive and user-friendly, allowing customers to input the necessary information easily.
 
 ### 3.2. Plan Selection
 
-[Detail how customers can choose from a list of available mobile plans.]
+Customers should be able to choose from a list of available mobile plans, including details such as plan name, data limits, talk time, and pricing.
 
 ### 3.3. Phone Number Validation
 
-[Explain how the system validates customer phone numbers.]
+The system should validate customer phone numbers to ensure they are in the correct format (e.g., XXX-XXX-XXXX) and not already associated with another active plan.
 
 ### 3.4. SIM Card Activation
 
-[Describe the process for requesting and entering SIM card information.]
+Customers should have the option to request a new SIM card if needed or enter the SIM card number if they already have a compatible one.
 
 ### 3.5. Billing Information
 
-[Explain how billing information is collected.]
+Customers must provide billing information, including their name, address, and payment method (e.g., credit card, PayPal).
 
 ### 3.6. Payment Processing
 
-[Detail the payment processing flow and confirmation.]
+The system should process payments based on the selected plan and payment method. It should provide a clear confirmation of the payment status (success or failure).
 
 ### 3.7. Confirmation
 
-[Explain how customers receive confirmation of their plan activation.]
+Upon successful payment, the customer should receive a confirmation email or SMS with details of the activated plan, billing information, and next steps.
 
 ### 3.8. Plan Activation
 
-[Describe how the selected plan is activated upon successful payment.]
+The selected mobile plan should be activated immediately upon successful payment, allowing the customer to make calls, send texts, and use data with the new plan.
 
 ### 3.9. Error Handling
 
-[Explain how the system handles errors gracefully.]
+The system should handle errors gracefully, including failed payments, network issues, or incorrect input data, and provide clear error messages to the customer.
 
 ## 4. Non-Functional Requirements
 
 ### 4.1. Performance
 
-[Specify performance requirements.]
+The system must perform efficiently, with quick response times, even during peak usage.
 
 ### 4.2. Security
 
-[Detail security measures and requirements.]
+Security measures should be in place to protect user data and payment information.
 
 ### 4.3. Usability
 
-[Describe usability requirements.]
+The system should be designed for ease of use, with an intuitive interface.
 
 ### 4.4. Availability
 
-[Specify system availability requirements.]
+The system should be highly available, with minimal downtime for maintenance.
 
 ### 4.5. Scalability
 
-[Detail scalability requirements.]
+The system should be scalable to accommodate a growing number of users and mobile plans.
 
 ## 5. Testing
 
 ### 5.1. Test Strategy
 
-[Describe the overall testing strategy for the project.]
+A comprehensive testing strategy will be employed, including unit tests, integration tests, and user acceptance testing, to ensure the application functions correctly.
 
 ### 5.2. Test Cases
 
-[List and describe key test cases.]
+Detailed test cases will be developed to cover various scenarios, including plan selection, payment processing, error handling, and more.
 
 ## 6. References
 
-[Include any reference documents or videos.]
+N/A
 
 ## 7. Appendix
 
-[Include any additional information or documentation as needed.]
-
+N/A
