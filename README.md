@@ -1,4 +1,4 @@
-# Software Requirements Specification (SRS) - Pseudo Fulfillment System
+# Pseudo Fulfillment System
 
 ## Table of Contents
 
