@@ -46,14 +46,15 @@ The scope of this project includes the design and development of both the fronte
 
 The technologies used for this project are as follows:
 
-- **Frontend Framework:** [Angular](https://angular.io)
-  ![angular](https://angular.io/assets/images/logos/angular/angular.svg){width=40px height=40px}
+- **Frontend:** [Angular](https://angular.io) 
+  <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="20" height="20">
 
-- **Backend Framework:** [Spring Boot](https://spring.io/)
-  ![spring](https://www.vectorlogo.zone/logos/springio/springio-icon.svg){width=40px height=40px}
+- **Backend:** [Spring Boot](https://spring.io/)
+  <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="20" height="20">
 
 - **Database:** [MySQL](https://www.mysql.com/)
-  ![mysql](https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg){width=40px height=40px}
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="20" height="20">
+
 
 ### 2. System Overview
 
