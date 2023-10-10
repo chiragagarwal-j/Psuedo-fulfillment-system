@@ -35,7 +35,7 @@
 
 #### 1.1. Purpose
 
-The purpose of this Software to the develop the Pseudo Fulfillment System, a mobile plan change order handling system for a Telco company. The system aims to streamline the process of activating new mobile plans for customers.
+The purpose of this Software to the develop the Pseudo Fulfillment System, a mobile plan change order handling system for a Telecom company. The system aims to streamline the process of activating new mobile plans for customers.
 
 #### 1.2. Scope
 
@@ -51,7 +51,7 @@ The technologies used for this project are as follows:
 - **Backend Framework:** [Spring Boot](https://spring.io/)
   <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="20" height="20">
 
-- **Database Management:** [MySQL](https://www.mysql.com/)
+- **Database:** [MySQL](https://www.mysql.com/)
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="20" height="20">
 
 ### 2. System Overview
