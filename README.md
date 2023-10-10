@@ -151,4 +151,6 @@ Detailed test cases will be developed to cover various scenarios, including plan
 
 ### 6. References
 
-N/A
+1. Casadei, Fabio & Savoldi, Antonio & Gubian, Paolo. (2006). ["Forensics and SIM cards: An overview."](https://www.researchgate.net/publication/220542556_Forensics_and_SIM_cards_An_overview) *International Journal of Digital Evidence (IJDE)*, 5.
+
+2. Tijani, Ibrahim. (2021). ["Development of Multiple Operator Enabled SIM Card."](https://www.researchgate.net/publication/349566748_DEVELOPMENT_OF_MULTIPLE_OPERATOR_ENABLED_SIM_CARD) DOI: 10.13140/RG.2.2.18098.94403.
