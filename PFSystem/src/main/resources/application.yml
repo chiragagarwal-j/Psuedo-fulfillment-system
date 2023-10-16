@@ -8,8 +8,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+
     hibernate:
       ddl-auto: update
+    show-sql: false
+    open-in-view: false
 
 # jwt:
 #   private.key: classpath:app.key
