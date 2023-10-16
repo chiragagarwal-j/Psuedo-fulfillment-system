@@ -15,6 +15,7 @@ public class MSISDN {
     @Column(name = "id")
     private Long id;
 
+    @Column(columnDefinition = "VARCHAR(2) DEFAULT '91'")
     private String CC;
 
     @Column(name = "NSN")
