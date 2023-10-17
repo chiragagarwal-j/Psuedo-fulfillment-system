@@ -7,10 +7,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "imsi")
 public class IMSI {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +25,10 @@ public class IMSI {
 
     private String MSIN;
 
-    public static String generateRandomMSIN() {
+    @Column(name = "IMSI_id")
+    private String IMSIid;
+
+    public String generateRandomMSIN() {
         Random random = new Random();
         StringBuilder msinBuilder = new StringBuilder(10);
         for (int i = 0; i < 10; i++) {
