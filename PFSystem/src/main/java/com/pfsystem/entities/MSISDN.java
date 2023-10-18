@@ -1,5 +1,7 @@
 package com.pfsystem.entities;
 
+import java.util.Random;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,19 +19,21 @@ public class MSISDN {
     @Column(name = "id")
     private Long id;
 
-    private String CC = "91";
+    private String cc = "91";
 
     @Column(name = "NSN")
-    private String NSN;
+    private String nsn;
 
     @Column(name = "MSISDN_id")
-    private String MSISDNid;
+    private String msisdnID;
+
+    Random random = new Random();
 
     public String generateIndianMobileNumber() {
-        int firstDigit = 6 + (int) (Math.random() * 4);
+        int firstDigit = 6 + random.nextInt(4);
         StringBuilder nsnBuilder = new StringBuilder(Integer.toString(firstDigit));
         for (int i = 1; i < 10; i++) {
-            int digit = (int) (Math.random() * 10);
+            int digit = random.nextInt(10);
             nsnBuilder.append(digit);
         }
         return nsnBuilder.toString();

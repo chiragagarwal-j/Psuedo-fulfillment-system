@@ -12,28 +12,29 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="iccid")
+@Table(name = "iccid")
 public class ICCID {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    private String MII = "89";
+    private String mii = "89";
 
-    private String CC = "91";
+    private String cc = "91";
 
-    private String MNC;
+    private String mnc;
 
-    private String IAN;
+    private String ian;
 
     private String x;
 
     @Column(name = "ICCID_id")
-    private String ICCIDid;
+    private String iccidID;
+
+    Random random = new Random();
 
     public String generateRandomIAN() {
-        Random random = new Random();
         StringBuilder msinBuilder = new StringBuilder(10);
         for (int i = 0; i < 10; i++) {
             msinBuilder.append(random.nextInt(10));

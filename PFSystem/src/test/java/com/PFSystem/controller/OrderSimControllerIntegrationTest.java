@@ -1,4 +1,4 @@
-package com.PFSystem.Controller;
+package com.PFSystem.controller;
 
 import com.pfsystem.PfSystemApplication;
 import com.pfsystem.service.OrderingSimService;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.when;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = PfSystemApplication.class)
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:application-test.properties")
-public class OrderSimControllerIntegrationTest {
+class OrderSimControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -32,7 +32,7 @@ public class OrderSimControllerIntegrationTest {
     private OrderingSimService orderingSimService;
 
     // @Test
-    // public void testFetchNetworkOperatorDetails() throws Exception {
+    // void testFetchNetworkOperatorDetails() throws Exception {
     // // Mock service response
     // when(orderingSimService.getNetworkOperatorDetails()).thenReturn(null, null);
 
@@ -43,7 +43,7 @@ public class OrderSimControllerIntegrationTest {
     // }
 
     @Test
-    public void testOrderNewSim() throws Exception {
+    void testOrderNewSim() throws Exception {
         Long simCardId = 2001L; // Replace with a valid simCardId
 
         // Mock service response

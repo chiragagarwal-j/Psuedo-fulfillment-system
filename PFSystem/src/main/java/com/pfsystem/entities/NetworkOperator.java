@@ -5,10 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Entity
 @Data
+@AllArgsConstructor
+
 public class NetworkOperator {
 
     @Id
@@ -24,12 +27,21 @@ public class NetworkOperator {
     @Column(name = "countryCode")
     private String countryCode;
 
-    private String MCC;
+    private String mcc;
 
-    private String MNC;
+    private String mnc;
     private String brand;
     private String operator;
     private String status;
     private String bands;
     private String notes;
+
+    public NetworkOperator() {
+    }
+
+    public NetworkOperator(long id, String operator, String brand) {
+        this.id = id;
+        this.operator = operator;
+        this.brand = brand;
+    }
 }

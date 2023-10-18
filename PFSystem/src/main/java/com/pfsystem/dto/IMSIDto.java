@@ -6,8 +6,8 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class IMSIDto {
-    private String MCC;
-    private String MNC;
+    private String mcc;
+    private String mnc;
     private String operator;
     private String brand;
 }

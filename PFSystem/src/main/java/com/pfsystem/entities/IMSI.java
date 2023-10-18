@@ -19,17 +19,18 @@ public class IMSI {
     @Column(name = "id")
     private Long id;
 
-    private String MCC;
+    private String mcc;
 
-    private String MNC;
+    private String mnc;
 
-    private String MSIN;
+    private String msin;
 
     @Column(name = "IMSI_id")
-    private String IMSIid;
+    private String imsiID;
+
+    Random random = new Random();
 
     public String generateRandomMSIN() {
-        Random random = new Random();
         StringBuilder msinBuilder = new StringBuilder(10);
         for (int i = 0; i < 10; i++) {
             msinBuilder.append(random.nextInt(10));

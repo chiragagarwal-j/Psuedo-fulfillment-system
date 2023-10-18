@@ -8,11 +8,17 @@ import {MatIconModule} from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
+import { GetNewSimComponent } from './get-new-sim/get-new-sim.component';
+import { RechargeComponent } from './recharge/recharge.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    GetNewSimComponent,
+    RechargeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

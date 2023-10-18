@@ -23,15 +23,15 @@ public class SimCard {
 
     @OneToOne
     @JoinColumn(name = "imsi_id")
-    private IMSI IMSI;
+    private IMSI imsi;
 
     @OneToOne
     @JoinColumn(name = "iccid_id")
-    private ICCID ICCID;
+    private ICCID iccid;
 
     @OneToOne
     @JoinColumn(name = "msisdn_id")
-    private MSISDN MSISDN;
+    private MSISDN msisdn;
 
     private boolean planStatus=false;
 

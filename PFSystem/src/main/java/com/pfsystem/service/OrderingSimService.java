@@ -2,8 +2,6 @@ package com.pfsystem.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -28,28 +26,27 @@ import jakarta.transaction.Transactional;
 public class OrderingSimService {
 
     @Autowired
-    private NetworkOperatorRepository networkOperatorRepository;
+    public NetworkOperatorRepository networkOperatorRepository;
 
     @Autowired
-    private IMSIRepository imsiRepository;
+    public IMSIRepository imsiRepository;
 
     @Autowired
-    private ICCIDRepository iccidRepository;
+    public ICCIDRepository iccidRepository;
 
     @Autowired
-    private MSISDNRepository msisdnRepository;
+    public MSISDNRepository msisdnRepository;
 
     @Autowired
-    private SimCardRepository simCardRepository;
+    public SimCardRepository simCardRepository;
 
     public List<NetworkOperatorDto> getNetworkOperatorDetails() {
         List<NetworkOperator> networkOperators = networkOperatorRepository
                 .getNetworkOperatorDetailsByCountryCodeAndStatus();
-        List<NetworkOperatorDto> networkOperatorDtos = networkOperators.stream()
+        return networkOperators.stream()
                 .map(networkOperator -> new NetworkOperatorDto(networkOperator.getId(), networkOperator.getOperator(),
                         networkOperator.getBrand()))
-                .collect(Collectors.toList());
-        return networkOperatorDtos;
+                .toList();
     }
 
     @Transactional
@@ -61,44 +58,43 @@ public class OrderingSimService {
         }
         SimCard simCard = new SimCard();
         NetworkOperator networkOperator = networkOperatorOptional.get();
-        IMSIDto imsiDto = new IMSIDto(networkOperator.getMCC(), networkOperator.getMNC(),
+        IMSIDto imsiDto = new IMSIDto(networkOperator.getMcc(), networkOperator.getMnc(),
                 networkOperator.getOperator(), networkOperator.getBrand());
 
         IMSI imsi = new IMSI();
-        imsi.setMCC(imsiDto.getMCC());
-        imsi.setMNC(imsiDto.getMNC());
-        String MSIN = imsi.generateRandomMSIN();
-        imsi.setMSIN(MSIN);
-        imsi.setIMSIid(imsiDto.getMCC() + imsiDto.getMNC() + MSIN);
+        imsi.setMcc(imsiDto.getMcc());
+        imsi.setMnc(imsiDto.getMnc());
+        String msin = imsi.generateRandomMSIN();
+        imsi.setMsin(msin);
+        imsi.setImsiID(imsiDto.getMcc() + imsiDto.getMnc() + msin);
         imsiRepository.save(imsi);
 
         ICCID iccid = new ICCID();
-        iccid.setMNC(imsiDto.getMNC());
+        iccid.setMnc(imsiDto.getMnc());
         String randomIAN = iccid.generateRandomIAN();
-        iccid.setIAN(randomIAN);
-        String iccidWithoutCheckDigit = "89" + "91" + imsiDto.getMNC() + randomIAN;
+        iccid.setIan(randomIAN);
+        String iccidWithoutCheckDigit = "89" + "91" + imsiDto.getMnc() + randomIAN;
         String checkDigit = iccid.calculateCheckDigit(iccidWithoutCheckDigit);
         iccid.setX(checkDigit);
-        iccid.setICCIDid("89" + "91" + imsiDto.getMNC() + randomIAN + checkDigit);
+        iccid.setIccidID("89" + "91" + imsiDto.getMnc() + randomIAN + checkDigit);
         iccidRepository.save(iccid);
 
         MSISDN msisdn = new MSISDN();
-        String NSN = msisdn.generateIndianMobileNumber();
-        msisdn.setNSN(NSN);
-        msisdn.setMSISDNid("91" + NSN);
+        String nsn = msisdn.generateIndianMobileNumber();
+        msisdn.setNsn(nsn);
+        msisdn.setMsisdnID("91" + nsn);
         msisdnRepository.save(msisdn);
 
-        simCard.setICCID(iccid);
-        simCard.setIMSI(imsi);
-        simCard.setMSISDN(msisdn);
+        simCard.setIccid(iccid);
+        simCard.setImsi(imsi);
+        simCard.setMsisdn(msisdn);
         simCard.setUser(null);
         simCardRepository.save(simCard);
         return ResponseEntity.ok("Sim card created successfully");
     }
 
-    public List<SimCard> getAll(){
-        List<SimCard> allCards= simCardRepository.findAll();
-        return allCards;
+    public List<SimCard> getAll() {
+        return simCardRepository.findAll();
     }
 
 }
