@@ -19,21 +19,25 @@ import com.pfsystem.entities.MSISDN;
 import com.pfsystem.entities.NetworkOperator;
 import com.pfsystem.entities.SimCard;
 import com.pfsystem.exceptions.NetworkOperatorNotFoundException;
+import com.pfsystem.repository.AddressRepository;
 import com.pfsystem.repository.ICCIDRepository;
 import com.pfsystem.repository.IMSIRepository;
 import com.pfsystem.repository.MSISDNRepository;
 import com.pfsystem.repository.NetworkOperatorRepository;
 import com.pfsystem.repository.SimCardRepository;
+import com.pfsystem.repository.UserRepository;
 import com.pfsystem.service.OrderingSimService;
 
 class OrderingSimServiceTest {
 
-    private OrderingSimService orderingSimService;
+     private OrderingSimService orderingSimService;
     private NetworkOperatorRepository networkOperatorRepository;
     private IMSIRepository imsiRepository;
     private ICCIDRepository iccidRepository;
     private MSISDNRepository msisdnRepository;
+    private UserRepository userRepository;
     private SimCardRepository simCardRepository;
+    private AddressRepository addressRepository;
 
     @BeforeEach
     void setUp() {
@@ -41,14 +45,18 @@ class OrderingSimServiceTest {
         imsiRepository = mock(IMSIRepository.class);
         iccidRepository = mock(ICCIDRepository.class);
         msisdnRepository = mock(MSISDNRepository.class);
+        userRepository = mock(UserRepository.class);
         simCardRepository = mock(SimCardRepository.class);
+        addressRepository = mock(AddressRepository.class);
 
         orderingSimService = new OrderingSimService();
         orderingSimService.networkOperatorRepository = networkOperatorRepository;
         orderingSimService.imsiRepository = imsiRepository;
         orderingSimService.iccidRepository = iccidRepository;
         orderingSimService.msisdnRepository = msisdnRepository;
+        orderingSimService.userRepository = userRepository;
         orderingSimService.simCardRepository = simCardRepository;
+        orderingSimService.addressRepository = addressRepository;
     }
 
     @Test
@@ -70,38 +78,7 @@ class OrderingSimServiceTest {
         verify(networkOperatorRepository, times(1)).getNetworkOperatorDetailsByCountryCodeAndStatus();
     }
     
-    @Test
-    void testCreateSimCard() {
-        // Arrange
-        Long networkOperatorId = 2001L;
-        NetworkOperator networkOperator = new NetworkOperator();
-        networkOperator.setId(networkOperatorId);
-        when(networkOperatorRepository.findById(networkOperatorId)).thenReturn(Optional.of(networkOperator));
 
-        // Act
-        ResponseEntity<String> response = orderingSimService.createSimCard(networkOperatorId);
-
-        // Assert
-        verify(imsiRepository).save(any(IMSI.class));
-        verify(iccidRepository).save(any(ICCID.class));
-        verify(msisdnRepository).save(any(MSISDN.class));
-        verify(simCardRepository).save(any(SimCard.class));
-        assertEquals("Sim card created successfully", response.getBody());
-    }
-
-    @Test
-    void testCreateSimCardNetworkOperatorNotFound() {
-        // Arrange
-        Long networkOperatorId = 0L;
-        when(networkOperatorRepository.findById(networkOperatorId)).thenReturn(Optional.empty());
-
-        // Act and Assert
-        try {
-            orderingSimService.createSimCard(networkOperatorId);
-        } catch (NetworkOperatorNotFoundException ex) {
-            assertEquals("Network operator not found for ID: " + networkOperatorId, ex.getMessage());
-        }
-    }
 
     @Test
     void testGetAll() {

@@ -1,57 +1,85 @@
 package com.PFSystem.controller;
 
-import com.pfsystem.PfSystemApplication;
-import com.pfsystem.service.OrderingSimService;
-
+import com.pfsystem.dto.NetworkOperatorDto;
+import com.pfsystem.entities.SimCard;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.*;
+import org.springframework.test.context.jdbc.Sql;
 
-import static org.mockito.Mockito.when;
+import java.util.List;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = PfSystemApplication.class)
-@AutoConfigureMockMvc
-@TestPropertySource(locations = "classpath:application-test.properties")
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class OrderSimControllerIntegrationTest {
 
+    @LocalServerPort
+    private int port;
+
     @Autowired
-    private MockMvc mockMvc;
+    private TestRestTemplate restTemplate;
 
-    @MockBean
-    private OrderingSimService orderingSimService;
+    private static HttpHeaders headers;
 
-    // @Test
-    // void testFetchNetworkOperatorDetails() throws Exception {
-    // // Mock service response
-    // when(orderingSimService.getNetworkOperatorDetails()).thenReturn(null, null);
+    @BeforeAll
+    public static void init() {
+        headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+    }
 
-    // mockMvc.perform(MockMvcRequestBuilders.get("/ordersim/getOperator")
-    // .contentType(MediaType.APPLICATION_JSON))
-    // .andExpect(MockMvcResultMatchers.status().isOk());
-    // // .andExpect(/* Add more assertions for the response content */);
-    // }
+    private String createURLWithPort(String path) {
+        return "http://localhost:" + port + "/ordersim" + path;
+    }
 
     @Test
-    void testOrderNewSim() throws Exception {
-        Long simCardId = 2001L; // Replace with a valid simCardId
+    @Sql(statements = "INSERT INTO PFSystem.network_operator (mcc, mnc, bands, brand, country_code, country_name, notes, operator, status, `type`) VALUES('405', '854', 'LTE', 'Jio', 'IN', 'India', '-', 'Andhra Pradesh', 'Operational', 'National')", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 
-        // Mock service response
-        when(orderingSimService.createSimCard(simCardId)).thenReturn(ResponseEntity.ok("Sim card created successfully"));
+    public void testGetOperatorDetails() {
+        HttpEntity<String> entity = new HttpEntity<>(null, headers);
+        ResponseEntity<List<NetworkOperatorDto>> response = restTemplate.exchange(
+                createURLWithPort("/getOperator"),
+                HttpMethod.GET,
+                entity,
+                new ParameterizedTypeReference<List<NetworkOperatorDto>>() {
+                });
+        List<NetworkOperatorDto> operatorDetails = response.getBody();
+        assertNotNull(operatorDetails);
+        assertEquals(response.getStatusCode().value(), 200);
+    }
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/ordersim/newsim/" + simCardId)
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-                // .andExpect(/* Add more assertions for the response content */);
+    @Test
+    public void testOrderNewSim() {
+        HttpEntity<String> entity = new HttpEntity<>(null, headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                createURLWithPort("/newsim/1"),
+                HttpMethod.POST,
+                entity,
+                String.class);
+        String responseBody = response.getBody();
+        assertEquals("Sim card ordered successfully", responseBody);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    public void testGetAllSimCards() {
+        HttpEntity<String> entity = new HttpEntity<>(null, headers);
+        ResponseEntity<List<SimCard>> response = restTemplate.exchange(
+                createURLWithPort("/getAllSimCards"),
+                HttpMethod.GET,
+                entity,
+                new ParameterizedTypeReference<List<SimCard>>() {
+                });
+        List<SimCard> simCards = response.getBody();
+        assertNotNull(simCards);
+        assertEquals(response.getStatusCode().value(), 200);
     }
 }

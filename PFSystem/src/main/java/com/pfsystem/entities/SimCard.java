@@ -33,6 +33,10 @@ public class SimCard {
     @JoinColumn(name = "msisdn_id")
     private MSISDN msisdn;
 
+    private String type;
+
+    private String aadhaarCard;
+
     private boolean planStatus=false;
 
     @ManyToOne

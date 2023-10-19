@@ -1,11 +1,19 @@
 package com.pfsystem.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class NewSimDto {
-    private String operator;
-    private String brand;
+    private String firstName;
+    private String lastName;
+    private String email;
+
+    private String addressLine1;
+    private String addressLine2;
+    private String city;
+    private String state;
+    private String pincode;
+
+    private String aadhaarCard;
+    private String type;
 }

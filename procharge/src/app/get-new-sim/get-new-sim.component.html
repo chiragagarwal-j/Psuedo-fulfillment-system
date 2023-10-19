@@ -1,1 +1,75 @@
-<p>get-new-sim works!</p>
+<form class="example-form" (ngSubmit)="orderNewSim()">
+  <mat-form-field class="example-full-width">
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="Enter First Name" [(ngModel)]="newSim.firstName" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Enter Last Name" [(ngModel)]="newSim.lastName" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Enter Email" [(ngModel)]="newSim.email" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Address Line 1</mat-label>
+    <input matInput placeholder="Enter Address Line 1" [(ngModel)]="newSim.addressLine1" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Address Line 2</mat-label>
+    <input matInput placeholder="Enter Address Line 2" [(ngModel)]="newSim.addressLine2" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>City</mat-label>
+    <input matInput placeholder="Enter City" [(ngModel)]="newSim.city" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>State</mat-label>
+    <input matInput placeholder="Enter State" [(ngModel)]="newSim.state" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Pincode</mat-label>
+    <input matInput placeholder="Enter Pincode" [(ngModel)]="newSim.pincode" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Aadhaar Card</mat-label>
+    <input matInput placeholder="Enter Aadhaar Card" [(ngModel)]="newSim.aadhaarCard" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Type</mat-label>
+    <mat-select [(ngModel)]="newSim.type" name="type">
+      <mat-option value="Prepaid">Prepaid</mat-option>
+      <mat-option value="Postpaid">Postpaid</mat-option>
+    </mat-select>
+  </mat-form-field>  
+
+  <mat-form-field>
+    <mat-label>Select Network Brand</mat-label>
+    <mat-select [(ngModel)]="selectedBrand" (ngModelChange)="filterOperatorsByBrand()" [ngModelOptions]="{standalone: true}">
+      <mat-option *ngFor="let brand of uniqueBrands" [value]="brand">
+        {{ brand }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Select Network Operator</mat-label>
+    <mat-select [(ngModel)]="selectedOperator" name="operator" [ngModelOptions]="{standalone: true}">
+      <mat-option *ngFor="let operator of availableOperators" [value]="operator">
+        {{ operator.operator }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>
+

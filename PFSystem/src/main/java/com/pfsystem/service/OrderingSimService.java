@@ -8,17 +8,23 @@ import org.springframework.stereotype.Service;
 
 import com.pfsystem.dto.IMSIDto;
 import com.pfsystem.dto.NetworkOperatorDto;
+import com.pfsystem.dto.NewSimDto;
+import com.pfsystem.dto.ResponseDto;
+import com.pfsystem.entities.Address;
 import com.pfsystem.entities.ICCID;
 import com.pfsystem.entities.IMSI;
 import com.pfsystem.entities.MSISDN;
 import com.pfsystem.entities.NetworkOperator;
 import com.pfsystem.entities.SimCard;
+import com.pfsystem.entities.User;
 import com.pfsystem.exceptions.NetworkOperatorNotFoundException;
+import com.pfsystem.repository.AddressRepository;
 import com.pfsystem.repository.ICCIDRepository;
 import com.pfsystem.repository.IMSIRepository;
 import com.pfsystem.repository.MSISDNRepository;
 import com.pfsystem.repository.NetworkOperatorRepository;
 import com.pfsystem.repository.SimCardRepository;
+import com.pfsystem.repository.UserRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -40,6 +46,12 @@ public class OrderingSimService {
     @Autowired
     public SimCardRepository simCardRepository;
 
+    @Autowired
+    public UserRepository userRepository;
+
+    @Autowired
+    public AddressRepository addressRepository;
+
     public List<NetworkOperatorDto> getNetworkOperatorDetails() {
         List<NetworkOperator> networkOperators = networkOperatorRepository
                 .getNetworkOperatorDetailsByCountryCodeAndStatus();
@@ -50,13 +62,11 @@ public class OrderingSimService {
     }
 
     @Transactional
-    public ResponseEntity<String> createSimCard(Long id) {
+    public ResponseEntity<ResponseDto> createSimCard(Long id, NewSimDto newSimDto) {
         Optional<NetworkOperator> networkOperatorOptional = networkOperatorRepository.findById(id);
-
         if (networkOperatorOptional.isEmpty()) {
             throw new NetworkOperatorNotFoundException("Network operator not found for ID: " + id);
         }
-        SimCard simCard = new SimCard();
         NetworkOperator networkOperator = networkOperatorOptional.get();
         IMSIDto imsiDto = new IMSIDto(networkOperator.getMcc(), networkOperator.getMnc(),
                 networkOperator.getOperator(), networkOperator.getBrand());
@@ -85,12 +95,33 @@ public class OrderingSimService {
         msisdn.setMsisdnID("91" + nsn);
         msisdnRepository.save(msisdn);
 
+        User user = new User();
+        user.setFirstName(newSimDto.getFirstName());
+        user.setLastName(newSimDto.getLastName());
+        user.setEmail(newSimDto.getEmail());
+        userRepository.save(user);
+
+        SimCard simCard = new SimCard();
         simCard.setIccid(iccid);
         simCard.setImsi(imsi);
         simCard.setMsisdn(msisdn);
-        simCard.setUser(null);
+        simCard.setType(newSimDto.getType());
+        simCard.setAadhaarCard(newSimDto.getAadhaarCard());
+        simCard.setUser(user);
         simCardRepository.save(simCard);
-        return ResponseEntity.ok("Sim card created successfully");
+
+        Address address = new Address();
+        address.setAddressLine1(newSimDto.getAddressLine1());
+        address.setAddressLine2(newSimDto.getAddressLine2());
+        address.setCity(newSimDto.getCity());
+        address.setPincode(newSimDto.getPincode());
+        address.setState(newSimDto.getState());
+        address.setUser(user);
+        addressRepository.save(address);
+        
+        ResponseDto responseDto = new ResponseDto();
+        responseDto.setResponseBody("Sim card created successfully");
+        return ResponseEntity.ok(responseDto);
     }
 
     public List<SimCard> getAll() {

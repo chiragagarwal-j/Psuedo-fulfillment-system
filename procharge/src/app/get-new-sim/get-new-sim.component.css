@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Style the overall form container */
+.example-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Style form fields */
+.mat-form-field {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Style labels */
+.mat-label {
+  font-weight: bold;
+}
+
+/* Style buttons */
+/* button[type="submit"] {
+  margin-top: 10px;
+} */
+
+/* Add more custom styles as needed */
+
+
+  
