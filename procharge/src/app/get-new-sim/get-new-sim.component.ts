@@ -19,6 +19,7 @@ export class GetNewSimComponent implements OnInit {
     state: '',
     pincode: '',
     aadhaarCard: '',
+    existingNumber: '',
     type: ''
   };
   selectedBrand: string | null = null;

@@ -39,6 +39,8 @@ public class SimCard {
 
     private boolean planStatus=false;
 
+    private String existingNumber;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

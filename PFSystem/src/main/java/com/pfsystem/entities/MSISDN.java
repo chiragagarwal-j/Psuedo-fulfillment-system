@@ -27,9 +27,8 @@ public class MSISDN {
     @Column(name = "MSISDN_id")
     private String msisdnID;
 
-    Random random = new Random();
-
     public String generateIndianMobileNumber() {
+        Random random = new Random();
         int firstDigit = 6 + random.nextInt(4);
         StringBuilder nsnBuilder = new StringBuilder(Integer.toString(firstDigit));
         for (int i = 1; i < 10; i++) {

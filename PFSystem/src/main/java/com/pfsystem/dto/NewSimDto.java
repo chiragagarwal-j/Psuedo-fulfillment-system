@@ -7,6 +7,7 @@ public class NewSimDto {
     private String firstName;
     private String lastName;
     private String email;
+    private String existingNumber;
 
     private String addressLine1;
     private String addressLine2;

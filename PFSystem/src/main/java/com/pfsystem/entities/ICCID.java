@@ -32,11 +32,10 @@ public class ICCID {
     @Column(name = "ICCID_id")
     private String iccidID;
 
-    Random random = new Random();
-
     public String generateRandomIAN() {
         StringBuilder msinBuilder = new StringBuilder(10);
         for (int i = 0; i < 10; i++) {
+            Random random = new Random();
             msinBuilder.append(random.nextInt(10));
         }
         return msinBuilder.toString();

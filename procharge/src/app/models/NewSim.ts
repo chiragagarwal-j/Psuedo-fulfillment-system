@@ -8,5 +8,6 @@ export interface NewSim {
     state: string;
     pincode: string;
     aadhaarCard: string;
+    existingNumber: string;
     type: string;
 }
