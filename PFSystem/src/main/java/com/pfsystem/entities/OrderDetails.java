@@ -8,8 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
@@ -23,13 +21,7 @@ public class OrderDetails {
 
     private String orderID;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "simcard_id")
-    private SimCard simCard;
+    private String price;
 
     public String generateRandomOrderId() {
         SecureRandom random = new SecureRandom();

@@ -41,6 +41,10 @@ public class SimCard {
 
     private String existingNumber;
 
+    @OneToOne
+    @JoinColumn(name="order_id")
+    private OrderDetails orderDetails;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

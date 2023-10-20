@@ -78,9 +78,9 @@ public class OrderingSimService {
         ICCID iccid = createICCID(imsiDto);
         MSISDN msisdn = createMSISDN();
         User user = createUser(newSimDto);
-        SimCard simCard = createSimCard(newSimDto, iccid, imsi, msisdn, user);
-        createOrderDetails(simCard, user);
-        createAddress(newSimDto, user);
+        OrderDetails orderDetails = createOrderDetails();
+        createSimCard(newSimDto, iccid, imsi, msisdn, user, orderDetails);
+        createAddress(newSimDto);
 
         ResponseDto responseDto = new ResponseDto();
         responseDto.setResponseBody("Sim card created successfully");
@@ -129,7 +129,8 @@ public class OrderingSimService {
         return user;
     }
 
-    private SimCard createSimCard(NewSimDto newSimDto, ICCID iccid, IMSI imsi, MSISDN msisdn, User user) {
+    private SimCard createSimCard(NewSimDto newSimDto, ICCID iccid, IMSI imsi, MSISDN msisdn, User user,
+            OrderDetails orderDetails) {
         SimCard simCard = new SimCard();
         simCard.setIccid(iccid);
         simCard.setImsi(imsi);
@@ -138,28 +139,28 @@ public class OrderingSimService {
         simCard.setType(newSimDto.getType());
         simCard.setAadhaarCard(newSimDto.getAadhaarCard());
         simCard.setUser(user);
+        simCard.setOrderDetails(orderDetails);
         simCardRepository.save(simCard);
         return simCard;
     }
 
-    private Address createAddress(NewSimDto newSimDto, User user) {
+    private Address createAddress(NewSimDto newSimDto) {
         Address address = new Address();
         address.setAddressLine1(newSimDto.getAddressLine1());
         address.setAddressLine2(newSimDto.getAddressLine2());
         address.setCity(newSimDto.getCity());
         address.setPincode(newSimDto.getPincode());
         address.setState(newSimDto.getState());
-        address.setUser(user);
         addressRepository.save(address);
         return address;
     }
 
-    private void createOrderDetails(SimCard simCard, User user) {
+    private OrderDetails createOrderDetails() {
         OrderDetails orderDetails = new OrderDetails();
         orderDetails.setOrderID(orderDetails.generateRandomOrderId());
-        orderDetails.setSimCard(simCard);
-        orderDetails.setUser(user);
+        orderDetails.setPrice("100");
         orderDetailsRepository.save(orderDetails);
+        return orderDetails;
     }
 
     public List<SimCard> getAll() {
