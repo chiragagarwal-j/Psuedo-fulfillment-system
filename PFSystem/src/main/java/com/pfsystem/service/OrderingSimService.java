@@ -15,6 +15,7 @@ import com.pfsystem.entities.ICCID;
 import com.pfsystem.entities.IMSI;
 import com.pfsystem.entities.MSISDN;
 import com.pfsystem.entities.NetworkOperator;
+import com.pfsystem.entities.OrderDetails;
 import com.pfsystem.entities.SimCard;
 import com.pfsystem.entities.User;
 import com.pfsystem.exceptions.NetworkOperatorNotFoundException;
@@ -23,6 +24,7 @@ import com.pfsystem.repository.ICCIDRepository;
 import com.pfsystem.repository.IMSIRepository;
 import com.pfsystem.repository.MSISDNRepository;
 import com.pfsystem.repository.NetworkOperatorRepository;
+import com.pfsystem.repository.OrderDetailsRepository;
 import com.pfsystem.repository.SimCardRepository;
 import com.pfsystem.repository.UserRepository;
 
@@ -50,6 +52,9 @@ public class OrderingSimService {
     @Autowired
     public AddressRepository addressRepository;
 
+    @Autowired
+    public OrderDetailsRepository orderDetailsRepository;
+
     public List<NetworkOperatorDto> getNetworkOperatorDetails() {
         List<NetworkOperator> networkOperators = networkOperatorRepository
                 .getNetworkOperatorDetailsByCountryCodeAndStatus();
@@ -65,22 +70,23 @@ public class OrderingSimService {
             throw new NetworkOperatorNotFoundException("Network operator not found for ID: " + id);
         }
         NetworkOperator networkOperator = networkOperatorOptional.get();
-    
+
         IMSIDto imsiDto = new IMSIDto(networkOperator.getMcc(), networkOperator.getMnc(),
                 networkOperator.getOperator(), networkOperator.getBrand());
-    
+
         IMSI imsi = createIMSI(imsiDto);
         ICCID iccid = createICCID(imsiDto);
         MSISDN msisdn = createMSISDN();
         User user = createUser(newSimDto);
-        createSimCard(newSimDto, iccid, imsi, msisdn, user);
+        SimCard simCard = createSimCard(newSimDto, iccid, imsi, msisdn, user);
+        createOrderDetails(simCard, user);
         createAddress(newSimDto, user);
-    
+
         ResponseDto responseDto = new ResponseDto();
         responseDto.setResponseBody("Sim card created successfully");
         return ResponseEntity.ok(responseDto);
     }
-    
+
     private IMSI createIMSI(IMSIDto imsiDto) {
         IMSI imsi = new IMSI();
         imsi.setMcc(imsiDto.getMcc());
@@ -91,7 +97,7 @@ public class OrderingSimService {
         imsiRepository.save(imsi);
         return imsi;
     }
-    
+
     private ICCID createICCID(IMSIDto imsiDto) {
         ICCID iccid = new ICCID();
         iccid.setMnc(imsiDto.getMnc());
@@ -104,7 +110,7 @@ public class OrderingSimService {
         iccidRepository.save(iccid);
         return iccid;
     }
-    
+
     private MSISDN createMSISDN() {
         MSISDN msisdn = new MSISDN();
         String nsn = msisdn.generateIndianMobileNumber();
@@ -113,7 +119,7 @@ public class OrderingSimService {
         msisdnRepository.save(msisdn);
         return msisdn;
     }
-    
+
     private User createUser(NewSimDto newSimDto) {
         User user = new User();
         user.setFirstName(newSimDto.getFirstName());
@@ -122,7 +128,7 @@ public class OrderingSimService {
         userRepository.save(user);
         return user;
     }
-    
+
     private SimCard createSimCard(NewSimDto newSimDto, ICCID iccid, IMSI imsi, MSISDN msisdn, User user) {
         SimCard simCard = new SimCard();
         simCard.setIccid(iccid);
@@ -135,7 +141,7 @@ public class OrderingSimService {
         simCardRepository.save(simCard);
         return simCard;
     }
-    
+
     private Address createAddress(NewSimDto newSimDto, User user) {
         Address address = new Address();
         address.setAddressLine1(newSimDto.getAddressLine1());
@@ -147,7 +153,14 @@ public class OrderingSimService {
         addressRepository.save(address);
         return address;
     }
-    
+
+    private void createOrderDetails(SimCard simCard, User user) {
+        OrderDetails orderDetails = new OrderDetails();
+        orderDetails.setOrderID(orderDetails.generateRandomOrderId());
+        orderDetails.setSimCard(simCard);
+        orderDetails.setUser(user);
+        orderDetailsRepository.save(orderDetails);
+    }
 
     public List<SimCard> getAll() {
         return simCardRepository.findAll();

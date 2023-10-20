@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NewSim } from '../models/NewSim';
 import { NetworkOperator } from '../models/NetworkOperator';
 import { NewSimService } from '../services/new-sim.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-get-new-sim',
@@ -27,7 +29,7 @@ export class GetNewSimComponent implements OnInit {
   uniqueBrands: string[] = [];
   availableOperators: NetworkOperator[] = [];
 
-  constructor(private newSimService: NewSimService) {}
+  constructor(private newSimService: NewSimService,private dialog:MatDialog) {}
 
   ngOnInit() {
     this.getOperators();
@@ -61,4 +63,21 @@ export class GetNewSimComponent implements OnInit {
       console.log('Please select a network operator');
     }
   }
+
+  openConfirmationDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '450px', // Set the desired width
+      data: 'Do you really want to submit?' // Pass data to the dialog
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Handle the submission logic here
+        // This block will be executed if the user confirms the action
+      } else {
+        // Handle the case when the user cancels the action
+      }
+    });
+  }
+
 }

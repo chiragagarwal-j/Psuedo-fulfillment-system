@@ -1,24 +1,15 @@
 package com.PFSystem.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.ResponseEntity;
-
 import com.pfsystem.dto.NetworkOperatorDto;
-import com.pfsystem.entities.ICCID;
-import com.pfsystem.entities.IMSI;
-import com.pfsystem.entities.MSISDN;
 import com.pfsystem.entities.NetworkOperator;
 import com.pfsystem.entities.SimCard;
-import com.pfsystem.exceptions.NetworkOperatorNotFoundException;
 import com.pfsystem.repository.AddressRepository;
 import com.pfsystem.repository.ICCIDRepository;
 import com.pfsystem.repository.IMSIRepository;
