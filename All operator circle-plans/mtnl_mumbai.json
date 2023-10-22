@@ -1,0 +1,265 @@
+{
+  "query": "Success",
+  "response": { "status": "Success", "code": "200" },
+  "data": [
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "5",
+      "validity": "1 days",
+      "details": "SMS: 40 SMS"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "10",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.7.47"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "16",
+      "validity": "1 days",
+      "details": "3G Data: 2 GB"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "19",
+      "validity": "7 days",
+      "details": "Extend SIM validity to 7 days & Free 120 sec of voice calls on MTNL N/W"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "22",
+      "validity": "3 days",
+      "details": "3G Data: 1 GB"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "25",
+      "validity": "21 days",
+      "details": "Local MTNL to MTNL Mobile @ Rs.0.2/min | Local MTNL to Other Mobile @ Rs.0.4/min | STD Calls @ Rs.0.5/min | Local In-network Night SMS (11pm-8am) @ Rs.0.05/sms | Night Local MTNL to MTNL Mobile (11pm-8am) @ Rs.0.05/min | Night Local MTNL to Other Mobile (11pm-8am) @ Rs.0.3/min"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "31",
+      "validity": "28 days",
+      "details": "SMS: 350 SMS"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "33",
+      "validity": "30 days",
+      "details": "Benefit:Calls (Voice & Video) on MTNL Network 1st Minute: 30p 2nd Minute: 20p 3rd Minute onwards:10p/min Other Local & BSNL Mah & Goa 1st Minute: 50p 2nd Minute: 40p 3rd Minute onwards: 30p/min Other Local Network in Maharashtra & Goa: 50p/Min STD: 75p/Min.Talktime:0.11 (Zyada Bola Plan)"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "34",
+      "validity": "14 days",
+      "details": "STD Mobile Calls: 4000 seconds"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "45",
+      "validity": "56 days",
+      "details": "All Mobile calls @ 1.0 p/sec | All Landline calls @ 2.0 p/sec"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "47",
+      "validity": "90 days",
+      "details": "Validity extension by 90 days and 500 Free SMS to MTNL n/w"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "48",
+      "validity": "90 days",
+      "details": "Local & STD Calls @ 0.48/min | Talktime: Rs.0.15"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "49",
+      "validity": "28 days",
+      "details": "Local Calls @ Rs.0.35/min | STD Calls @ Rs.0.4/min | Local Video Calls @ Rs.0.35/min | STD Video Calls @ Rs.0.4/min"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "50",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.39.0"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "56",
+      "validity": "10 days",
+      "details": "3G Data: 10 GB"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "63",
+      "validity": "56 days",
+      "details": "All Landline calls @ 2.0 p/sec | Local MTNL to MTNL Mobile @ Rs.0.01/2 seconds | Local MTNL to Other Mobile @ Rs.1.0 p/sec"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "75",
+      "validity": "90 days",
+      "details": "Extension of SIM Validity by 90 days"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "97",
+      "validity": "28 days",
+      "details": "SMS: 1350 SMS"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "99",
+      "validity": "28 days",
+      "details": "3G Data: 15 GB"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "100",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.81.0"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "102",
+      "validity": "22 days",
+      "details": "Local & STD Calls: Unlimited | SMS: 99 SMS | from Home & MTNL Delhi N/w."
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "119",
+      "validity": "180 days",
+      "details": "Data @ Rs.0.03/10KB | Pay Per Second on Home N/W."
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "136",
+      "validity": "180 days",
+      "details": "Extension of SIM Validity by 180 days"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "153",
+      "validity": "28 days",
+      "details": "3G Data: 1 GB / Day | Local & STD Calls (Home & MTNL Delhi N/w ): Unlimited | SMS: 100 SMS / Day | from Home & MTNL Delhi N/W | (All other special numbers (e.g | 139) will be charged as per tariff)"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "198",
+      "validity": "50 days",
+      "details": "3G Data: 2 GB / Day"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "200",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.190.0"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "245",
+      "validity": "365 days",
+      "details": "Extension of SIM Validity by 365 days"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "298",
+      "validity": "56 days",
+      "details": "3G Data: 1 GB / Day | Local & STD Calls (Home & MTNL Delhi N/w ): Unlimited | SMS: 100 SMS / Day | from Home & MTNL Delhi N/w."
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "299",
+      "validity": "28 days",
+      "details": "3G Data: 25 GB"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "300",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.295.0"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "485",
+      "validity": "90 days",
+      "details": "3G Data: 1.5 GB / Day | Local & STD Calls (Home & MTNL Delhi N/w ): Unlimited | SMS: 100 SMS / Day | from Home & MTNL Delhi N/w"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "500",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.500.0"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "750",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.750.0"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "1000",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.1010.0"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "1498",
+      "validity": "365 days",
+      "details": "3G Data: 2 GB / Day"
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "1999",
+      "validity": "365 days",
+      "details": "3G Data: 600 GB | Local & STD Calls: Unlimited | SMS: 100 SMS / Day | from Home & MTNL Delhi N/w."
+    },
+    {
+      "operator": "mtnl",
+      "operator_circle": "mumbai",
+      "price": "2200",
+      "validity": "N.A.",
+      "details": "Talktime: Rs.2250.0"
+    }
+  ]
+}

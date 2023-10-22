@@ -79,8 +79,7 @@ public class OrderingSimService {
         MSISDN msisdn = createMSISDN();
         User user = createUser(newSimDto);
         OrderDetails orderDetails = createOrderDetails();
-        createSimCard(newSimDto, iccid, imsi, msisdn, user, orderDetails);
-        createAddress(newSimDto);
+        createSimCard(newSimDto, iccid, imsi, msisdn, user, orderDetails, createAddress(newSimDto));
 
         ResponseDto responseDto = new ResponseDto();
         responseDto.setResponseBody("Sim card created successfully");
@@ -130,7 +129,7 @@ public class OrderingSimService {
     }
 
     private SimCard createSimCard(NewSimDto newSimDto, ICCID iccid, IMSI imsi, MSISDN msisdn, User user,
-            OrderDetails orderDetails) {
+            OrderDetails orderDetails, Address address) {
         SimCard simCard = new SimCard();
         simCard.setIccid(iccid);
         simCard.setImsi(imsi);
@@ -140,6 +139,7 @@ public class OrderingSimService {
         simCard.setAadhaarCard(newSimDto.getAadhaarCard());
         simCard.setUser(user);
         simCard.setOrderDetails(orderDetails);
+        simCard.setAddresses(address);
         simCardRepository.save(simCard);
         return simCard;
     }

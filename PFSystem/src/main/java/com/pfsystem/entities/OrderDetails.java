@@ -23,6 +23,10 @@ public class OrderDetails {
 
     private String price;
 
+    private String status="Success";
+
+    private String StatusMessage="Order confirmed!!";
+
     public String generateRandomOrderId() {
         SecureRandom random = new SecureRandom();
         return new BigInteger(50, random)

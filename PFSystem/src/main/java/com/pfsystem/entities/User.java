@@ -1,14 +1,10 @@
 package com.pfsystem.entities;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
@@ -31,12 +27,5 @@ public class User {
 
     private String password;
     private String username;
-
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Address> addresses;
-
-    @OneToMany(mappedBy = "user")
-    private List<SimCard> simCards;
 
 }

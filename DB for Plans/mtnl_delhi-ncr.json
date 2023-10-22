@@ -1,0 +1,346 @@
+[
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "4",
+    "validity": "1 days",
+    "category": "Data",
+    "details": "2G/3G Data: 120 MB"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "9",
+    "validity": "7 days",
+    "category": "SMS",
+    "details": "SMS: 70 SMS"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "10",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.8.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "11",
+    "validity": "1 days",
+    "category": "Special_offer",
+    "details": "Local Calls: 50 minutes"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "14",
+    "validity": "30 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | Local Own 1p/2Sec, Local Other 1p/1Sec, STD 1p/1Sec; Roaming(MT/MO-InCircle/MO-OutCircle)-Free/80p/115p per Min | Applicable only for Pay Per SECOND."
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "16",
+    "validity": "30 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | Local&STD 1p/1Sec;Roaming(MT/MO- InCircle/MO-OutCircle)-Free/ 4p/5p per 3Sec"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "17",
+    "validity": "90 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | All local/STD Call 50p/Min"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "19",
+    "validity": "2 days",
+    "category": "Data",
+    "details": "2G/3G Data: 750 MB"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "20",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.16.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "21",
+    "validity": "1 days",
+    "category": "STD",
+    "details": "STD Calls: 50 minutes"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "22",
+    "validity": "90 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | Local(Own/Other) 30p/50p per Min, STD 60p/Min"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "30",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.26.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "31",
+    "validity": "30 days",
+    "category": "SMS",
+    "details": "SMS: 300 SMS"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "42",
+    "validity": "3 days",
+    "category": "Data",
+    "details": "2G/3G Data: 2.5 GB"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "43",
+    "validity": "90 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | -Local&STD 1p/1Sec;Roaming(MT/MO- InCircle/MO-OutCircle)-Free/ 4p/5p per 3Sec"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "44",
+    "validity": "7 days",
+    "category": "Combo,Truly_unlimited",
+    "details": "2G/3G Data: 1.5 GB / Day | Local, STD & Roaming Calls: Unlimited | SMS: 100 SMS / Day"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "45",
+    "validity": "90 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | Local Own 1p/2Sec, Local Other 1p/1Sec, STD 1p/1Sec; Roaming(MT/MO-InCircle/MO-OutCircle)-Free/80p/115p per Min | Applicable only for Pay Per SECOND."
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "47",
+    "validity": "90 days",
+    "category": "SMS",
+    "details": "Extension of SIM/ Account Validity to 90 days with 500 free SMS (MTNL Delhi GSM)"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "48",
+    "validity": "90 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | All local/STD Call 50 Paisa; Free 30 local min and 30 STD Min for 30 Days"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "51",
+    "validity": "30 days",
+    "category": "Data",
+    "details": "2G/3G Data: 2 GB"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "52",
+    "validity": "28 days",
+    "category": "Combo",
+    "details": "2G/3G Data: 1 GB | All MTNL to MTNL Calls: Unlimited | All MTNL to Other Calls: 200 minutes | SMS: 100 SMS"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "53",
+    "validity": "90 days",
+    "category": "Special_offer",
+    "details": "Plan Migration | Local(Own/Other) 30p/50p per Min, STD 60p/Min ; Free 30 local min, 30 STD Min for 30 Days"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "76",
+    "validity": "7 days",
+    "category": "Data",
+    "details": "2G/3G Data: 6 GB"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "80",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.76.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "82",
+    "validity": "14 days",
+    "category": "Combo,Truly_unlimited",
+    "details": "2G/3G Data: 1.5 GB / Day | Local, STD & Roaming Calls: Unlimited | SMS: 100 SMS / Day"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "89",
+    "validity": "30 days",
+    "category": "SMS",
+    "details": "SMS: 1000 SMS"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "99",
+    "validity": "30 days",
+    "category": "Data",
+    "details": "2G/3G Data: 5 GB"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "100",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.100.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "109",
+    "validity": "10 days",
+    "category": "Combo",
+    "details": "3G Data: 110 MB | Local MTNL to MTNL: 34 minutes | STD MTNL to MTNL: 26 minutes | All Video Calls: 30 minutes | Local MTNL to MTNL: 34 SMS | National MTNL to MTNL: 26 SMS"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "121",
+    "validity": "30 days",
+    "category": "Special_offer",
+    "details": "Local MTNL to MTNL Mobile: Unlimited"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "145",
+    "validity": "28 days",
+    "category": "Combo,Truly_unlimited",
+    "details": "2G/3G Data: 1.5 GB / Day | Local, STD & Roaming Calls: Unlimited | SMS: 100 SMS / Day"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "200",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.205.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "225",
+    "validity": "1825 days",
+    "category": "Special_offer",
+    "details": "Lifetime Validity *1825 days, i.e | 5 yrs ,Further extended if the customer obliges/agrees with Terms & condition of MTNL prevailing at that time"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "300",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.310.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "309",
+    "validity": "30 days",
+    "category": "Combo",
+    "details": "3G Data: 310 MB | Local MTNL to MTNL: 106 minutes | STD MTNL to MTNL: 80 minutes | All Video Calls: 100 minutes | Local SMS: 106 SMS | National SMS: 80 SMS"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "500",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.520.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "750",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.790.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "1000",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.1077.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "1097",
+    "validity": "365 days",
+    "category": "Combo,Truly_unlimited,Annual",
+    "details": "3G Data: 40 GB | Local & STD Calls: Unlimited | SMS: 1000 SMS | (home n/w and MTNL Mumbai n/w)"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "1449",
+    "validity": "365 days",
+    "category": "Data,Annual",
+    "details": "2G/3G Data: 2 GB / Day"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "1500",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.1665.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "2250",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.2525.0"
+  },
+  {
+    "operator": "MTNL",
+    "operator_circle": "delhi-ncr",
+    "price": "2700",
+    "validity": "N.A.",
+    "category": "Talktime",
+    "details": "Talktime: Rs.3100.0"
+  }
+]
