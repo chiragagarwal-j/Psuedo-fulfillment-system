@@ -1,0 +1,13 @@
+.form-box {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.recharge-form {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,14 @@
+<mat-card *ngFor="let plan of receivedData" class="recharge-card">
+    <mat-card-content>
+        <mat-card-title>{{ plan.categoryName }}</mat-card-title>
+        <p>{{ plan.price}}</p>
+        <p>Validity: {{ plan.validity }}</p>
+
+        <mat-card-actions>
+            <button mat-button (click)="toggleDetails(plan)">Show More</button>
+        </mat-card-actions>
+        <div *ngIf="plan.showDetails">
+            <p>Details: {{ plan.details }}</p>
+        </div>
+    </mat-card-content>
+</mat-card>

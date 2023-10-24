@@ -5,22 +5,31 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
-@Data
 @Entity
-public class RechargePlans {
+@Data
+public class RechargeSim {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
+    private String mobileNumber;
+
     private String operator;
-    private String operator_circle;
-    private String price;
-    private String validity;
-    private String details;
-    private String categories;
+
+    private String operatorCircle;
+
+    @OneToOne
+    @JoinColumn(name = "plan_id")
+    private RechargePlans rechargePlans;
+
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private OrderDetails orderDetails;
 
 }

@@ -1,0 +1,5 @@
+.recharge-card {
+    width: 300px; /* Set the desired width for your cards */
+    margin: 16px; /* Add margin for spacing between cards */
+    display: inline-block;
+  }  

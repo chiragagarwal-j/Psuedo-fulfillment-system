@@ -24,41 +24,46 @@ export class GetNewSimComponent implements OnInit {
     existingNumber: '',
     type: ''
   };
-  selectedBrand: string | null = null;
-  selectedOperator: NetworkOperator | null = null;
-  uniqueBrands: string[] = [];
+  selectedOperatorCircle: string = '';
+  selectedOperator: string = '';
+  uniqueOperators: string[] = [];
+  availableOperatorCircle: string[] = [];
   availableOperators: NetworkOperator[] = [];
 
-  constructor(private newSimService: NewSimService,private dialog:MatDialog) {}
+  constructor(private newSimService: NewSimService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.getOperators();
+    this.getUniqueOperators();
   }
 
-  getOperators() {
+  getUniqueOperators() {
     this.newSimService.getOperator().subscribe((operators: NetworkOperator[]) => {
-      this.uniqueBrands = Array.from(new Set(operators.map(operator => operator.brand)));
       this.availableOperators = operators;
+      this.uniqueOperators = Array.from(new Set(operators.map(operator => operator.operator)));
     });
   }
 
-  filterOperatorsByBrand() {
-    if (this.selectedBrand) {
-      this.availableOperators = this.availableOperators.filter(
-        operator => operator.brand === this.selectedBrand
-      );
-      this.selectedOperator = null;
+  onOperatorChange() {
+    if (this.selectedOperator) {
+      this.availableOperatorCircle = this.availableOperators
+        .filter(operator => operator.operator === this.selectedOperator)
+        .map(operator => operator.operatorCircle);
     } else {
-      this.availableOperators = this.availableOperators;
+      this.availableOperatorCircle = [];
     }
   }
 
   orderNewSim() {
     if (this.selectedOperator) {
-      const operatorId = this.selectedOperator.id;
-      this.newSimService.orderNewSim(operatorId, this.newSim).subscribe((response: string) => {
-        console.log('Order success:', response);
-      });
+      const selectedOperatorObj = this.availableOperators.find(operator => operator.operator === this.selectedOperator);
+      if (selectedOperatorObj) {
+        const operatorId = selectedOperatorObj.id;
+        this.newSimService.orderNewSim(operatorId, this.newSim).subscribe((response: string) => {
+          console.log('Order success:', response);
+        });
+      } else {
+        console.log('Selected operator not found in available operators.');
+      }
     } else {
       console.log('Please select a network operator');
     }
@@ -66,18 +71,15 @@ export class GetNewSimComponent implements OnInit {
 
   openConfirmationDialog(): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '450px', // Set the desired width
-      data: 'Do you really want to submit?' // Pass data to the dialog
+      width: '450px',
+      data: 'Do you really want to submit?'
     });
-  
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Handle the submission logic here
-        // This block will be executed if the user confirms the action
+        this.orderNewSim();
       } else {
-        // Handle the case when the user cancels the action
       }
     });
   }
-
 }

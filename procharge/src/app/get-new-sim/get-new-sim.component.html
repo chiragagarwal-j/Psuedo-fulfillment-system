@@ -1,4 +1,4 @@
-<form class="example-form" (ngSubmit)="orderNewSim()">
+<form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>First Name</mat-label>
     <input matInput placeholder="Enter First Name" [(ngModel)]="newSim.firstName" required
@@ -66,20 +66,21 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Select Network Brand</mat-label>
-    <mat-select [(ngModel)]="selectedBrand" (ngModelChange)="filterOperatorsByBrand()" required
+    <mat-label>Select Network Operator</mat-label>
+    <mat-select [(ngModel)]="selectedOperator" (ngModelChange)="onOperatorChange()" required
       [ngModelOptions]="{standalone: true}">
-      <mat-option *ngFor="let brand of uniqueBrands" [value]="brand">
-        {{ brand }}
+      <mat-option *ngFor="let operator of uniqueOperators" [value]="operator">
+        {{ operator }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Select Network Operator</mat-label>
-    <mat-select [(ngModel)]="selectedOperator" name="operator" required [ngModelOptions]="{standalone: true}">
-      <mat-option *ngFor="let operator of availableOperators" [value]="operator">
-        {{ operator.operator }}
+    <mat-label>Select Network Operator Circle</mat-label>
+    <mat-select [(ngModel)]="selectedOperatorCircle" name="operatorCircle" required
+      [ngModelOptions]="{standalone: true}">
+      <mat-option *ngFor="let circle of availableOperatorCircle" [value]="circle">
+        {{ circle }}
       </mat-option>
     </mat-select>
   </mat-form-field>

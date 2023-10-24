@@ -1,1 +1,27 @@
-<p>recharge works!</p>
+<div class="form-box">
+    <form class="recharge-form" (ngSubmit)="submitRecharge()">
+        <mat-form-field>
+            <mat-label>Mobile Number</mat-label>
+            <input matInput type="text" name="mobileNumber" [(ngModel)]="EnteredmobileNumber" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Select Network Operator</mat-label>
+            <mat-select [(ngModel)]="selectedOperator" (ngModelChange)="onOperatorChange()" name="operator" required>
+                <mat-option *ngFor="let operator of uniqueOperators" [value]="operator">
+                    {{ operator }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Select Network Operator Circle</mat-label>
+            <mat-select [(ngModel)]="selectedOperatorCircle" name="operatorCircle" required>
+                <mat-option *ngFor="let circle of availableOperatorCircle" [value]="circle">
+                    {{ circle }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button type="submit">Submit</button>
+    </form>
+</div>

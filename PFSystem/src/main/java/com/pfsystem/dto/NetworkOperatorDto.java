@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class NetworkOperatorDto {
     private Long id;
+    private String operatorCircle;
     private String operator;
-    private String brand;
 }

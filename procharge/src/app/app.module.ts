@@ -12,11 +12,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 
@@ -26,6 +29,7 @@ import { RechargeComponent } from './recharge/recharge.component';
 import { HomeComponent } from './home/home.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { TrackOrderComponent } from './track-order/track-order.component';
+import { RechargePlansComponent } from './recharge-plans/recharge-plans.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { TrackOrderComponent } from './track-order/track-order.component';
     RechargeComponent,
     HomeComponent,
     ConfirmationDialogComponent,
-    TrackOrderComponent
+    TrackOrderComponent,
+    RechargePlansComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,8 @@ import { TrackOrderComponent } from './track-order/track-order.component';
     MatDialogModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatGridListModule,
+    MatCardModule,
     HttpClientModule,
     FormsModule
   ],
