@@ -1,14 +1,42 @@
-<mat-card *ngFor="let plan of receivedData" class="recharge-card">
-    <mat-card-content>
-        <mat-card-title>{{ plan.categoryName }}</mat-card-title>
-        <p>{{ plan.price}}</p>
-        <p>Validity: {{ plan.validity }}</p>
-
-        <mat-card-actions>
-            <button mat-button (click)="toggleDetails(plan)">Show More</button>
-        </mat-card-actions>
-        <div *ngIf="plan.showDetails">
-            <p>Details: {{ plan.details }}</p>
+<div class="mobile-change-category">
+    <div class="container">
+        <div class="content">
+            <span class="info">
+                <span class="label">Recharging for</span>
+                <div class="mobile-number">{{rechargeInfo.mobileNumber}}</div>
+            </span>
+            <button mat-button class="change-button" [routerLink]="'/recharge'">
+                <span class="button-label">Change</span>
+            </button>
         </div>
-    </mat-card-content>
-</mat-card>
+    </div>
+</div>
+
+
+<div class="plan-container">
+    <div class="plan-category-box">
+        <h2>Plan Category</h2>
+        <mat-nav-list>
+            <mat-list-item *ngFor="let service of selectedOperatorPlans?.services"
+                (click)="selectedCategory(service.type,service.name)"
+                [class.selected]="service.name === selectedCategoryName">
+                {{ service.name }}
+            </mat-list-item>
+        </mat-nav-list>
+    </div>
+    <div class="recharge-cards">
+        <mat-card *ngFor="let plan of rechargePlans" class="recharge-card">
+            <mat-card-content>
+                <p>Price:₹ {{ plan.price}}</p>
+                <p>Validity: {{ plan.validity }}</p>
+                <button mat-button>Recharge</button>
+                <mat-card-actions>
+                    <button mat-button (click)="toggleDetails(plan)">Show More</button>
+                </mat-card-actions>
+                <div *ngIf="plan.showDetails">
+                    <p>Details: {{ plan.details }}</p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

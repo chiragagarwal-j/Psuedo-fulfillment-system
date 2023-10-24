@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { RechargePlans } from '../models/RechargePlans';
 import { Observable } from 'rxjs';
 import { FetchPlans } from '../models/FetchPlans';
+import { RechargeInfo } from '../models/RechargeInfo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RechargeSimService {
 
-  cachedPlans?: RechargePlans[]
+  cachedInfo: RechargeInfo= { mobileNumber: '', operator: '', operatorCircle: '', planID: 1 };;
 
   baseUrl = 'http://localhost:8080/rechargesim';
 
@@ -20,13 +21,12 @@ export class RechargeSimService {
     return this.http.post<RechargePlans[]>(url, fetchPlans);
   }
 
-  cachePlanDetails(toBeStored: RechargePlans[]) {
-    this.cachedPlans = toBeStored;
+  cachePlanDetails(toBeStored: RechargeInfo) {
+    this.cachedInfo = toBeStored;
   }
 
   retrieveCachedPlans() {
-    return this.cachedPlans;
+    return this.cachedInfo;
   }
-
 
 }

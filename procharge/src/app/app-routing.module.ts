@@ -7,12 +7,12 @@ import { TrackOrderComponent } from './track-order/track-order.component';
 import { RechargePlansComponent } from './recharge-plans/recharge-plans.component';
 
 const routes: Routes = [
-  {path:"",component:HomeComponent},
-  {path:"home",component:HomeComponent},
-  {path:"getnewsim",component:GetNewSimComponent},
-  {path:"recharge",component:RechargeComponent},
-  {path:"trackOrder",component:TrackOrderComponent},
-  {path:"recharge-plans",component:RechargePlansComponent}
+  { path: "", component: HomeComponent },
+  { path: "home", component: HomeComponent },
+  { path: "getnewsim", component: GetNewSimComponent },
+  { path: "recharge", component: RechargeComponent },
+  { path: "trackOrder", component: TrackOrderComponent },
+  { path: 'recharge-plans/:operator', component: RechargePlansComponent }
 ];
 
 @NgModule({

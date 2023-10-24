@@ -17,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -59,6 +61,8 @@ import { RechargePlansComponent } from './recharge-plans/recharge-plans.componen
     MatSnackBarModule,
     MatGridListModule,
     MatCardModule,
+    MatSidenavModule,
+    MatListModule,
     HttpClientModule,
     FormsModule
   ],
