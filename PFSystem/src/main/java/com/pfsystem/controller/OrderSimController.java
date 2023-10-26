@@ -36,9 +36,9 @@ public class OrderSimController {
         return orderingSimService.createSimCard(id,newSimDto);
     }
 
-    @GetMapping("/getAllSimCards")
-    public List<SimCard> getAllSimCards(){
-        return orderingSimService.getAll();
+    @GetMapping("/getOrderDetails")
+    public SimCard fetchOrderDetails(){
+        return orderingSimService.getDetails();
     }
 
 }

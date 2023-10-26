@@ -1,0 +1,59 @@
+<div class="payment-container">
+    <h2>Payment Details</h2>
+    <form (ngSubmit)="processPayment()">
+        <div class="form-group">
+            <label for="orderAmount">Order Amount:</label>
+            <label id="orderAmount">{{ rechargingInfo.amount }}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="paymentMethod">Select Payment Method:</label>
+            <select id="paymentMethod" [(ngModel)]="selectedPaymentMethod" name="paymentMethod" required>
+                <option value="upi">UPI ID</option>
+                <option value="card">Card</option>
+                <option value="wallet">Wallet</option>
+            </select>
+        </div>
+
+        <div *ngIf="selectedPaymentMethod === 'upi'" class="form-group">
+            <label for="upiId">Select UPI Method:</label>
+            <select id="upiMethod" [(ngModel)]="selectedUpiMethod" name="selectedUpiMethod" required>
+                <option value="googlepay">Google Pay</option>
+                <option value="phonepe">PhonePe</option>
+            </select>
+            <label for="upiId">UPI ID:</label>
+            <input type="text" id="upiId" [(ngModel)]="upiId" name="upiId" required>
+        </div>
+
+        <div *ngIf="selectedPaymentMethod === 'card'" class="form-group">
+            <label for="cardType">Select Card Type:</label>
+            <select id="cardType" [(ngModel)]="selectedCardType" name="selectedCardType" required>
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+            </select>
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" [(ngModel)]="cardNumber" name="cardNumber" required>
+
+            <label for="expiryDate">Expiry Date (MM/YY):</label>
+            <input type="text" id="expiryDate" [(ngModel)]="expiryDate" name="expiryDate" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="password" id="cvv" [(ngModel)]="cvv" name="cvv" password required>
+
+            <label for="cardName">Name on the Card:</label>
+            <input type="text" id="cardName" [(ngModel)]="cardName" name="cardName" required>
+        </div>
+
+
+        <div *ngIf="selectedPaymentMethod === 'wallet'" class="form-group">
+            <label for="walletName">Select Wallet:</label>
+            <select id="walletName" [(ngModel)]="selectedWallet" name="selectedWallet" required>
+                <option value="paytm">Paytm</option>
+                <option value="mobikwik">Mobikwik</option>
+                <option value="amazonpay">Amazon Pay</option>
+            </select>
+        </div>
+
+        <button type="submit">Pay</button>
+    </form>
+</div>

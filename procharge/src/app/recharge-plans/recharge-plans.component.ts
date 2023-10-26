@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RechargePlans } from '../models/RechargePlans';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { ActivatedRoute } from '@angular/router';
 import { RechargeSimService } from '../services/recharge-sim.service';
 import { OperatorPlans } from '../models/OperatorPlans';
 import { RechargeInfo } from '../models/RechargeInfo';
 import { FetchPlans } from '../models/FetchPlans';
+import { Router } from '@angular/router';
 
 const operatorPlans: { [key: string]: OperatorPlans } = {
   Airtel: {
@@ -71,15 +70,14 @@ const operatorPlans: { [key: string]: OperatorPlans } = {
 })
 
 export class RechargePlansComponent implements OnInit {
-  rechargeInfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1 };
+  rechargeInfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', payingInfo: '', amount: '' };
   operatorName: string | null = null;
   selectedOperatorPlans: OperatorPlans | null = null;
   rechargePlans: RechargePlans[] = [];
   fetchPlans: FetchPlans = { operator: '', categoryName: 'Combo' };
   selectedCategoryName: string = '';
 
-
-  constructor(private rechargeSimService: RechargeSimService) { }
+  constructor(private rechargeSimService: RechargeSimService, private router: Router) { }
 
   ngOnInit() {
     this.rechargeInfo = this.rechargeSimService.retrieveCachedPlans();
@@ -88,11 +86,9 @@ export class RechargePlansComponent implements OnInit {
     this.fetchCategoryPlans();
   }
 
-  selectedCategory(selectedCategoryType: string,categoryName:string) {
+  selectedCategory(selectedCategoryType: string, categoryName: string) {
     this.fetchPlans.categoryName = selectedCategoryType;
     this.selectedCategoryName = categoryName;
-    console.log(this.selectedCategoryName);
-    
     this.fetchCategoryPlans();
   }
 
@@ -107,4 +103,12 @@ export class RechargePlansComponent implements OnInit {
   toggleDetails(plan: RechargePlans) {
     plan.showDetails = !plan.showDetails;
   }
+
+  sendRechargeRequest(planID: number,price:string) {
+    this.rechargeInfo.planID = planID;
+    this.rechargeInfo.amount = price;
+    this.rechargeSimService.cachePlanDetails(this.rechargeInfo);
+    this.router.navigate(['/payment-page']);
+  }
+
 }

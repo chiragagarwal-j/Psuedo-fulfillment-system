@@ -2,6 +2,9 @@ package com.pfsystem.entities;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.Date;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,7 +16,7 @@ import lombok.Data;
 @Entity
 @Data
 public class OrderDetails {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -23,14 +26,20 @@ public class OrderDetails {
 
     private String price;
 
-    private String status="Success";
+    @CreationTimestamp
+    @Column(name = "orderTime")
+    private Date orderTime;
 
-    private String StatusMessage="Order confirmed!!";
+    private String paidVia;
+
+    private String PaymentInfo;
+
+    private String status = "Success";
 
     public String generateRandomOrderId() {
         SecureRandom random = new SecureRandom();
         return new BigInteger(50, random)
-            .toString(32)
-            .toUpperCase();
+                .toString(32)
+                .toUpperCase();
     }
 }

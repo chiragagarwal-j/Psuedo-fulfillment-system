@@ -163,8 +163,9 @@ public class OrderingSimService {
         return orderDetails;
     }
 
-    public List<SimCard> getAll() {
-        return simCardRepository.findAll();
+    public SimCard getDetails() {
+        List<SimCard> simcards = simCardRepository.findAll();
+        return simcards.get(simcards.size() - 1);
     }
 
 }

@@ -1,0 +1,57 @@
+<head>
+    <title>Invoice</title>
+</head>
+
+<body>
+    <div id="invoice">
+        <header>
+            <h1>Invoice</h1>
+            <address contenteditable>
+                <p>Hey, {{allOrderDetails.user.firstName}}</p>
+                <p>Your Order is confirmed</p>
+            </address>
+        </header>
+        <article>
+            <h1>Order Details</h1>
+            <table class="order-details">
+                <tr>
+                    <th>Name</th>
+                    <td>{{allOrderDetails.user.firstName}}
+                        {{allOrderDetails.user.lastName}}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{allOrderDetails.addresses.addressLine1}},
+                        {{allOrderDetails.addresses.addressLine2}},
+                        {{allOrderDetails.addresses.city}},
+                        {{allOrderDetails.addresses.state}},
+                        {{allOrderDetails.addresses.pincode}}</td>
+                </tr>
+                <tr>
+                    <th>New SIM Card Number</th>
+                    <td>{{allOrderDetails.msisdn.nsn}}</td>
+                </tr>
+                <tr>
+                    <th>Order ID</th>
+                    <td>{{allOrderDetails.orderDetails.orderID}}</td>
+                </tr>
+                <tr>
+                    <th>Date Booked On</th>
+                    <td>{{allOrderDetails.orderDetails.orderTime | date: 'medium'}}</td>
+                </tr>
+                <tr>
+                    <th>Final Price</th>
+                    <td>{{allOrderDetails.orderDetails.price}}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{allOrderDetails.user.email}}</td>
+                </tr>
+            </table>
+        </article>
+    </div>
+    <button (click)="generatePDF()">
+        generate
+    </button>
+</body>

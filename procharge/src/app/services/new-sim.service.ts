@@ -22,4 +22,9 @@ export class NewSimService {
     return this.http.post<string>(url, newSimDto);
   }
 
+  fetchOrderDetails(): Observable<any> {
+    const url = `${this.baseUrl}/getOrderDetails`;
+    return this.http.get<any>(url);
+  }
+
 }

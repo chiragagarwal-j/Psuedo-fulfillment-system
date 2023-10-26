@@ -25,7 +25,4 @@ public class User {
     @Email(message = "Invalid email format")
     private String email;
 
-    private String password;
-    private String username;
-
 }

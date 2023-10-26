@@ -20,7 +20,7 @@ export class RechargeComponent implements OnInit {
   uniqueOperators: string[] = [];
   availableOperatorCircle: string[] = [];
   availableOperators: NetworkOperator[] = [];
-  rechargeinfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1 };
+  rechargeinfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', payingInfo: '', amount: '' };
 
   constructor(private newSimService: NewSimService, private router: Router, private rechargeSimService: RechargeSimService) { }
 

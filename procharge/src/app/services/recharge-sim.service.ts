@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RechargePlans } from '../models/RechargePlans';
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { RechargeInfo } from '../models/RechargeInfo';
 })
 export class RechargeSimService {
 
-  cachedInfo: RechargeInfo= { mobileNumber: '', operator: '', operatorCircle: '', planID: 1 };;
+  cachedInfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', payingInfo: '', amount: '' };
 
   baseUrl = 'http://localhost:8080/rechargesim';
 
@@ -27,6 +27,11 @@ export class RechargeSimService {
 
   retrieveCachedPlans() {
     return this.cachedInfo;
+  }
+
+  processRecharge(rechargeInfoToSend: RechargeInfo): Observable<string> {
+    const url = `${this.baseUrl}/processRecharge`;
+    return this.http.post<string>(url, rechargeInfoToSend);
   }
 
 }

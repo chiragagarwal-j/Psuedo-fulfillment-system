@@ -32,6 +32,9 @@ import { HomeComponent } from './home/home.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { TrackOrderComponent } from './track-order/track-order.component';
 import { RechargePlansComponent } from './recharge-plans/recharge-plans.component';
+import { OrderStatusComponent } from './order-status/order-status.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { RechargeOrderStatusComponent } from './recharge-order-status/recharge-order-status.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { RechargePlansComponent } from './recharge-plans/recharge-plans.componen
     HomeComponent,
     ConfirmationDialogComponent,
     TrackOrderComponent,
-    RechargePlansComponent
+    RechargePlansComponent,
+    OrderStatusComponent,
+    PaymentPageComponent,
+    RechargeOrderStatusComponent,
   ],
   imports: [
     BrowserModule,

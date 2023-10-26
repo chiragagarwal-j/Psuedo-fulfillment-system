@@ -24,9 +24,7 @@ public class RechargeSim {
 
     private String operatorCircle;
 
-    @OneToOne
-    @JoinColumn(name = "plan_id")
-    private RechargePlans rechargePlans;
+    private Long planID;
 
     @OneToOne
     @JoinColumn(name = "order_id")
