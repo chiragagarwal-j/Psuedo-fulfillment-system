@@ -1,1 +1,45 @@
-<p>recharge-order-status works!</p>
+<head>
+    <title>Invoice</title>
+</head>
+
+<body>
+    <div class="invoice">
+        <h1>Invoice</h1>
+
+        <div class="invoice-details">
+            <label>Mobile Number:</label>
+            <span>{{ rechargedSimInfo?.mobileNumber }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label>Operator:</label>
+            <span>{{ rechargedSimInfo?.operator }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label>Operator Circle:</label>
+            <span>{{ rechargedSimInfo?.operatorCirle }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label>Final Amount:</label>
+            <span>{{ rechargedSimInfo?.finalAmount }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label>Order Status:</label>
+            <span>{{ rechargedSimInfo?.orderStatus }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label>Validity:</label>
+            <span>{{ rechargedSimInfo?.validity }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label>Details:</label>
+            <span>{{ rechargedSimInfo?.details }}</span>
+        </div>
+
+    </div>
+</body>

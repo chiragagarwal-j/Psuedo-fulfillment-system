@@ -34,6 +34,8 @@ public class OrderDetails {
 
     private String PaymentInfo;
 
+    private Boolean isPending = false;
+
     private String status = "Success";
 
     public String generateRandomOrderId() {

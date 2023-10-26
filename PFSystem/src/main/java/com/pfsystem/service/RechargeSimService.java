@@ -1,5 +1,6 @@
 package com.pfsystem.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.pfsystem.dto.FetchPlansDto;
+import com.pfsystem.dto.OrderIDDto;
 import com.pfsystem.dto.RechargeInfoDto;
 import com.pfsystem.dto.RechargePlansDto;
 import com.pfsystem.dto.RechargeStatusDto;
@@ -51,9 +53,19 @@ public class RechargeSimService {
                 .collect(Collectors.toList());
     }
 
+    public OrderIDDto createOrderID() {
+        OrderDetails orderDetails = new OrderDetails();
+        String orderID = orderDetails.generateRandomOrderId();
+        orderDetails.setOrderID(orderID);
+        orderDetails.setIsPending(true);
+        orderDetailsRepository.save(orderDetails);
+        return new OrderIDDto(orderID);
+    }
+
     public ResponseEntity<ResponseDto> processingRecharge(RechargeInfoDto rechargeInfoDto) {
 
         ResponseDto responseDto = new ResponseDto();
+
         RechargeSim rechargeSim = new RechargeSim();
         rechargeSim.setMobileNumber(rechargeInfoDto.getMobileNumber());
         rechargeSim.setOperator(rechargeInfoDto.getOperator());
@@ -63,42 +75,60 @@ public class RechargeSimService {
         if (rechargeInfoDto.getPayVia() == null || rechargeInfoDto.getPaymentInfo() == null) {
             responseDto.setResponseBody("Recharge failed due to invalid payment info");
             rechargeSim.setOrderDetails(createOrderDetails(rechargePlan.get().getPrice(), rechargeInfoDto.getPayVia(),
-                    rechargeInfoDto.getPaymentInfo(), "Failed"));
+                    rechargeInfoDto.getPaymentInfo(), "Failed", rechargeInfoDto.getOrderID()));
             return new ResponseEntity<>(responseDto, HttpStatus.OK);
         }
         rechargeSim.setOrderDetails(createOrderDetails(rechargePlan.get().getPrice(), rechargeInfoDto.getPayVia(),
-                rechargeInfoDto.getPaymentInfo(), "Success"));
+                rechargeInfoDto.getPaymentInfo(), "Success", rechargeInfoDto.getOrderID()));
         rechargeSimRepository.save(rechargeSim);
 
         responseDto.setResponseBody("Recharge was Successfully executed");
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-    private OrderDetails createOrderDetails(String price, String paidVia, String paymentInfo, String paymentStatus) {
-        OrderDetails orderDetails = new OrderDetails();
-        orderDetails.setOrderID(orderDetails.generateRandomOrderId());
+    private OrderDetails createOrderDetails(String price, String paidVia, String paymentInfo, String paymentStatus,
+            String orderID) {
+        OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderID);
         orderDetails.setPrice(price);
         orderDetails.setPaidVia(paidVia);
         orderDetails.setPaymentInfo(paymentInfo);
         orderDetails.setStatus(paymentStatus);
+        orderDetails.setOrderTime(new Date());
         orderDetailsRepository.save(orderDetails);
+
         return orderDetails;
     }
 
-    public RechargeStatusDto fetchRechargeStatus(String mobileNumber) {
-        RechargeSim rechargeSim = rechargeSimRepository.findByMobileNumber(mobileNumber);
-        Long orderId = rechargeSim.getId();
-        Optional<OrderDetails> orderDetails = orderDetailsRepository.findById(orderId);
-        Optional<RechargePlans> rechargePlans = rechargePlansRepository.findById(rechargeSim.getPlanID());
+    public RechargeStatusDto fetchRechargeStatus(String orderId) {
         RechargeStatusDto rechargeStatusDto = new RechargeStatusDto();
-        rechargeStatusDto.setMobileNumber(mobileNumber);
-        rechargeStatusDto.setOperator(rechargeSim.getOperator());
-        rechargeStatusDto.setOperatorCirle(rechargeSim.getOperatorCircle());
-        rechargeStatusDto.setOrderStatus(orderDetails.get().getStatus());
-        rechargeStatusDto.setFinalAmount(orderDetails.get().getPrice());
-        rechargeStatusDto.setValidity(rechargePlans.get().getValidity());
-        rechargeStatusDto.setDetails(rechargePlans.get().getDetails());
-        return rechargeStatusDto;
 
+        OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderId);
+
+        RechargeSim rechargeSim = rechargeSimRepository.findByOrderDetails(orderDetails);
+        if (rechargeSim != null) {
+            rechargeStatusDto.setFinalAmount(orderDetails.getPrice());
+
+            rechargeStatusDto.setMobileNumber(rechargeSim.getMobileNumber());
+            rechargeStatusDto.setOperator(rechargeSim.getOperator());
+            rechargeStatusDto.setOperatorCirle(rechargeSim.getOperatorCircle());
+
+            Optional<RechargePlans> rechargePlans = rechargePlansRepository.findById(rechargeSim.getPlanID());
+            if (rechargePlans.isPresent()) {
+                RechargePlans plans = rechargePlans.get();
+                rechargeStatusDto.setValidity(plans.getValidity());
+                rechargeStatusDto.setDetails(plans.getDetails());
+                rechargeStatusDto.setOrderTime(orderDetails.getOrderTime());
+                rechargeStatusDto.setOrderStatus(orderDetails.getStatus());
+            }
+
+            return rechargeStatusDto;
+        } else {
+            orderDetails.setStatus("Recharge Failed");
+            orderDetails.setOrderTime(new Date());
+            orderDetailsRepository.save(orderDetails);
+            rechargeStatusDto.setOrderTime(orderDetails.getOrderTime());
+        }
+        System.out.println(rechargeStatusDto.toString());
+        return rechargeStatusDto;
     }
 }

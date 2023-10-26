@@ -1,10 +1,14 @@
 package com.pfsystem.dto;
 
-import lombok.Data;
+import java.util.Date;
 
-@Data
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class RechargeStatusDto {
-    
+
     private String mobileNumber;
     private String operator;
     private String operatorCirle;
@@ -12,4 +16,5 @@ public class RechargeStatusDto {
     private String orderStatus;
     private String validity;
     private String details;
+    private Date orderTime;
 }

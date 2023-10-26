@@ -11,5 +11,6 @@ public class RechargeInfoDto {
     private Long planID;
     private String payVia;
     private String paymentInfo;
+    private String orderID;
 
 }

@@ -1,8 +1,14 @@
 package com.pfsystem.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class ResponseDto {
+
     private String responseBody;
+
+    public ResponseDto() {
+    }
 }

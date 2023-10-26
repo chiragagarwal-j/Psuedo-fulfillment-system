@@ -16,12 +16,7 @@
         </div>
 
         <div *ngIf="selectedPaymentMethod === 'upi'" class="form-group">
-            <label for="upiId">Select UPI Method:</label>
-            <select id="upiMethod" [(ngModel)]="selectedUpiMethod" name="selectedUpiMethod" required>
-                <option value="googlepay">Google Pay</option>
-                <option value="phonepe">PhonePe</option>
-            </select>
-            <label for="upiId">UPI ID:</label>
+            <label for="upiId">Enter UPI ID:</label>
             <input type="text" id="upiId" [(ngModel)]="upiId" name="upiId" required>
         </div>
 

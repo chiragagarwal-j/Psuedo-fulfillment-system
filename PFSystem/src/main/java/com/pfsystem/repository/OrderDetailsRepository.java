@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.pfsystem.entities.OrderDetails;
 
-public interface OrderDetailsRepository extends JpaRepository<OrderDetails,Long> {
-    
+public interface OrderDetailsRepository extends JpaRepository<OrderDetails, Long> {
+    OrderDetails findByOrderID(String orderID);
 }

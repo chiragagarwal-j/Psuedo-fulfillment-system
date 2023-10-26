@@ -1,4 +1,4 @@
-export interface RechargeSimStatus {
+export interface RechargeOrderStatus {
     mobileNumber: string;
     operator: string;
     operatorCirle: string;
@@ -6,4 +6,5 @@ export interface RechargeSimStatus {
     orderStatus: string;
     validity: string;
     details: string;
+    orderTime: Date;
 }

@@ -70,7 +70,7 @@ const operatorPlans: { [key: string]: OperatorPlans } = {
 })
 
 export class RechargePlansComponent implements OnInit {
-  rechargeInfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', payingInfo: '', amount: '' };
+  rechargeInfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', paymentInfo: '', amount: '', orderID: '' };
   operatorName: string | null = null;
   selectedOperatorPlans: OperatorPlans | null = null;
   rechargePlans: RechargePlans[] = [];
@@ -104,7 +104,7 @@ export class RechargePlansComponent implements OnInit {
     plan.showDetails = !plan.showDetails;
   }
 
-  sendRechargeRequest(planID: number,price:string) {
+  sendRechargeRequest(planID: number, price: string) {
     this.rechargeInfo.planID = planID;
     this.rechargeInfo.amount = price;
     this.rechargeSimService.cachePlanDetails(this.rechargeInfo);

@@ -20,22 +20,26 @@ export class PaymentPageComponent implements OnInit {
   cvv: string = '';
   cardName: string = '';
 
-  rechargingInfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', payingInfo: '', amount: '' };
-
+  rechargingInfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', paymentInfo: '', amount: '', orderID: '' };
+  orderID: string = '';
   constructor(private rechargeSimService: RechargeSimService, private router: Router) { }
   ngOnInit(): void {
+    this.rechargeSimService.getOrderID().subscribe(id => { this.orderID = id.orderID });
     this.rechargingInfo = this.rechargeSimService.retrieveCachedPlans();
+    console.log(this.rechargingInfo);
   }
 
   processPayment() {
     this.rechargingInfo.payVia = this.selectedPaymentMethod;
     if (this.selectedPaymentMethod === 'upi') {
-      this.rechargingInfo.payingInfo = this.upiId;
+      this.rechargingInfo.paymentInfo = this.upiId;
     } else if (this.selectedPaymentMethod === 'card') {
-      this.rechargingInfo.payingInfo = this.cardNumber;
+      this.rechargingInfo.paymentInfo = this.cardNumber;
     } else if (this.selectedPaymentMethod === 'wallet') {
-      this.rechargingInfo.payingInfo = this.selectedWallet;
+      this.rechargingInfo.paymentInfo = this.selectedWallet;
     }
+    this.rechargingInfo.orderID = this.orderID;
+    this.rechargeSimService.setOrderId(this.orderID);
     this.rechargeSimService.processRecharge(this.rechargingInfo).subscribe();
     this.router.navigate(['/recharge-order-status']);
   }

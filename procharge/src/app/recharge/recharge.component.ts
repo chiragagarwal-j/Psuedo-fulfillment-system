@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NewSimService } from '../services/new-sim.service';
 import { NetworkOperator } from '../models/NetworkOperator';
-import { FetchPlans } from '../models/FetchPlans';
 import { Router } from '@angular/router';
 import { RechargeSimService } from '../services/recharge-sim.service';
-import { RechargePlans } from '../models/RechargePlans';
 import { RechargeInfo } from '../models/RechargeInfo';
 
 @Component({
@@ -20,7 +18,7 @@ export class RechargeComponent implements OnInit {
   uniqueOperators: string[] = [];
   availableOperatorCircle: string[] = [];
   availableOperators: NetworkOperator[] = [];
-  rechargeinfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', payingInfo: '', amount: '' };
+  rechargeinfo: RechargeInfo = { mobileNumber: '', operator: '', operatorCircle: '', planID: 1, payVia: '', paymentInfo: '', amount: '', orderID: '' };
 
   constructor(private newSimService: NewSimService, private router: Router, private rechargeSimService: RechargeSimService) { }
 

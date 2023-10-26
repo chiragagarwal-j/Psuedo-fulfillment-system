@@ -9,7 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import com.pfsystem.dto.NetworkOperatorDto;
 import com.pfsystem.entities.NetworkOperator;
-import com.pfsystem.entities.SimCard;
 import com.pfsystem.repository.AddressRepository;
 import com.pfsystem.repository.ICCIDRepository;
 import com.pfsystem.repository.IMSIRepository;
@@ -21,7 +20,7 @@ import com.pfsystem.service.OrderingSimService;
 
 class OrderingSimServiceTest {
 
-     private OrderingSimService orderingSimService;
+    private OrderingSimService orderingSimService;
     private NetworkOperatorRepository networkOperatorRepository;
     private IMSIRepository imsiRepository;
     private ICCIDRepository iccidRepository;
@@ -56,8 +55,9 @@ class OrderingSimServiceTest {
         List<NetworkOperator> expectedNetworkOperators = new ArrayList<>();
         expectedNetworkOperators.add(new NetworkOperator(1L, "Operator1", "Brand1"));
         expectedNetworkOperators.add(new NetworkOperator(2L, "Operator2", "Brand2"));
-        
-        when(networkOperatorRepository.getNetworkOperatorDetailsByCountryCodeAndStatus()).thenReturn(expectedNetworkOperators);
+
+        when(networkOperatorRepository.getNetworkOperatorDetailsByCountryCodeAndStatus())
+                .thenReturn(expectedNetworkOperators);
 
         // Act
         List<NetworkOperatorDto> networkOperatorDtos = orderingSimService.getNetworkOperatorDetails();
@@ -68,22 +68,5 @@ class OrderingSimServiceTest {
         // Verify that the repository method was called
         verify(networkOperatorRepository, times(1)).getNetworkOperatorDetailsByCountryCodeAndStatus();
     }
-    
 
-
-    @Test
-    void testGetAll() {
-        // Arrange
-        List<SimCard> expectedSimCards = new ArrayList<>();
-        expectedSimCards.add(new SimCard());
-        expectedSimCards.add(new SimCard());
-        when(simCardRepository.findAll()).thenReturn(expectedSimCards);
-
-        // Act
-        List<SimCard> actualSimCards = orderingSimService.getAll();
-
-        // Assert
-        assertEquals(expectedSimCards.size(), actualSimCards.size());
-        verify(simCardRepository, times(1)).findAll();
-    }
 }

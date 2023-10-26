@@ -5,5 +5,6 @@ export interface RechargeInfo{
     planID: number;
     amount: string;
     payVia: string;
-    payingInfo: string;
+    paymentInfo: string;
+    orderID: string;
 }
