@@ -1,8 +1,10 @@
 package com.pfsystem.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class NewSimDto {
     private String firstName;
     private String lastName;
@@ -17,4 +19,6 @@ public class NewSimDto {
 
     private String aadhaarCard;
     private String type;
+
+    private String orderID;
 }

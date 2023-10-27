@@ -1,5 +1,15 @@
 # Pseudo Fulfillment System
 
+## CheckList
+
+- [ ] [BackEnd Docs](#task-1)
+
+- [ ] [FrontEnd Docs](#task-2)
+
+- [x] [Database Layer](https://github.com/chiragagarwal-j/Psuedo-fulfillment-system/tree/main/PFSystem/PFSystem_Database_Layer.png)
+
+- [ ] [Test Report](#task-4)
+
 ## Table of Contents
 
 1. [Introduction](#1-introduction)
@@ -151,6 +161,6 @@ Detailed test cases will be developed to cover various scenarios, including plan
 
 ### 6. References
 
-1. Casadei, Fabio & Savoldi, Antonio & Gubian, Paolo. (2006). ["Forensics and SIM cards: An overview."](https://www.researchgate.net/publication/220542556_Forensics_and_SIM_cards_An_overview) *International Journal of Digital Evidence (IJDE)*, 5.
+1. Casadei, Fabio & Savoldi, Antonio & Gubian, Paolo. (2006). ["Forensics and SIM cards: An overview."](https://www.researchgate.net/publication/220542556_Forensics_and_SIM_cards_An_overview) _International Journal of Digital Evidence (IJDE)_, 5.
 
 2. Tijani, Ibrahim. (2021). ["Development of Multiple Operator Enabled SIM Card."](https://www.researchgate.net/publication/349566748_DEVELOPMENT_OF_MULTIPLE_OPERATOR_ENABLED_SIM_CARD) DOI: 10.13140/RG.2.2.18098.94403.

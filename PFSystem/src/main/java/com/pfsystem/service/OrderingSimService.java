@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.pfsystem.dto.IMSIDto;
 import com.pfsystem.dto.NetworkOperatorDto;
 import com.pfsystem.dto.NewSimDto;
+import com.pfsystem.dto.OrderIDDto;
 import com.pfsystem.dto.ResponseDto;
 import com.pfsystem.entities.Address;
 import com.pfsystem.entities.ICCID;
@@ -64,6 +65,18 @@ public class OrderingSimService {
                 .toList();
     }
 
+    public OrderIDDto getNewOrderID() {
+        OrderDetails orderDetails = new OrderDetails();
+        String orderID = orderDetails.generateRandomOrderId();
+        orderDetails.setOrderID(orderID);
+        orderDetails.setPaidVia("COD");
+        orderDetails.setPaymentInfo("COD");
+        orderDetails.setPrice("120");
+        orderDetails.setIsPending(true);
+        orderDetailsRepository.save(orderDetails);
+        return new OrderIDDto(orderID);
+    }
+
     public ResponseEntity<ResponseDto> createSimCard(Long id, NewSimDto newSimDto) {
         Optional<NetworkOperator> networkOperatorOptional = networkOperatorRepository.findById(id);
         if (networkOperatorOptional.isEmpty()) {
@@ -78,7 +91,7 @@ public class OrderingSimService {
         ICCID iccid = createICCID(imsiDto);
         MSISDN msisdn = createMSISDN();
         User user = createUser(newSimDto);
-        OrderDetails orderDetails = createOrderDetails();
+        OrderDetails orderDetails = processOrderDetails(newSimDto.getOrderID());
         createSimCard(newSimDto, iccid, imsi, msisdn, user, orderDetails, createAddress(newSimDto));
 
         ResponseDto responseDto = new ResponseDto();
@@ -155,15 +168,14 @@ public class OrderingSimService {
         return address;
     }
 
-    private OrderDetails createOrderDetails() {
-        OrderDetails orderDetails = new OrderDetails();
-        orderDetails.setOrderID(orderDetails.generateRandomOrderId());
-        orderDetails.setPrice("100");
+    private OrderDetails processOrderDetails(String orderID) {
+        OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderID);
+        orderDetails.setStatus("Success");
         orderDetailsRepository.save(orderDetails);
         return orderDetails;
     }
 
-    public SimCard getDetails() {
+    public SimCard getDetails(String OrderID) {
         List<SimCard> simcards = simCardRepository.findAll();
         return simcards.get(simcards.size() - 1);
     }

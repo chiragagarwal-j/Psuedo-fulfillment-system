@@ -8,6 +8,8 @@ import { NetworkOperator } from '../models/NetworkOperator';
   providedIn: 'root'
 })
 export class NewSimService {
+  cachedOrderID: string = '';
+
   baseUrl = 'http://localhost:8080/ordersim';
 
   constructor(private http: HttpClient) { }
