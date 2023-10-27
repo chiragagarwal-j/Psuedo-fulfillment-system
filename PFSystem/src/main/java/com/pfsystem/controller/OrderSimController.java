@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pfsystem.dto.NetworkOperatorDto;
 import com.pfsystem.dto.NewSimDto;
+import com.pfsystem.dto.NewSimOrderStatusDto;
 import com.pfsystem.dto.OrderIDDto;
 import com.pfsystem.dto.ResponseDto;
-import com.pfsystem.entities.SimCard;
 import com.pfsystem.service.OrderingSimService;
 
 @CrossOrigin
@@ -44,7 +44,7 @@ public class OrderSimController {
     }
 
     @GetMapping("/getOrderDetails")
-    public SimCard fetchOrderDetails(@RequestParam String orderID) {
+    public NewSimOrderStatusDto fetchOrderDetails(@RequestParam("orderID") String orderID) {
         return orderingSimService.getDetails(orderID);
     }
 

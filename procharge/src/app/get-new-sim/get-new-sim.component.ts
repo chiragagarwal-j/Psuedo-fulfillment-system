@@ -4,6 +4,7 @@ import { NetworkOperator } from '../models/NetworkOperator';
 import { NewSimService } from '../services/new-sim.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-new-sim',
@@ -22,15 +23,17 @@ export class GetNewSimComponent implements OnInit {
     pincode: '',
     aadhaarCard: '',
     existingNumber: '',
-    type: ''
+    type: '',
+    orderID: ''
   };
   selectedOperatorCircle: string = '';
   selectedOperator: string = '';
   uniqueOperators: string[] = [];
   availableOperatorCircle: string[] = [];
   availableOperators: NetworkOperator[] = [];
-
-  constructor(private newSimService: NewSimService, private dialog: MatDialog) { }
+  cachedorderID: string = '';
+  response?: string;
+  constructor(private newSimService: NewSimService, private dialog: MatDialog, private router:Router) { }
 
   ngOnInit() {
     this.getUniqueOperators();
@@ -58,21 +61,20 @@ export class GetNewSimComponent implements OnInit {
       const selectedOperatorObj = this.availableOperators.find(operator => operator.operator === this.selectedOperator);
       if (selectedOperatorObj) {
         const operatorId = selectedOperatorObj.id;
-        this.newSimService.orderNewSim(operatorId, this.newSim).subscribe((response: string) => {
-          console.log('Order success:', response);
+        this.newSim.orderID = this.cachedorderID;
+        this.newSimService.setOrderId(this.cachedorderID);
+        this.newSimService.orderNewSim(operatorId, this.newSim).subscribe(()=>{
+          this.router.navigate(['/order-status']);
         });
-      } else {
-        console.log('Selected operator not found in available operators.');
       }
-    } else {
-      console.log('Please select a network operator');
     }
   }
 
   openConfirmationDialog(): void {
+    this.newSimService.getOrderID().subscribe(id => { this.cachedorderID = id.orderID });
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '450px',
-      data: 'Do you really want to submit?'
+      data: 'Do you want to continue?'
     });
 
     dialogRef.afterClosed().subscribe(result => {

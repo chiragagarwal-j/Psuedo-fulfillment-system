@@ -1,6 +1,7 @@
 /* Center-align the dialog content */
 mat-dialog-content {
   text-align: center;
+  background-color: blue;
   display: flex;
   flex-direction: column;
   align-items: center;

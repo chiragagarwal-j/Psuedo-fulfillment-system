@@ -2,7 +2,6 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { GetNewSimComponent } from '../get-new-sim/get-new-sim.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmation-dialog',
@@ -12,7 +11,7 @@ import { Router } from '@angular/router';
 export class ConfirmationDialogComponent {
   durationInSeconds = 5;
 
-  constructor(private snackBar: MatSnackBar, protected router:Router,
+  constructor(private snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<GetNewSimComponent>,
     @Inject(MAT_DIALOG_DATA) public data: string
   ) { }
@@ -22,6 +21,5 @@ export class ConfirmationDialogComponent {
       duration: 3000,
     });
     this.dialogRef.close(true);
-    this.router.navigate(['/order-status']);
   }
 }

@@ -10,4 +10,5 @@ export interface NewSim {
     aadhaarCard: string;
     existingNumber: string;
     type: string;
+    orderID: string;
 }

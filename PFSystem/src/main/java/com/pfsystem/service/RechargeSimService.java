@@ -59,11 +59,12 @@ public class RechargeSimService {
         orderDetails.setOrderID(orderID);
         orderDetails.setIsPending(true);
         orderDetailsRepository.save(orderDetails);
-        return new OrderIDDto(orderID);
+        OrderIDDto orderIDDto = new OrderIDDto();
+        orderIDDto.setOrderID(orderID);
+        return orderIDDto;
     }
 
     public ResponseEntity<ResponseDto> processingRecharge(RechargeInfoDto rechargeInfoDto) {
-
         ResponseDto responseDto = new ResponseDto();
 
         RechargeSim rechargeSim = new RechargeSim();
@@ -103,32 +104,24 @@ public class RechargeSimService {
         RechargeStatusDto rechargeStatusDto = new RechargeStatusDto();
 
         OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderId);
+        rechargeStatusDto.setFinalAmount(orderDetails.getPrice());
+        rechargeStatusDto.setOrderTime(orderDetails.getOrderTime());
+        rechargeStatusDto.setOrderStatus(orderDetails.getStatus());
+        rechargeStatusDto.setPaidVia(orderDetails.getPaidVia());
+        rechargeStatusDto.setPaymentInfo(orderDetails.getPaymentInfo());
 
         RechargeSim rechargeSim = rechargeSimRepository.findByOrderDetails(orderDetails);
-        if (rechargeSim != null) {
-            rechargeStatusDto.setFinalAmount(orderDetails.getPrice());
+        rechargeStatusDto.setMobileNumber(rechargeSim.getMobileNumber());
+        rechargeStatusDto.setOperator(rechargeSim.getOperator());
+        rechargeStatusDto.setOperatorCirle(rechargeSim.getOperatorCircle());
 
-            rechargeStatusDto.setMobileNumber(rechargeSim.getMobileNumber());
-            rechargeStatusDto.setOperator(rechargeSim.getOperator());
-            rechargeStatusDto.setOperatorCirle(rechargeSim.getOperatorCircle());
+        Optional<RechargePlans> rechargePlansOptional = rechargePlansRepository.findById(rechargeSim.getPlanID());
+        if (rechargePlansOptional.isPresent()) {
+            RechargePlans rechargePlans = rechargePlansOptional.get();
 
-            Optional<RechargePlans> rechargePlans = rechargePlansRepository.findById(rechargeSim.getPlanID());
-            if (rechargePlans.isPresent()) {
-                RechargePlans plans = rechargePlans.get();
-                rechargeStatusDto.setValidity(plans.getValidity());
-                rechargeStatusDto.setDetails(plans.getDetails());
-                rechargeStatusDto.setOrderTime(orderDetails.getOrderTime());
-                rechargeStatusDto.setOrderStatus(orderDetails.getStatus());
-            }
-
-            return rechargeStatusDto;
-        } else {
-            orderDetails.setStatus("Recharge Failed");
-            orderDetails.setOrderTime(new Date());
-            orderDetailsRepository.save(orderDetails);
-            rechargeStatusDto.setOrderTime(orderDetails.getOrderTime());
+            rechargeStatusDto.setValidity(rechargePlans.getValidity());
+            rechargeStatusDto.setDetails(rechargePlans.getDetails());
         }
-        System.out.println(rechargeStatusDto.toString());
         return rechargeStatusDto;
     }
 }

@@ -10,12 +10,12 @@ import { RechargeOrderStatus } from '../models/RechargeOrderStatus';
 export class RechargeOrderStatusComponent implements OnInit {
 
   rechargedSimInfo?: RechargeOrderStatus;
+  rechargeOrderID?: string;
   constructor(private rechargeSimService: RechargeSimService) { }
   ngOnInit(): void {
-    this.rechargeSimService.getRechargeOrderDetails().subscribe((response: RechargeOrderStatus) => {
+    this.rechargeOrderID = this.rechargeSimService.retriveOrderId();
+    this.rechargeSimService.getRechargeOrderDetails(this.rechargeOrderID).subscribe((response: RechargeOrderStatus) => {
       this.rechargedSimInfo = response;
-      console.log(this.rechargedSimInfo);
-      
     });
   }
 

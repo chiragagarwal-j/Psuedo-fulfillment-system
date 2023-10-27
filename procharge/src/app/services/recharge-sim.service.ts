@@ -41,11 +41,10 @@ export class RechargeSimService {
     return this.http.post<string>(url, rechargeInfoToSend);
   }
 
-  getRechargeOrderDetails(): Observable<RechargeOrderStatus> {
-    const url = `${this.baseUrl}/getRechargeOrderDetails/${this.cachedOrderID}`;
-    console.log(this.cachedOrderID);
+  getRechargeOrderDetails(sendOrderID: string): Observable<RechargeOrderStatus> {
+    const url = this.baseUrl + "/getRechargeOrderDetails/" + sendOrderID;
     return this.http.get<RechargeOrderStatus>(url);
-  }  
+  }
 
   retriveOrderId() {
     return this.cachedOrderID;

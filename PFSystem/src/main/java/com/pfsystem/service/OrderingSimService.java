@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.pfsystem.dto.IMSIDto;
 import com.pfsystem.dto.NetworkOperatorDto;
 import com.pfsystem.dto.NewSimDto;
+import com.pfsystem.dto.NewSimOrderStatusDto;
 import com.pfsystem.dto.OrderIDDto;
 import com.pfsystem.dto.ResponseDto;
 import com.pfsystem.entities.Address;
@@ -56,6 +57,9 @@ public class OrderingSimService {
     @Autowired
     public OrderDetailsRepository orderDetailsRepository;
 
+    @Autowired
+    private NotificationService notificationService;
+
     public List<NetworkOperatorDto> getNetworkOperatorDetails() {
         List<NetworkOperator> networkOperators = networkOperatorRepository
                 .getNetworkOperatorDetailsByCountryCodeAndStatus();
@@ -74,7 +78,10 @@ public class OrderingSimService {
         orderDetails.setPrice("120");
         orderDetails.setIsPending(true);
         orderDetailsRepository.save(orderDetails);
-        return new OrderIDDto(orderID);
+
+        OrderIDDto orderIDDto = new OrderIDDto();
+        orderIDDto.setOrderID(orderID);
+        return orderIDDto;
     }
 
     public ResponseEntity<ResponseDto> createSimCard(Long id, NewSimDto newSimDto) {
@@ -171,13 +178,57 @@ public class OrderingSimService {
     private OrderDetails processOrderDetails(String orderID) {
         OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderID);
         orderDetails.setStatus("Success");
+        orderDetails.setIsPending(false);
         orderDetailsRepository.save(orderDetails);
         return orderDetails;
     }
 
-    public SimCard getDetails(String OrderID) {
-        List<SimCard> simcards = simCardRepository.findAll();
-        return simcards.get(simcards.size() - 1);
+    public NewSimOrderStatusDto getDetails(String orderID) {
+        NewSimOrderStatusDto newSimOrderStatusDto = new NewSimOrderStatusDto();
+        OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderID);
+        newSimOrderStatusDto.setOrderTime(orderDetails.getOrderTime());
+        newSimOrderStatusDto.setPaidVia(orderDetails.getPaidVia());
+        newSimOrderStatusDto.setPrice(orderDetails.getPrice());
+        newSimOrderStatusDto.setStatus(orderDetails.getStatus());
+
+        SimCard simCard = simCardRepository.findByOrderDetails(orderDetails);
+        newSimOrderStatusDto.setExistingNumber(simCard.getExistingNumber());
+
+        Optional<User> user = userRepository.findById(simCard.getUser().getId());
+        newSimOrderStatusDto.setName(user.get().getFirstName() + " " + user.get().getLastName());
+        newSimOrderStatusDto.setEmail(user.get().getEmail());
+
+        Optional<Address> address = addressRepository.findById(simCard.getAddresses().getId());
+        newSimOrderStatusDto.setAddress(address.get().getAddressLine1() + "," + address.get().getAddressLine2() + ","
+                + address.get().getCity() + "," + address.get().getState() + "," + address.get().getPincode() + ".");
+
+        Optional<MSISDN> msisdn = msisdnRepository.findById(simCard.getMsisdn().getId());
+        newSimOrderStatusDto.setNewSimNumber(msisdn.get().getNsn());
+
+        String htmlContent = "<html><body>" +
+                "<h1>Greeting from ProCharge!!!!</h1>" +
+                "<h2>New SIM Order Status</h2>" +
+                "<table border='1'>" +
+                "<tr><th></th><th></th></tr>" +
+                "<tr><td>order ID</td><td>" + orderID + "</td></tr>" +
+                "<tr><td>Status</td><td>" + newSimOrderStatusDto.getStatus() + "</td></tr>" +
+                "<tr><td>Name</td><td>" + newSimOrderStatusDto.getName() + "</td></tr>" +
+                "<tr><td>Email</td><td>" + newSimOrderStatusDto.getEmail() + "</td></tr>" +
+                "<tr><td>Address</td><td>" + newSimOrderStatusDto.getAddress() + "</td></tr>" +
+                "<tr><td>Existing Number</td><td>" + newSimOrderStatusDto.getExistingNumber() + "</td></tr>" +
+                "<tr><td>New SIM Number</td><td>" + newSimOrderStatusDto.getNewSimNumber() + "</td></tr>" +
+                "<tr><td>Price</td><td>" + newSimOrderStatusDto.getPrice() + "</td></tr>" +
+                "<tr><td>Order Time</td><td>" + newSimOrderStatusDto.getOrderTime().toString() + "</td></tr>" +
+                "<tr><td>Paid Via</td><td>" + newSimOrderStatusDto.getPaidVia() + "</td></tr>" +
+                "</table>" +
+                "<p>Thank you!! For choosing us, we are happy to serve you.</p>" +
+                "<p>Contact us at <a href='mailto:procharge.foryou@gmail.com'>procharge.foryou@gmail.com</a> for any assistance.</p>"
+                +
+                "</body></html>";
+        notificationService.sendEmail(user.get().getEmail(), "Your New Sim is on the way!!",
+                htmlContent);
+
+        return newSimOrderStatusDto;
     }
 
 }

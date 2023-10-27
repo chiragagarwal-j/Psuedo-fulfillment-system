@@ -14,6 +14,20 @@ spring:
     show-sql: false
     open-in-view: false
 
-# jwt:
-#   private.key: classpath:app.key
-#   public.key: classpath:app.pub
+  mail:
+    host: smtp.gmail.com
+    port: 25
+    username: procharge.foryou@gmail.com
+    password: amrh spub ijaj zrlo
+    properties:
+      mail:
+        debug: true
+        transport:
+          protocol: smtp
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true

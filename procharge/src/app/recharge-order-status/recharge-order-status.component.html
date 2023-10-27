@@ -7,6 +7,16 @@
         <h1>Invoice</h1>
 
         <div class="invoice-details">
+            <label>Order ID:</label>
+            <span>{{ rechargeOrderID }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label>Order Status:</label>
+            <span>{{ rechargedSimInfo?.orderStatus }}</span>
+        </div>
+
+        <div class="invoice-details">
             <label>Mobile Number:</label>
             <span>{{ rechargedSimInfo?.mobileNumber }}</span>
         </div>
@@ -22,16 +32,6 @@
         </div>
 
         <div class="invoice-details">
-            <label>Final Amount:</label>
-            <span>{{ rechargedSimInfo?.finalAmount }}</span>
-        </div>
-
-        <div class="invoice-details">
-            <label>Order Status:</label>
-            <span>{{ rechargedSimInfo?.orderStatus }}</span>
-        </div>
-
-        <div class="invoice-details">
             <label>Validity:</label>
             <span>{{ rechargedSimInfo?.validity }}</span>
         </div>
@@ -40,6 +40,27 @@
             <label>Details:</label>
             <span>{{ rechargedSimInfo?.details }}</span>
         </div>
+
+        <div class="invoice-details">
+            <label>Order requested at:</label>
+            <span>{{ rechargedSimInfo?.orderTime| date: 'medium' }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label> Amount:</label>
+            <span>{{ rechargedSimInfo?.finalAmount }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label> Paid Through:</label>
+            <span>{{ rechargedSimInfo?.paidVia }}</span>
+        </div>
+
+        <div class="invoice-details">
+            <label> Payment Details:</label>
+            <span>{{ rechargedSimInfo?.paymentInfo }}</span>
+        </div>
+
 
     </div>
 </body>

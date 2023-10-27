@@ -26,7 +26,6 @@ export class PaymentPageComponent implements OnInit {
   ngOnInit(): void {
     this.rechargeSimService.getOrderID().subscribe(id => { this.orderID = id.orderID });
     this.rechargingInfo = this.rechargeSimService.retrieveCachedPlans();
-    console.log(this.rechargingInfo);
   }
 
   processPayment() {
@@ -40,7 +39,9 @@ export class PaymentPageComponent implements OnInit {
     }
     this.rechargingInfo.orderID = this.orderID;
     this.rechargeSimService.setOrderId(this.orderID);
-    this.rechargeSimService.processRecharge(this.rechargingInfo).subscribe();
-    this.router.navigate(['/recharge-order-status']);
+    this.rechargeSimService.processRecharge(this.rechargingInfo).subscribe(() => {
+      this.router.navigate(['/recharge-order-status']);
+    });
+
   }
 }

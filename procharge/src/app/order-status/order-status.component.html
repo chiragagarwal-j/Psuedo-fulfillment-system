@@ -7,7 +7,7 @@
         <header>
             <h1>Invoice</h1>
             <address contenteditable>
-                <p>Hey, {{allOrderDetails.user.firstName}}</p>
+                <p>Hey, {{allOrderDetails?.name}}</p>
                 <p>Your Order is confirmed</p>
             </address>
         </header>
@@ -15,39 +15,43 @@
             <h1>Order Details</h1>
             <table class="order-details">
                 <tr>
+                    <th>Order ID</th>
+                    <td>{{cachedOrderID}}</td>
+                </tr>
+                <tr>
                     <th>Name</th>
-                    <td>{{allOrderDetails.user.firstName}}
-                        {{allOrderDetails.user.lastName}}
+                    <td>{{allOrderDetails?.name}}
                     </td>
                 </tr>
                 <tr>
-                    <th>Address</th>
-                    <td>{{allOrderDetails.addresses.addressLine1}},
-                        {{allOrderDetails.addresses.addressLine2}},
-                        {{allOrderDetails.addresses.city}},
-                        {{allOrderDetails.addresses.state}},
-                        {{allOrderDetails.addresses.pincode}}</td>
+                    <th>Email</th>
+                    <td>{{allOrderDetails?.email}}</td>
                 </tr>
                 <tr>
                     <th>New SIM Card Number</th>
-                    <td>{{allOrderDetails.msisdn.nsn}}</td>
+                    <td>{{allOrderDetails?.newSimNumber}}</td>
                 </tr>
                 <tr>
-                    <th>Order ID</th>
-                    <td>{{allOrderDetails.orderDetails.orderID}}</td>
+                    <th>Existing Number</th>
+                    <td>{{allOrderDetails?.existingNumber}}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{allOrderDetails?.address}}</td>
                 </tr>
                 <tr>
                     <th>Date Booked On</th>
-                    <td>{{allOrderDetails.orderDetails.orderTime | date: 'medium'}}</td>
+                    <td>{{allOrderDetails?.orderTime| date: 'medium'}}</td>
                 </tr>
                 <tr>
-                    <th>Final Price</th>
-                    <td>{{allOrderDetails.orderDetails.price}}</td>
+                    <th>Amount</th>
+                    <td>{{allOrderDetails?.price}}</td>
                 </tr>
                 <tr>
-                    <th>Email</th>
-                    <td>{{allOrderDetails.user.email}}</td>
+                    <th>Payment Mode</th>
+                    <td>{{allOrderDetails?.paidVia}}</td>
                 </tr>
+
             </table>
         </article>
     </div>

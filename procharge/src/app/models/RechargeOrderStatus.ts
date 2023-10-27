@@ -4,6 +4,8 @@ export interface RechargeOrderStatus {
     operatorCirle: string;
     finalAmount: string;
     orderStatus: string;
+    paidVia: string;
+    paymentInfo: string;
     validity: string;
     details: string;
     orderTime: Date;

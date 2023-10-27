@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs'; // Import Observable if not already imported
 import { NewSim } from '../models/NewSim';
 import { NetworkOperator } from '../models/NetworkOperator';
+import { FetchOrderID } from '../models/FetchOrderID';
+import { NewSimOrderStatus } from '../models/NewSimOrderStatus';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +26,29 @@ export class NewSimService {
     return this.http.post<string>(url, newSimDto);
   }
 
-  fetchOrderDetails(): Observable<any> {
-    const url = `${this.baseUrl}/getOrderDetails`;
-    return this.http.get<any>(url);
+  getOrderID(): Observable<FetchOrderID> {
+    const url = `${this.baseUrl}/createOrderID`;
+    return this.http.get<FetchOrderID>(url);
+  }
+
+  fetchOrderDetails(): Observable<NewSimOrderStatus> {
+    console.log(this.cachedOrderID);
+    
+    const url = `${this.baseUrl}/getOrderDetails?orderID=${this.cachedOrderID}`;    
+    return this.http.get<NewSimOrderStatus>(url);
+  }
+
+  // fetchOrderDetails(orderID: string): Observable<NewSimOrderStatus> {
+  //   const url = `${this.baseUrl}/getRechargeOrderDetails?orderID=${orderID}`;
+  //   return this.http.get<NewSimOrderStatus>(url);
+  // }
+
+  retriveOrderId() {
+    return this.cachedOrderID;
+  }
+
+  setOrderId(orderID: string): void {
+    this.cachedOrderID = orderID;
   }
 
 }
