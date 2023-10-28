@@ -32,7 +32,7 @@ public class OrderDetails {
 
     private String paidVia;
 
-    private String PaymentInfo;
+    private String paymentInfo;
 
     private Boolean isPending = false;
 

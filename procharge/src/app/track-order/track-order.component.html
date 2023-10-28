@@ -1,1 +1,81 @@
-<p>track-order works!</p>
+<div class="container" *ngIf="!showOrderDetails">
+    <h2>Track your Order Status</h2>
+    <form (ngSubmit)="sendOTP()" #otpForm="ngForm">
+        <div class="form-group">
+            <label for="orderID">Order ID:</label>
+            <input type="text" id="orderID" name="orderID" [(ngModel)]="orderID" required>
+        </div>
+        <button type="submit">Send OTP</button>
+    </form>
+
+    <div *ngIf="otpSent">
+        <p>OTP sent to the mobile number ending with {{mobileNumber}}</p>
+        <form (ngSubmit)="verifyOTP()" #verifyForm="ngForm">
+            <div class="form-group">
+                <label for="otp">Enter OTP:</label>
+                <input type="password" id="otp" name="otp" [(ngModel)]="enteredOTP" pattern="^[0-9]{6}$" required>
+            </div>
+            <div *ngIf="invalidOTPMessage">
+                <p>Invalid OTP. Please try again.</p>
+            </div>
+            <button type="submit">Submit OTP</button>
+        </form>
+    </div>
+</div>
+
+<div id="invoice" *ngIf="showOrderDetails">
+    <header>
+
+        <address contenteditable>
+            <p>Hey, {{allOrderDetails?.name}}</p>
+            <p>Your Order is confirmed</p>
+        </address>
+    </header>
+    <article>
+        <h1>Order Details</h1>
+        <table class="order-details">
+            <tr>
+                <th>Order ID</th>
+                <td>{{orderID}}</td>
+            </tr>
+            <tr>
+                <th>Order status</th>
+                <td>Order received and will be delivered in next 2 days. </td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{allOrderDetails?.name}}
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{allOrderDetails?.email}}</td>
+            </tr>
+            <tr>
+                <th>New SIM Card Number</th>
+                <td>{{allOrderDetails?.newSimNumber}}</td>
+            </tr>
+            <tr>
+                <th>Existing Number</th>
+                <td>{{allOrderDetails?.existingNumber}}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{allOrderDetails?.address}}</td>
+            </tr>
+            <tr>
+                <th>Ordered at</th>
+                <td>{{allOrderDetails?.orderTime| date: 'medium'}}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{allOrderDetails?.price}}</td>
+            </tr>
+            <tr>
+                <th>Payment Mode</th>
+                <td>{{allOrderDetails?.paidVia}}</td>
+            </tr>
+
+        </table>
+    </article>
+</div>

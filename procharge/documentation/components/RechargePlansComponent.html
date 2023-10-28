@@ -1,0 +1,1129 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>procharge documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">procharge documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  RechargePlansComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/recharge-plans/recharge-plans.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-recharge-plans</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./recharge-plans.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./recharge-plans.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fetchPlans" >fetchPlans</a>
+                            </li>
+                            <li>
+                                <a href="#operatorName" >operatorName</a>
+                            </li>
+                            <li>
+                                <a href="#rechargeInfo" >rechargeInfo</a>
+                            </li>
+                            <li>
+                                <a href="#rechargePlans" >rechargePlans</a>
+                            </li>
+                            <li>
+                                <a href="#selectedCategoryName" >selectedCategoryName</a>
+                            </li>
+                            <li>
+                                <a href="#selectedOperatorPlans" >selectedOperatorPlans</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fetchCategoryPlans" >fetchCategoryPlans</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#selectedCategory" >selectedCategory</a>
+                            </li>
+                            <li>
+                                <a href="#sendRechargeRequest" >sendRechargeRequest</a>
+                            </li>
+                            <li>
+                                <a href="#toggleDetails" >toggleDetails</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(rechargeSimService: <a href="../injectables/RechargeSimService.html" target="_self">RechargeSimService</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>rechargeSimService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RechargeSimService.html" target="_self" >RechargeSimService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchCategoryPlans"></a>
+                    <span class="name">
+                        <span ><b>fetchCategoryPlans</b></span>
+                        <a href="#fetchCategoryPlans"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchCategoryPlans()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCategory"></a>
+                    <span class="name">
+                        <span ><b>selectedCategory</b></span>
+                        <a href="#selectedCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectedCategory(selectedCategoryType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, categoryName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="89"
+                                    class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>selectedCategoryType</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>categoryName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendRechargeRequest"></a>
+                    <span class="name">
+                        <span ><b>sendRechargeRequest</b></span>
+                        <a href="#sendRechargeRequest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendRechargeRequest(planID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, price: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>planID</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>price</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleDetails"></a>
+                    <span class="name">
+                        <span ><b>toggleDetails</b></span>
+                        <a href="#toggleDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleDetails(plan: <a href="../interfaces/RechargePlans.html" target="_self">RechargePlans</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>plan</td>
+                                            <td>
+                                                            <code><a href="../interfaces/RechargePlans.html" target="_self" >RechargePlans</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPlans"></a>
+                    <span class="name">
+                        <span ><b>fetchPlans</b></span>
+                        <a href="#fetchPlans"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/FetchPlans.html" target="_self" >FetchPlans</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ operator: &#x27;&#x27;, categoryName: &#x27;Combo&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="operatorName"></a>
+                    <span class="name">
+                        <span ><b>operatorName</b></span>
+                        <a href="#operatorName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rechargeInfo"></a>
+                    <span class="name">
+                        <span ><b>rechargeInfo</b></span>
+                        <a href="#rechargeInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/RechargeInfo.html" target="_self" >RechargeInfo</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ mobileNumber: &#x27;&#x27;, operator: &#x27;&#x27;, operatorCircle: &#x27;&#x27;, planID: 1, payVia: &#x27;&#x27;, paymentInfo: &#x27;&#x27;, amount: &#x27;&#x27;, orderID: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rechargePlans"></a>
+                    <span class="name">
+                        <span ><b>rechargePlans</b></span>
+                        <a href="#rechargePlans"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>RechargePlans[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCategoryName"></a>
+                    <span class="name">
+                        <span ><b>selectedCategoryName</b></span>
+                        <a href="#selectedCategoryName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedOperatorPlans"></a>
+                    <span class="name">
+                        <span ><b>selectedOperatorPlans</b></span>
+                        <a href="#selectedOperatorPlans"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OperatorPlans | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/recharge-plans/recharge-plans.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { RechargePlans } from &#x27;../models/RechargePlans&#x27;;
+import { RechargeSimService } from &#x27;../services/recharge-sim.service&#x27;;
+import { OperatorPlans } from &#x27;../models/OperatorPlans&#x27;;
+import { RechargeInfo } from &#x27;../models/RechargeInfo&#x27;;
+import { FetchPlans } from &#x27;../models/FetchPlans&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+const operatorPlans: { [key: string]: OperatorPlans } &#x3D; {
+  Airtel: {
+    name: &#x27;Airtel&#x27;,
+    services: [
+      { name: &#x27;Combo&#x27;, type: &#x27;Combo&#x27; },
+      { name: &#x27;Data&#x27;, type: &#x27;Data&#x27; },
+      { name: &#x27;Talktime&#x27;, type: &#x27;Talktime&#x27; },
+      { name: &#x27;Truly Unlimited&#x27;, type: &#x27;Truly_unlimited&#x27; },
+      { name: &#x27;Entertainment&#x27;, type: &#x27;Entertainment&#x27; },
+      { name: &#x27;International Roaming&#x27;, type: &#x27;International_roaming&#x27; },
+      { name: &#x27;Annual&#x27;, type: &#x27;Annual&#x27; }
+    ]
+  },
+
+  BSNL: {
+    name: &#x27;BSNL Mobile&#x27;,
+    services: [
+      { name: &#x27;Combo&#x27;, type: &#x27;Combo&#x27; },
+      { name: &#x27;Data&#x27;, type: &#x27;Data&#x27; },
+      { name: &#x27;Talktime&#x27;, type: &#x27;Talktime&#x27; },
+      { name: &#x27;Truly Unlimited&#x27;, type: &#x27;Truly_unlimited&#x27; },
+      { name: &#x27;SMS&#x27;, type: &#x27;SMS&#x27; },
+      { name: &#x27;Enterprise&#x27;, type: &#x27;Enterprise&#x27; },
+      { name: &#x27;Entertainment&#x27;, type: &#x27;Entertainment&#x27; },
+      { name: &#x27;Special Offer&#x27;, type: &#x27;Special_offer&#x27; },
+      { name: &#x27;International Roaming&#x27;, type: &#x27;International_roaming&#x27; },
+      { name: &#x27;Annual&#x27;, type: &#x27;Annual&#x27; }
+    ]
+  },
+
+  Jio: {
+    name: &#x27;Jio&#x27;,
+    services: [
+      { name: &#x27;Combo&#x27;, type: &#x27;Combo&#x27; },
+      { name: &#x27;Data&#x27;, type: &#x27;Data&#x27; },
+      { name: &#x27;Talktime&#x27;, type: &#x27;Talktime&#x27; },
+      { name: &#x27;Jio Phone&#x27;, type: &#x27;Jio_phone&#x27; },
+      { name: &#x27;Truly Unlimited&#x27;, type: &#x27;Truly_unlimited&#x27; },
+      { name: &#x27;Entertainment&#x27;, type: &#x27;Entertainment&#x27; },
+      { name: &#x27;International Roaming&#x27;, type: &#x27;International_roaming&#x27; },
+      { name: &#x27;Annual&#x27;, type: &#x27;Annual&#x27; }
+    ]
+  },
+
+  MTNL: {
+    name: &#x27;MTNL&#x27;,
+    services: [
+      { name: &#x27;Combo&#x27;, type: &#x27;Combo&#x27; },
+      { name: &#x27;Data&#x27;, type: &#x27;Data&#x27; },
+      { name: &#x27;SMS&#x27;, type: &#x27;SMS&#x27; },
+      { name: &#x27;Special Offer&#x27;, type: &#x27;Special_offer&#x27; },
+      { name: &#x27;Talktime&#x27;, type: &#x27;Talktime&#x27; },
+      { name: &#x27;STD&#x27;, type: &#x27;STD&#x27; },
+    ]
+  },
+};
+
+@Component({
+  selector: &#x27;app-recharge-plans&#x27;,
+  templateUrl: &#x27;./recharge-plans.component.html&#x27;,
+  styleUrls: [&#x27;./recharge-plans.component.css&#x27;]
+})
+
+export class RechargePlansComponent implements OnInit {
+  rechargeInfo: RechargeInfo &#x3D; { mobileNumber: &#x27;&#x27;, operator: &#x27;&#x27;, operatorCircle: &#x27;&#x27;, planID: 1, payVia: &#x27;&#x27;, paymentInfo: &#x27;&#x27;, amount: &#x27;&#x27;, orderID: &#x27;&#x27; };
+  operatorName: string | null &#x3D; null;
+  selectedOperatorPlans: OperatorPlans | null &#x3D; null;
+  rechargePlans: RechargePlans[] &#x3D; [];
+  fetchPlans: FetchPlans &#x3D; { operator: &#x27;&#x27;, categoryName: &#x27;Combo&#x27; };
+  selectedCategoryName: string &#x3D; &#x27;&#x27;;
+
+  constructor(private rechargeSimService: RechargeSimService, private router: Router) { }
+
+  ngOnInit() {
+    this.rechargeInfo &#x3D; this.rechargeSimService.retrieveCachedPlans();
+    this.operatorName &#x3D; this.rechargeInfo.operator;
+    this.selectedOperatorPlans &#x3D; this.operatorName ? operatorPlans[this.operatorName] : null;
+    this.fetchCategoryPlans();
+  }
+
+  selectedCategory(selectedCategoryType: string, categoryName: string) {
+    this.fetchPlans.categoryName &#x3D; selectedCategoryType;
+    this.selectedCategoryName &#x3D; categoryName;
+    this.fetchCategoryPlans();
+  }
+
+  fetchCategoryPlans() {
+    this.fetchPlans.operator &#x3D; this.rechargeInfo.operator;
+    this.rechargeSimService.fetchPlanDetails(this.fetchPlans).subscribe(
+      (rechargePlans: RechargePlans[]) &#x3D;&gt; {
+        this.rechargePlans &#x3D; rechargePlans;
+      });
+  }
+
+  toggleDetails(plan: RechargePlans) {
+    plan.showDetails &#x3D; !plan.showDetails;
+  }
+
+  sendRechargeRequest(planID: number, price: string) {
+    this.rechargeInfo.planID &#x3D; planID;
+    this.rechargeInfo.amount &#x3D; price;
+    this.rechargeSimService.cachePlanDetails(this.rechargeInfo);
+    this.router.navigate([&#x27;/payment-page&#x27;]);
+  }
+
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;mobile-change-category&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;content&quot;&gt;
+            &lt;span class&#x3D;&quot;info&quot;&gt;
+                &lt;span class&#x3D;&quot;label&quot;&gt;Recharging for&lt;/span&gt;
+                &lt;div class&#x3D;&quot;mobile-number&quot;&gt;{{rechargeInfo.mobileNumber}}&lt;/div&gt;
+            &lt;/span&gt;
+            &lt;button mat-button class&#x3D;&quot;change-button&quot; [routerLink]&#x3D;&quot;&#x27;/recharge&#x27;&quot;&gt;
+                &lt;span class&#x3D;&quot;button-label&quot;&gt;Change&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class&#x3D;&quot;plan-container&quot;&gt;
+    &lt;div class&#x3D;&quot;plan-category-box&quot;&gt;
+        &lt;h2&gt;Plan Category&lt;/h2&gt;
+        &lt;mat-nav-list&gt;
+            &lt;mat-list-item *ngFor&#x3D;&quot;let service of selectedOperatorPlans?.services&quot;
+                (click)&#x3D;&quot;selectedCategory(service.type,service.name)&quot;
+                [class.selected]&#x3D;&quot;service.name &#x3D;&#x3D;&#x3D; selectedCategoryName&quot;&gt;
+                {{ service.name }}
+            &lt;/mat-list-item&gt;
+        &lt;/mat-nav-list&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;recharge-cards&quot;&gt;
+        &lt;mat-card *ngFor&#x3D;&quot;let plan of rechargePlans&quot; class&#x3D;&quot;recharge-card&quot;&gt;
+            &lt;mat-card-content&gt;
+                &lt;p&gt;Price:₹ {{ plan.price}}&lt;/p&gt;
+                &lt;p&gt;Validity: {{ plan.validity }}&lt;/p&gt;
+                &lt;button mat-button (click)&#x3D;&quot;sendRechargeRequest(plan.planID.valueOf(),plan.price)&quot;&gt;Recharge&lt;/button&gt;
+                &lt;mat-card-actions&gt;
+                    &lt;button mat-button (click)&#x3D;&quot;toggleDetails(plan)&quot;&gt;Show More&lt;/button&gt;
+                &lt;/mat-card-actions&gt;
+                &lt;div *ngIf&#x3D;&quot;plan.showDetails&quot;&gt;
+                    &lt;p&gt;Details: {{ plan.details }}&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/mat-card-content&gt;
+        &lt;/mat-card&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./recharge-plans.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.recharge-card {
+  width: 200px;
+  margin: 16px;
+  display: inline-block;
+}
+
+.mobile-change-category {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 220px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  background-color: #c3e0fe; /* Light blue background color */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px; /* Adjust the width as needed */
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info {
+  font-size: 11px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.mobile-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.change-button {
+  margin-top: 10px;
+  color: darkblue;
+  font-weight: bold;
+}
+
+.plan-container {
+  margin-left: 210px;
+}
+
+.plan-category-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  margin: 10px;
+  width: 200px;
+  float: left;
+  clear: both; /* Change &#x27;right&#x27; to &#x27;both&#x27; to clear both sides */
+}
+
+.plan-category-box h2 {
+  font-size: 16px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* New rule to style the list items in the plan category box */
+.plan-category-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* New rule to style each list item */
+.plan-category-box li {
+  font-size: 8px;
+  margin: 3px 0;
+}
+
+/* Add this style to highlight the selected category */
+.mat-list-item.selected {
+  background-color: #FFFF00; /* Change to your desired highlight color */
+  font-weight: bold; /* Make the text bold */
+  color: #000; /* Change to your desired text color */
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="mobile-change-category">    <div class="container">        <div class="content">            <span class="info">                <span class="label">Recharging for</span>                <div class="mobile-number">{{rechargeInfo.mobileNumber}}</div>            </span>            <button mat-button class="change-button" [routerLink]="\'/recharge\'">                <span class="button-label">Change</span>            </button>        </div>    </div></div><div class="plan-container">    <div class="plan-category-box">        <h2>Plan Category</h2>        <mat-nav-list>            <mat-list-item *ngFor="let service of selectedOperatorPlans?.services"                (click)="selectedCategory(service.type,service.name)"                [class.selected]="service.name === selectedCategoryName">                {{ service.name }}            </mat-list-item>        </mat-nav-list>    </div>    <div class="recharge-cards">        <mat-card *ngFor="let plan of rechargePlans" class="recharge-card">            <mat-card-content>                <p>Price:₹ {{ plan.price}}</p>                <p>Validity: {{ plan.validity }}</p>                <button mat-button (click)="sendRechargeRequest(plan.planID.valueOf(),plan.price)">Recharge</button>                <mat-card-actions>                    <button mat-button (click)="toggleDetails(plan)">Show More</button>                </mat-card-actions>                <div *ngIf="plan.showDetails">                    <p>Details: {{ plan.details }}</p>                </div>            </mat-card-content>        </mat-card>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'GetNewSimComponent', 'selector': 'app-get-new-sim'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'OrderStatusComponent', 'selector': 'app-order-status'},{'name': 'PaymentPageComponent', 'selector': 'app-payment-page'},{'name': 'RechargeComponent', 'selector': 'app-recharge'},{'name': 'RechargeOrderStatusComponent', 'selector': 'app-recharge-order-status'},{'name': 'RechargePlansComponent', 'selector': 'app-recharge-plans'},{'name': 'TrackOrderComponent', 'selector': 'app-track-order'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RechargePlansComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RechargePlansComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

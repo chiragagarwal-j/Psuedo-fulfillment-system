@@ -17,7 +17,7 @@ public class RechargePlans {
     private Long id;
 
     private String operator;
-    private String operator_circle;
+    private String operatorCircle;
     private String price;
     private String validity;
     private String details;

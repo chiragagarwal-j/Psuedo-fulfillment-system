@@ -5,6 +5,7 @@ import { NewSim } from '../models/NewSim';
 import { NetworkOperator } from '../models/NetworkOperator';
 import { FetchOrderID } from '../models/FetchOrderID';
 import { NewSimOrderStatus } from '../models/NewSimOrderStatus';
+import { FetchMobileNumber } from '../models/FetchMobileNumber';
 
 @Injectable({
   providedIn: 'root'
@@ -32,16 +33,19 @@ export class NewSimService {
   }
 
   fetchOrderDetails(): Observable<NewSimOrderStatus> {
-    console.log(this.cachedOrderID);
-    
-    const url = `${this.baseUrl}/getOrderDetails?orderID=${this.cachedOrderID}`;    
+    const url = `${this.baseUrl}/getOrderDetails?orderID=${this.cachedOrderID}`;
     return this.http.get<NewSimOrderStatus>(url);
   }
 
-  // fetchOrderDetails(orderID: string): Observable<NewSimOrderStatus> {
-  //   const url = `${this.baseUrl}/getRechargeOrderDetails?orderID=${orderID}`;
-  //   return this.http.get<NewSimOrderStatus>(url);
-  // }
+  sendOTPtoMobile(orderID: string): Observable<FetchMobileNumber> {
+    const url = `${this.baseUrl}/getOTPNewSim?orderID=${orderID}`;
+    return this.http.get<FetchMobileNumber>(url);
+  }
+
+  validateOTPandFetchInfo(orderID: string, inputOtp: string, mobileNumber: string): Observable<any> {
+    const url = `${this.baseUrl}/validateOTP?orderID=${orderID}&inputOtp=${inputOtp}&mobileNumber=${mobileNumber}`;
+    return this.http.post<any>(url, null);
+  }
 
   retriveOrderId() {
     return this.cachedOrderID;

@@ -1,0 +1,107 @@
+/* otp-component.css */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+.form-group {
+  margin: 10px 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Show/hide OTP verification section */
+form[ngForm] {
+  display: none;
+}
+
+/* Show OTP verification form when otpSent is true */
+form[ngForm].ngForm-touched {
+  display: block;
+}
+/* Reset some default styles */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+address {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+article {
+  margin: 20px;
+}
+
+table.order-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table.order-details th,
+table.order-details td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table.order-details th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* You can add more specific styles or adjust the colors as needed */

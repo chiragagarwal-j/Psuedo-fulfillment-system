@@ -1,5 +1,8 @@
 package com.pfsystem.service;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -18,8 +21,9 @@ public class NotificationService {
     @Autowired
     private JavaMailSender sender;
 
-    final String ACCOUNT_SID = "AC0360ce612c223bb2c6bbac67fabe37b2";
-    final String AUTH_TOKEN = "7a39ab7bf0b5145cf3f3d8186d5cabec";
+    
+
+    private static final Logger logger = Logger.getLogger(NotificationService.class.getName());
 
     public void sendEmail(String toEmail, String subject, String content) {
         MimeMessage message = sender.createMimeMessage();
@@ -32,7 +36,7 @@ public class NotificationService {
 
             sender.send(message);
         } catch (MessagingException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "An error occurred while sending the email", e);
         }
     }
 
@@ -61,16 +65,15 @@ public class NotificationService {
                 htmlContent);
     }
 
-    public void sendOTP() {
+    public void sendOTP(String mobileNumber, String otp) {
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(
-                new com.twilio.type.PhoneNumber("+916281705722"),
+                new com.twilio.type.PhoneNumber("+91" + mobileNumber),
                 new com.twilio.type.PhoneNumber("+13346038286"),
-                "Hi there")
+                "Your OTP to track the order status is : " + otp)
                 .create();
-
-        System.out.println(message.getSid());
+        logger.info("Message SID: " + message.getSid());
     }
 
     public void sendSMSNotification(String mobileNumber, String messageInfo) {
@@ -80,8 +83,7 @@ public class NotificationService {
                 new com.twilio.type.PhoneNumber("+13346038286"),
                 messageInfo)
                 .create();
-
-        System.out.println(message.getSid());
+        logger.info("Message SID: " + message.getSid());
     }
 
 }

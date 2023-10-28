@@ -11,4 +11,8 @@ public class ResponseDto {
 
     public ResponseDto() {
     }
+
+    public ResponseDto(String string) {
+        this.responseBody = string;
+    }
 }

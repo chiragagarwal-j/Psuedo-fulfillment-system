@@ -19,6 +19,7 @@ import com.pfsystem.dto.NewSimOrderStatusDto;
 import com.pfsystem.dto.OrderIDDto;
 import com.pfsystem.dto.ResponseDto;
 import com.pfsystem.service.NotificationService;
+import com.pfsystem.service.OTPService;
 import com.pfsystem.service.OrderingSimService;
 
 @CrossOrigin
@@ -31,6 +32,9 @@ public class OrderSimController {
 
     @Autowired
     private NotificationService notificationService;
+
+    @Autowired
+    private OTPService otpService;
 
     @GetMapping("/getOperator")
     public List<NetworkOperatorDto> fetchNetworkOperatorDetails() {
@@ -54,6 +58,33 @@ public class OrderSimController {
         notificationService.sendSMSNotification(newSimOrderStatusDto.getExistingNumber(),
                 newSimOrderStatusDto.toSMSString(orderID));
         return newSimOrderStatusDto;
+    }
+
+    @GetMapping("/getOTPNewSim")
+    public ResponseDto sendOTP(@RequestParam("orderID") String orderID) {
+        ResponseDto responseDto = new ResponseDto();
+        String mobileNumber = orderingSimService.getMobileNumber(orderID);
+        responseDto.setResponseBody(mobileNumber);
+        otpService.generateOTP(mobileNumber);
+        return responseDto;
+    }
+
+    @PostMapping("/validateOTP")
+    public ResponseEntity<?> fetchOrderStatus(@RequestParam("orderID") String orderID,
+            @RequestParam("inputOtp") String inputOtp,
+            @RequestParam("mobileNumber") String mobileNumber) {
+
+        if (!otpService.verifyOTP(inputOtp, mobileNumber)) {
+
+            return ResponseEntity.ok(new ResponseDto("Invalid OTP. Please try again."));
+        }
+        NewSimOrderStatusDto newSimOrderStatusDto = orderingSimService.getDetails(orderID);
+
+        if (newSimOrderStatusDto == null) {
+            return ResponseEntity.ok("Order not found.");
+        }
+
+        return ResponseEntity.ok(newSimOrderStatusDto);
     }
 
 }

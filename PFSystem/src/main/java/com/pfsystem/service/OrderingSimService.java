@@ -103,7 +103,7 @@ public class OrderingSimService {
         return ResponseEntity.ok(responseDto);
     }
 
-    private IMSI createIMSI(IMSIDto imsiDto) {
+    public IMSI createIMSI(IMSIDto imsiDto) {
         IMSI imsi = new IMSI();
         imsi.setMcc(imsiDto.getMcc());
         imsi.setMnc(imsiDto.getMnc());
@@ -114,7 +114,7 @@ public class OrderingSimService {
         return imsi;
     }
 
-    private ICCID createICCID(IMSIDto imsiDto) {
+    public ICCID createICCID(IMSIDto imsiDto) {
         ICCID iccid = new ICCID();
         iccid.setMnc(imsiDto.getMnc());
         String randomIAN = iccid.generateRandomIAN();
@@ -127,7 +127,7 @@ public class OrderingSimService {
         return iccid;
     }
 
-    private MSISDN createMSISDN() {
+    public MSISDN createMSISDN() {
         MSISDN msisdn = new MSISDN();
         String nsn = msisdn.generateIndianMobileNumber();
         msisdn.setNsn(nsn);
@@ -136,7 +136,7 @@ public class OrderingSimService {
         return msisdn;
     }
 
-    private User createUser(NewSimDto newSimDto) {
+    public User createUser(NewSimDto newSimDto) {
         User user = new User();
         user.setFirstName(newSimDto.getFirstName());
         user.setLastName(newSimDto.getLastName());
@@ -145,7 +145,7 @@ public class OrderingSimService {
         return user;
     }
 
-    private SimCard createSimCard(NewSimDto newSimDto, ICCID iccid, IMSI imsi, MSISDN msisdn, User user,
+    public SimCard createSimCard(NewSimDto newSimDto, ICCID iccid, IMSI imsi, MSISDN msisdn, User user,
             OrderDetails orderDetails, Address address) {
         SimCard simCard = new SimCard();
         simCard.setIccid(iccid);
@@ -161,7 +161,7 @@ public class OrderingSimService {
         return simCard;
     }
 
-    private Address createAddress(NewSimDto newSimDto) {
+    public Address createAddress(NewSimDto newSimDto) {
         Address address = new Address();
         address.setAddressLine1(newSimDto.getAddressLine1());
         address.setAddressLine2(newSimDto.getAddressLine2());
@@ -172,7 +172,7 @@ public class OrderingSimService {
         return address;
     }
 
-    private OrderDetails processOrderDetails(String orderID) {
+    public OrderDetails processOrderDetails(String orderID) {
         OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderID);
         orderDetails.setStatus("Success");
         orderDetails.setIsPending(false);
@@ -203,6 +203,12 @@ public class OrderingSimService {
         newSimOrderStatusDto.setNewSimNumber(msisdn.get().getNsn());
 
         return newSimOrderStatusDto;
+    }
+
+    public String getMobileNumber(String orderID) {
+        OrderDetails orderDetails = orderDetailsRepository.findByOrderID(orderID);
+        SimCard simCard = simCardRepository.findByOrderDetails(orderDetails);
+        return simCard.getExistingNumber();
     }
 
 }
