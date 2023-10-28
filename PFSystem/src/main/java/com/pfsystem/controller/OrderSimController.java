@@ -18,6 +18,7 @@ import com.pfsystem.dto.NewSimDto;
 import com.pfsystem.dto.NewSimOrderStatusDto;
 import com.pfsystem.dto.OrderIDDto;
 import com.pfsystem.dto.ResponseDto;
+import com.pfsystem.service.NotificationService;
 import com.pfsystem.service.OrderingSimService;
 
 @CrossOrigin
@@ -27,6 +28,9 @@ public class OrderSimController {
 
     @Autowired
     private OrderingSimService orderingSimService;
+
+    @Autowired
+    private NotificationService notificationService;
 
     @GetMapping("/getOperator")
     public List<NetworkOperatorDto> fetchNetworkOperatorDetails() {
@@ -45,7 +49,11 @@ public class OrderSimController {
 
     @GetMapping("/getOrderDetails")
     public NewSimOrderStatusDto fetchOrderDetails(@RequestParam("orderID") String orderID) {
-        return orderingSimService.getDetails(orderID);
+        NewSimOrderStatusDto newSimOrderStatusDto = orderingSimService.getDetails(orderID);
+        notificationService.sendNewSimEmail(newSimOrderStatusDto, orderID);
+        notificationService.sendSMSNotification(newSimOrderStatusDto.getExistingNumber(),
+                newSimOrderStatusDto.toSMSString(orderID));
+        return newSimOrderStatusDto;
     }
 
 }

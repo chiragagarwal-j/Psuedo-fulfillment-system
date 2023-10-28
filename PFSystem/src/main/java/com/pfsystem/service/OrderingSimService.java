@@ -57,9 +57,6 @@ public class OrderingSimService {
     @Autowired
     public OrderDetailsRepository orderDetailsRepository;
 
-    @Autowired
-    private NotificationService notificationService;
-
     public List<NetworkOperatorDto> getNetworkOperatorDetails() {
         List<NetworkOperator> networkOperators = networkOperatorRepository
                 .getNetworkOperatorDetailsByCountryCodeAndStatus();
@@ -204,29 +201,6 @@ public class OrderingSimService {
 
         Optional<MSISDN> msisdn = msisdnRepository.findById(simCard.getMsisdn().getId());
         newSimOrderStatusDto.setNewSimNumber(msisdn.get().getNsn());
-
-        String htmlContent = "<html><body>" +
-                "<h1>Greeting from ProCharge!!!!</h1>" +
-                "<h2>New SIM Order Status</h2>" +
-                "<table border='1'>" +
-                "<tr><th></th><th></th></tr>" +
-                "<tr><td>order ID</td><td>" + orderID + "</td></tr>" +
-                "<tr><td>Status</td><td>" + newSimOrderStatusDto.getStatus() + "</td></tr>" +
-                "<tr><td>Name</td><td>" + newSimOrderStatusDto.getName() + "</td></tr>" +
-                "<tr><td>Email</td><td>" + newSimOrderStatusDto.getEmail() + "</td></tr>" +
-                "<tr><td>Address</td><td>" + newSimOrderStatusDto.getAddress() + "</td></tr>" +
-                "<tr><td>Existing Number</td><td>" + newSimOrderStatusDto.getExistingNumber() + "</td></tr>" +
-                "<tr><td>New SIM Number</td><td>" + newSimOrderStatusDto.getNewSimNumber() + "</td></tr>" +
-                "<tr><td>Price</td><td>" + newSimOrderStatusDto.getPrice() + "</td></tr>" +
-                "<tr><td>Order Time</td><td>" + newSimOrderStatusDto.getOrderTime().toString() + "</td></tr>" +
-                "<tr><td>Paid Via</td><td>" + newSimOrderStatusDto.getPaidVia() + "</td></tr>" +
-                "</table>" +
-                "<p>Thank you!! For choosing us, we are happy to serve you.</p>" +
-                "<p>Contact us at <a href='mailto:procharge.foryou@gmail.com'>procharge.foryou@gmail.com</a> for any assistance.</p>"
-                +
-                "</body></html>";
-        notificationService.sendEmail(user.get().getEmail(), "Your New Sim is on the way!!",
-                htmlContent);
 
         return newSimOrderStatusDto;
     }

@@ -18,6 +18,7 @@ import com.pfsystem.dto.RechargeInfoDto;
 import com.pfsystem.dto.RechargePlansDto;
 import com.pfsystem.dto.RechargeStatusDto;
 import com.pfsystem.dto.ResponseDto;
+import com.pfsystem.service.NotificationService;
 import com.pfsystem.service.RechargeSimService;
 
 @CrossOrigin
@@ -27,6 +28,9 @@ public class RechargeSimController {
 
     @Autowired
     private RechargeSimService rechargeSimService;
+
+    @Autowired
+    private NotificationService notificationService;
 
     @PostMapping("/getPlans")
     public List<RechargePlansDto> fetchPlanDetails(@RequestBody FetchPlansDto fetchPlansDto) {
@@ -45,6 +49,9 @@ public class RechargeSimController {
 
     @GetMapping("/getRechargeOrderDetails/{orderID}")
     public RechargeStatusDto getRechargeOrderDetails(@PathVariable String orderID) {
-        return rechargeSimService.fetchRechargeStatus(orderID);
+        RechargeStatusDto rechargeStatusDto = rechargeSimService.fetchRechargeStatus(orderID);
+        notificationService.sendSMSNotification(rechargeStatusDto.getMobileNumber(),
+                rechargeStatusDto.toSMSString(orderID));
+        return rechargeStatusDto;
     }
 }
