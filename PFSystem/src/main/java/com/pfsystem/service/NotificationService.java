@@ -21,8 +21,7 @@ public class NotificationService {
     @Autowired
     private JavaMailSender sender;
 
-    static final String ACCOUNT_SID = "AC0360ce612c223bb2c6bbac67fabe37b2";
-    static final String AUTH_TOKEN = "9162c2ff59ad6a802225449f73a9c6d8";
+    
 
     private static final Logger logger = Logger.getLogger(NotificationService.class.getName());
 

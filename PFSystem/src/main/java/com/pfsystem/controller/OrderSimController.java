@@ -56,8 +56,8 @@ public class OrderSimController {
     public NewSimOrderStatusDto fetchOrderDetails(@RequestParam("orderID") String orderID) {
         NewSimOrderStatusDto newSimOrderStatusDto = orderingSimService.getDetails(orderID);
         notificationService.sendNewSimEmail(newSimOrderStatusDto, orderID);
-        // notificationService.sendSMSNotification(newSimOrderStatusDto.getExistingNumber(),
-        //         newSimOrderStatusDto.toSMSString(orderID));
+        notificationService.sendSMSNotification(newSimOrderStatusDto.getExistingNumber(),
+                newSimOrderStatusDto.toSMSString(orderID));
         return newSimOrderStatusDto;
     }
 
