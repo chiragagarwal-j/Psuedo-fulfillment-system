@@ -6,9 +6,9 @@ Table of contents:
 
 1. [Introduction](#introduction)
 2. [Base URL](#base-url)
-3. [Operations](#operations)
-4. [Conclusion](#conclusion)
-5. [Schemas](#schemas)
+3. [API](#api)
+4. [Schemas](#schemas)
+5. [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -18,7 +18,7 @@ This API provides functionality for managing SIM card orders and recharges. It i
 
 - Base URL: [http://localhost:8080](http://localhost:8080)
 
-## Operations
+## API
 
 ****Order Sim Controller****
 
