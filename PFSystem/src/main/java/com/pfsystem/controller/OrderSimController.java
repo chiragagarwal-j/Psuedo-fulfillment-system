@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pfsystem.dto.MobileNumberDto;
 import com.pfsystem.dto.NetworkOperatorDto;
 import com.pfsystem.dto.NewSimDto;
 import com.pfsystem.dto.NewSimOrderStatusDto;
@@ -61,12 +62,12 @@ public class OrderSimController {
     }
 
     @GetMapping("/getOTPNewSim")
-    public ResponseDto sendOTP(@RequestParam("orderID") String orderID) {
-        ResponseDto responseDto = new ResponseDto();
+    public MobileNumberDto sendOTP(@RequestParam("orderID") String orderID) {
+        MobileNumberDto mobileNumberDto = new MobileNumberDto();
         String mobileNumber = orderingSimService.getMobileNumber(orderID);
-        responseDto.setResponseBody(mobileNumber);
+        mobileNumberDto.setMobileNumber(mobileNumber);
         otpService.generateOTP(mobileNumber);
-        return responseDto;
+        return mobileNumberDto;
     }
 
     @PostMapping("/validateOTP")
