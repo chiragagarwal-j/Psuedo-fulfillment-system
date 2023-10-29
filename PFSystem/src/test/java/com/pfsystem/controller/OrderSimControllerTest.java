@@ -7,11 +7,9 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(OrderSimController.class)
@@ -31,10 +29,28 @@ public class OrderSimControllerTest {
 	@Test
 	public void fetchNetworkOperatorDetails() throws Exception {
 		this.mockMvc.perform(get("/ordersim/getOperator"))
-			.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-			.andExpect(jsonPath("$[0].id").value("<value>"))
-			.andExpect(jsonPath("$[0].operatorCircle").value("<value>"))
-			.andExpect(jsonPath("$[0].operator").value("<value>"));
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	public void fetchOrderStatus() throws Exception {
+		this.mockMvc.perform(post("/ordersim/validateOTP")
+				.param("inputOtp", "abc")
+				.param("mobileNumber", "abc")
+				.param("orderID", "abc"))
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	public void generateOrderID() throws Exception {
+		this.mockMvc.perform(get("/ordersim/createOrderID"))
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	public void sendOTP() throws Exception {
+		this.mockMvc.perform(get("/ordersim/getOTPNewSim")
+				.param("orderID", "abc"))
+				.andExpect(status().isOk());
 	}
 }

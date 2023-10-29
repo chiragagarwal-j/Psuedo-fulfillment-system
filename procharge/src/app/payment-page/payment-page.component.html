@@ -7,7 +7,7 @@
         </div>
 
         <div class="form-group">
-            <label for="paymentMethod">Select Payment Method:</label>
+            <label for="paymentMethod">Select Payment Method:<mat-icon>credit_card</mat-icon><mat-icon>account_balance_wallet</mat-icon></label>
             <select id="paymentMethod" [(ngModel)]="selectedPaymentMethod" name="paymentMethod" required>
                 <option value="upi">UPI ID</option>
                 <option value="card">Card</option>
@@ -17,8 +17,16 @@
 
         <div *ngIf="selectedPaymentMethod === 'upi'" class="form-group">
             <label for="upiId">Enter UPI ID:</label>
-            <input type="text" id="upiId" [(ngModel)]="upiId" name="upiId" required>
+            <div class="upi-input">
+                <input type="text" id="upiId" [(ngModel)]="upiId" name="upiId" required style="width: 120px;">
+                <span>@</span>
+                <select [(ngModel)]="selectedUPIHandle" name="selectedUPIHandle" style="width: 180px;">
+                    <option value="">Select UPI Handle</option>
+                    <option *ngFor="let handle of upiHandles" [value]="handle">{{ handle }}</option>
+                </select>
+            </div>
         </div>
+
 
         <div *ngIf="selectedPaymentMethod === 'card'" class="form-group">
             <label for="cardType">Select Card Type:</label>

@@ -6,11 +6,12 @@
 
 .example-form {
   max-width: 500px;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
 .mat-form-field {
-  width: 100%;
+  width: 60%;
   margin: 15px 0;
 }
 
@@ -19,6 +20,18 @@
 }
 
 /* Style buttons */
-/* button[type="submit"] {
-  margin-top: 10px;
-} */
+button[type="submit"] {
+  margin-left: 15%;
+}
+
+.mat-error {
+  color: #ff0000; /* Red color for error message */
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.side-image{
+  max-width: 2px !important;
+  height: auto !important;
+  align-self: flex-start;
+  margin-right: 58%; 
+}

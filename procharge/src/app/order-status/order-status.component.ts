@@ -11,12 +11,16 @@ export class OrderStatusComponent implements OnInit {
 
   allOrderDetails?: NewSimOrderStatus;
   cachedOrderID?: string;
+  progressBarValue: number = 20;
+  progressBarColor: string = 'accent';
   constructor(private newSimService: NewSimService) { }
 
   ngOnInit() {
     this.cachedOrderID = this.newSimService.retriveOrderId();
+    this.progressBarValue = 50;
     this.newSimService.fetchOrderDetails().subscribe((data) => {
       this.allOrderDetails = data;
+      this.progressBarValue = 100;
     });
 
   }

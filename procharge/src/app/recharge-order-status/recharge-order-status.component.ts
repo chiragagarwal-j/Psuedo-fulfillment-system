@@ -11,11 +11,14 @@ export class RechargeOrderStatusComponent implements OnInit {
 
   rechargedSimInfo?: RechargeOrderStatus;
   rechargeOrderID?: string;
+  progressBarValue: number = 20;
+  progressBarColor: string = 'accent';
   constructor(private rechargeSimService: RechargeSimService) { }
   ngOnInit(): void {
     this.rechargeOrderID = this.rechargeSimService.retriveOrderId();
     this.rechargeSimService.getRechargeOrderDetails(this.rechargeOrderID).subscribe((response: RechargeOrderStatus) => {
       this.rechargedSimInfo = response;
+      this.progressBarValue = 100;
     });
   }
 

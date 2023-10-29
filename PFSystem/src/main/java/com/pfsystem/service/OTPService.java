@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class OTPService {
 
     private static final int OTP_LENGTH = 6;
-    private static final long OTP_EXPIRATION_MINUTES = 5;
+    static final long OTP_EXPIRATION_MINUTES = 5;
 
     @Autowired
     public OTPRepository otpRepository;
@@ -46,7 +46,7 @@ public class OTPService {
         return currentTime.isBefore(otp.getExpirationTime()) && otpCode.equals(inputOtp);
     }
 
-    private String generateRandomOTP() {
+    String generateRandomOTP() {
         StringBuilder otp = new StringBuilder();
 
         for (int i = 0; i < OTP_LENGTH; i++) {

@@ -5,6 +5,7 @@ import { NewSimService } from '../services/new-sim.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-get-new-sim',
@@ -33,7 +34,40 @@ export class GetNewSimComponent implements OnInit {
   availableOperators: NetworkOperator[] = [];
   cachedorderID: string = '';
   response?: string;
-  constructor(private newSimService: NewSimService, private dialog: MatDialog, private router:Router) { }
+  pincode = new FormControl('', [Validators.pattern('^[0-9]{6}$')]);
+  existingNumber = new FormControl('', [Validators.pattern('^[0-9]{10}$')]);
+  indianStates = [
+    'Andhra Pradesh',
+    'Arunachal Pradesh',
+    'Assam',
+    'Bihar',
+    'Chhattisgarh',
+    'Goa',
+    'Gujarat',
+    'Haryana',
+    'Himachal Pradesh',
+    'Jharkhand',
+    'Karnataka',
+    'Kerala',
+    'Madhya Pradesh',
+    'Maharashtra',
+    'Manipur',
+    'Meghalaya',
+    'Mizoram',
+    'Nagaland',
+    'Odisha',
+    'Punjab',
+    'Rajasthan',
+    'Sikkim',
+    'Tamil Nadu',
+    'Telangana',
+    'Tripura',
+    'Uttarakhand',
+    'Uttar Pradesh',
+    'West Bengal'
+  ];
+
+  constructor(private newSimService: NewSimService, private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
     this.getUniqueOperators();
@@ -63,7 +97,7 @@ export class GetNewSimComponent implements OnInit {
         const operatorId = selectedOperatorObj.id;
         this.newSim.orderID = this.cachedorderID;
         this.newSimService.setOrderId(this.cachedorderID);
-        this.newSimService.orderNewSim(operatorId, this.newSim).subscribe(()=>{
+        this.newSimService.orderNewSim(operatorId, this.newSim).subscribe(() => {
           this.router.navigate(['/order-status']);
         });
       }

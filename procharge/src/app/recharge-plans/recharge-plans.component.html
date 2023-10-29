@@ -24,14 +24,18 @@
             </mat-list-item>
         </mat-nav-list>
     </div>
+    <div class="plan-category-name">
+        <h2>{{ selectedCategoryName }}</h2>
+    </div>
     <div class="recharge-cards">
         <mat-card *ngFor="let plan of rechargePlans" class="recharge-card">
             <mat-card-content>
                 <p>Price:₹ {{ plan.price}}</p>
                 <p>Validity: {{ plan.validity }}</p>
-                <button mat-button (click)="sendRechargeRequest(plan.planID.valueOf(),plan.price)">Recharge</button>
+                <button mat-button class="recharge-button"
+                    (click)="sendRechargeRequest(plan.planID.valueOf(),plan.price)">Recharge</button>
                 <mat-card-actions>
-                    <button mat-button (click)="toggleDetails(plan)">Show More</button>
+                    <button mat-button class="show-details-button" (click)="toggleDetails(plan)">View Details</button>
                 </mat-card-actions>
                 <div *ngIf="plan.showDetails">
                     <p>Details: {{ plan.details }}</p>

@@ -14,8 +14,10 @@
   <mat-form-field class="example-full-width">
     <mat-label>Existing Number</mat-label>
     <input matInput placeholder="Enter Existing Number" [(ngModel)]="newSim.existingNumber" required
-      [ngModelOptions]="{standalone: true}">
+      [ngModelOptions]="{standalone: true}" pattern="^[0-9]{10}$">
+    <mat-error *ngIf="existingNumber.invalid">Please enter a valid 10-digit numeric number.</mat-error>
   </mat-form-field>
+
 
   <mat-form-field class="example-full-width">
     <mat-label>Email</mat-label>
@@ -42,14 +44,19 @@
 
   <mat-form-field class="example-full-width">
     <mat-label>State</mat-label>
-    <input matInput placeholder="Enter State" [(ngModel)]="newSim.state" required [ngModelOptions]="{standalone: true}">
+    <mat-select [(ngModel)]="newSim.state" required [ngModelOptions]="{ standalone: true }">
+      <mat-option *ngFor="let state of indianStates" [value]="state">{{ state }}</mat-option>
+    </mat-select>
   </mat-form-field>
+
 
   <mat-form-field class="example-full-width">
     <mat-label>Pincode</mat-label>
     <input matInput placeholder="Enter Pincode" [(ngModel)]="newSim.pincode" required
-      [ngModelOptions]="{standalone: true}">
+      [ngModelOptions]="{standalone: true}" pattern="^[0-9]{6}$">
+    <mat-error *ngIf="pincode.invalid">Please enter a valid 6-digit pincode.</mat-error>
   </mat-form-field>
+
 
   <mat-form-field class="example-full-width">
     <mat-label>Aadhaar Card</mat-label>
@@ -87,3 +94,7 @@
 
   <button type="submit" mat-raised-button color="primary" (click)="openConfirmationDialog()">Submit</button>
 </form>
+
+<!-- <div class="side-image">
+    <img src="https://selectra.in/sites/selectra.in/files/2021-08/buy-sim-card-online.png" alt="Side Image">
+  </div> -->

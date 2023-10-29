@@ -20,7 +20,6 @@ public class User {
     private String firstName;
     private String lastName;
 
-    @Column(unique = true)
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email format")
     private String email;

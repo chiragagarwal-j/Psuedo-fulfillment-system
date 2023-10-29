@@ -1,6 +1,7 @@
 .recharge-card {
   width: 200px;
   margin: 16px;
+  background-color: #dceaf8;
   display: inline-block;
 }
 
@@ -84,4 +85,32 @@
   background-color: #FFFF00; /* Change to your desired highlight color */
   font-weight: bold; /* Make the text bold */
   color: #000; /* Change to your desired text color */
+}
+
+/* Style for the "Recharge" and "Show Details" buttons */
+.recharge-button {
+  border: 2px solid white; /* Add a 2px solid border with a blue color (#007bff) */
+  color: #007bff; /* Change the text color to blue (#007bff) */
+  background-color: white; /* Make the background transparent */
+  font-weight: bold; /* Make the text bold */
+  padding: 5px 10px; /* Add some padding to the buttons */
+  border-radius: 15px; /* Add rounded corners */
+}
+.show-details-button{
+  color: rgb(0, 0, 0); /* Change the text color to blue (#007bff) */
+  font-weight: bold; /* Make the text bold */
+  padding: 5px 10px; /* Add some padding to the buttons */
+}
+.recharge-button:hover, .show-details-button:hover {
+  background-color: #007bff; /* Change the background color on hover */
+  color: #fff; /* Change text color to white on hover */
+}
+
+.plan-category-name {
+  text-align: center; /* Center-align the category name */
+  padding: 10px;
+}
+.plan-category-name h2 {
+  font-size: 16px;
+  margin: 0;
 }

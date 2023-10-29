@@ -75,7 +75,7 @@ export class RechargePlansComponent implements OnInit {
   selectedOperatorPlans: OperatorPlans | null = null;
   rechargePlans: RechargePlans[] = [];
   fetchPlans: FetchPlans = { operator: '', categoryName: 'Combo' };
-  selectedCategoryName: string = '';
+  selectedCategoryName: string = 'Combo';
 
   constructor(private rechargeSimService: RechargeSimService, private router: Router) { }
 

@@ -30,6 +30,7 @@ export class RechargeComponent implements OnInit {
     this.newSimService.getOperator().subscribe((operators: NetworkOperator[]) => {
       this.availableOperators = operators;
       this.uniqueOperators = Array.from(new Set(operators.map(operator => operator.operator)));
+      this.uniqueOperators = this.uniqueOperators.filter(operator => operator !== 'Vi India' && operator !== 'BSNL Mobile');
     });
   }
 

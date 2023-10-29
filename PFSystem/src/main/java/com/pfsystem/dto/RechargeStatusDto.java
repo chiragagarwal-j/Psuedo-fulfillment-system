@@ -47,7 +47,7 @@ public class RechargeStatusDto {
                 "The mobile number " + mobileNumber + " has been recharged with " + finalAmount + ". " +
                 "The validity of this recharge is " + validity + ", and here are the recharge details: " +
                 details + ".\n\n" +
-                "Thank you for using Procharge for your recharge.";
+                "Thank you for choosing ProCharge.";
     }
 
 }

@@ -19,6 +19,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -69,6 +70,7 @@ import { RechargeOrderStatusComponent } from './recharge-order-status/recharge-o
     MatCardModule,
     MatSidenavModule,
     MatListModule,
+    MatProgressBarModule,
     HttpClientModule,
     FormsModule
   ],

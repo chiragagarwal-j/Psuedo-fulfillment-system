@@ -70,3 +70,56 @@ body {
     transform: translateX(-1260px); /* Width of three cards + margin */
   }
 }
+
+/* Add these styles after your existing CSS */
+
+.contact-form {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  width: 50%;
+  margin: 20px auto; /* Center the form horizontally */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  text-align: left; /* Align form elements to the left */
+  margin-bottom: 15px;
+  margin-right: 5%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 150px; /* Adjust the height as needed */
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
