@@ -53,7 +53,7 @@ public class OrderSimController {
     }
 
     @GetMapping("/getOrderDetails")
-    public NewSimOrderStatusDto fetchOrderDetails(@RequestParam("orderID") String orderID) {
+    public NewSimOrderStatusDto fetchOrderDetails(@RequestParam String orderID) {
         NewSimOrderStatusDto newSimOrderStatusDto = orderingSimService.getDetails(orderID);
         notificationService.sendNewSimEmail(newSimOrderStatusDto, orderID);
         notificationService.sendSMSNotification(newSimOrderStatusDto.getExistingNumber(),
@@ -62,7 +62,7 @@ public class OrderSimController {
     }
 
     @GetMapping("/getOTPNewSim")
-    public MobileNumberDto sendOTP(@RequestParam("orderID") String orderID) {
+    public MobileNumberDto sendOTP(@RequestParam String orderID) {
         MobileNumberDto mobileNumberDto = new MobileNumberDto();
         String mobileNumber = orderingSimService.getMobileNumber(orderID);
         mobileNumberDto.setMobileNumber(mobileNumber);
@@ -71,9 +71,9 @@ public class OrderSimController {
     }
 
     @PostMapping("/validateOTP")
-    public ResponseEntity<?> fetchOrderStatus(@RequestParam("orderID") String orderID,
-            @RequestParam("inputOtp") String inputOtp,
-            @RequestParam("mobileNumber") String mobileNumber) {
+    public ResponseEntity<?> fetchOrderStatus(@RequestParam String orderID,
+            @RequestParam String inputOtp,
+            @RequestParam String mobileNumber) {
 
         if (!otpService.verifyOTP(inputOtp, mobileNumber)) {
 

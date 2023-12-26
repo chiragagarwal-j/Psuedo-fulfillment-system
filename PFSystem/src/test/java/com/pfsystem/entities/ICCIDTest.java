@@ -1,12 +1,13 @@
 package com.pfsystem.entities;
 
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ICCIDTest {
+class ICCIDTest {
 
-	@Test
-	public void testICCIDFields() {
+    @Test
+    void iCCIDFields() {
 		ICCID iccid = new ICCID();
 		iccid.setId(1L);
 		iccid.setMii("89");
@@ -21,8 +22,8 @@ public class ICCIDTest {
 		assertEquals("8991123456789012", iccid.getIccidID());
 	}
 
-	@Test
-	public void generateRandomIAN() {
+    @Test
+    void generateRandomIAN() {
 		ICCID i = new ICCID();
 		String actual = i.generateRandomIAN();
 		assertNotNull(actual);

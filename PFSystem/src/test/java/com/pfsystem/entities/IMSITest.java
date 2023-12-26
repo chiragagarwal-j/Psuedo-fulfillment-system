@@ -1,11 +1,12 @@
 package com.pfsystem.entities;
 
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IMSITest {
-	@Test
-	public void testAddressFields() {
+class IMSITest {
+    @Test
+    void addressFields() {
 
 		IMSI imsi = new IMSI();
 
@@ -22,8 +23,8 @@ public class IMSITest {
 		assertEquals("1234567890123456", imsi.getImsiID());
 	}
 
-	@Test
-	public void generateRandomMSINTODO() {
+    @Test
+    void generateRandomMSINTODO() {
 		IMSI i = new IMSI();
 		String actual = i.generateRandomMSIN();
 		assertNotNull(actual);

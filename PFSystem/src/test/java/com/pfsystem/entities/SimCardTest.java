@@ -1,12 +1,13 @@
 package com.pfsystem.entities;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
-
-public class SimCardTest {
+class SimCardTest {
     @Test
-    public void testGetterSetters() {
+    void getterSetters() {
         SimCard simCard = new SimCard();
 
         IMSI imsi = new IMSI();
@@ -28,7 +29,7 @@ public class SimCardTest {
         assertEquals("AadhaarCardValue", simCard.getAadhaarCard());
 
         simCard.setPlanStatus(true);
-        assertEquals(true, simCard.isPlanStatus());
+        assertTrue(simCard.isPlanStatus());
 
         simCard.setExistingNumber("ExistingNumberValue");
         assertEquals("ExistingNumberValue", simCard.getExistingNumber());

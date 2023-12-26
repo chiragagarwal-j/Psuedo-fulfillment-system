@@ -70,7 +70,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-	void testGetNetworkOperatorDetails() {
+	void getNetworkOperatorDetails() {
 		List<NetworkOperator> expectedNetworkOperators = new ArrayList<>();
 		expectedNetworkOperators.add(new NetworkOperator(1L, "Operator1", "Brand1"));
 		expectedNetworkOperators.add(new NetworkOperator(2L, "Operator2", "Brand2"));
@@ -86,7 +86,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-	void testGetNewOrderID() {
+	void getNewOrderID() {
 		// Arrange and Act
 		OrderIDDto orderIDDto1 = orderingSimService.getNewOrderID();
 		OrderIDDto orderIDDto2 = orderingSimService.getNewOrderID();
@@ -98,7 +98,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-	void testCreateIMSI() {
+	void createIMSI() {
 		IMSIDto imsiDto = new IMSIDto("MCC", "MNC", "Operator", "Brand");
 
 		when(imsiRepository.save(any(IMSI.class))).thenReturn(new IMSI());
@@ -109,7 +109,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-	void testCreateICCID() {
+	void createICCID() {
 		IMSIDto imsiDto = new IMSIDto("MCC", "MNC", "Operator", "Brand");
 
 		when(iccidRepository.save(any(ICCID.class))).thenReturn(new ICCID());
@@ -120,7 +120,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-    void testCreateMSISDN() {
+    void createMSISDN() {
         when(msisdnRepository.save(any(MSISDN.class))).thenReturn(new MSISDN());
 
         
@@ -131,7 +131,7 @@ class OrderingSimServiceTest {
     }
 
 	@Test
-	void testCreateUser() {
+	void createUser() {
 		NewSimDto newSimDto = new NewSimDto();
 		newSimDto.setFirstName("John");
 		newSimDto.setLastName("Doe");
@@ -148,7 +148,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-	void testCreateAddress() {
+	void createAddress() {
 		NewSimDto newSimDto = new NewSimDto();
 		newSimDto.setAddressLine1("123 Main St");
 		newSimDto.setAddressLine2("Apt 4B");
@@ -169,7 +169,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-	void testProcessOrderDetails() {
+	void processOrderDetails() {
 		String orderID = "123456";
 
 		when(orderDetailsRepository.findByOrderID(eq(orderID))).thenReturn(new OrderDetails());
@@ -182,7 +182,7 @@ class OrderingSimServiceTest {
 	}
 
 	@Test
-	void testGetMobileNumber() {
+	void getMobileNumber() {
 		OrderDetails orderDetails = new OrderDetails();
 		SimCard simCard = new SimCard();
 		simCard.setExistingNumber("9876543210");

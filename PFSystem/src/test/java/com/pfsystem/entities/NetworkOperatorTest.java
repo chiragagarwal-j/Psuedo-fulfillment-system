@@ -1,22 +1,21 @@
 package com.pfsystem.entities;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class NetworkOperatorTest {
+class NetworkOperatorTest {
     @Test
-    public void testDefaultConstructor() {
+    void defaultConstructor() {
         NetworkOperator networkOperator = new NetworkOperator();
 
         assertNotNull(networkOperator);
-        assertEquals(null, networkOperator.getCountryName());
-        assertEquals(null, networkOperator.getCountryCode());
+        assertNull(networkOperator.getCountryName());
+        assertNull(networkOperator.getCountryCode());
     }
 
     @Test
-    public void testParameterizedConstructor() {
+    void parameterizedConstructor() {
         long id = 1L;
         String operator = "Operator";
         String brand = "Brand";
@@ -30,7 +29,7 @@ public class NetworkOperatorTest {
     }
 
     @Test
-    public void testSetterGetterMethods() {
+    void setterGetterMethods() {
         NetworkOperator networkOperator = new NetworkOperator();
 
         networkOperator.setId(2L);

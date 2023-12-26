@@ -1,12 +1,12 @@
 package com.pfsystem.entities;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-
-public class UserTest {
+class UserTest {
     @Test
-    public void testGetterSetters() {
+    void getterSetters() {
         User user = new User();
 
         user.setId(1L);

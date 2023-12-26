@@ -15,7 +15,7 @@ import org.mockito.MockitoAnnotations;
 import com.pfsystem.entities.OTP;
 import com.pfsystem.repository.OTPRepository;
 
-public class OTPServiceTest {
+class OTPServiceTest {
 
 	@InjectMocks
 	private OTPService otpService;
@@ -34,7 +34,7 @@ public class OTPServiceTest {
 	}
 
 	@Test
-	void testVerifyOTP_Valid() {
+	void verifyOTP_Valid() {
 		String inputOtp = "123456";
 		String mobileNumber = "1234567890";
 		LocalDateTime currentTime = LocalDateTime.now();
@@ -53,7 +53,7 @@ public class OTPServiceTest {
 	}
 
 	@Test
-	void testVerifyOTP_Invalid() {
+	void verifyOTP_Invalid() {
 		String inputOtp = "123456";
 		String mobileNumber = "1234567890";
 		LocalDateTime currentTime = LocalDateTime.now();
@@ -72,7 +72,7 @@ public class OTPServiceTest {
 	}
 
 	@Test
-	void testGenerateRandomOTP() {
+	void generateRandomOTP() {
 		Mockito.when(random.nextInt(10))
 				.thenReturn(1, 2, 3, 4, 5, 6);
 

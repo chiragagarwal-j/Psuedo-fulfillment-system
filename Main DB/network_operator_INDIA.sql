@@ -1,0 +1,126 @@
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('404','01','GSM 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Haryana','Operational','National'),
+	 ('404','02','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Punjab','Operational','National'),
+	 ('404','03','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Himachal Pradesh','Operational','National'),
+	 ('404','05','GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Hutch, Fascel, Vodafone India','Gujarat','Operational','National'),
+	 ('404','09','LTE','Reliance','IN','India','Data-only as of 2020','Assam','Operational','National'),
+	 ('404','10','GSM 900 / GSM 1800 / LTE 850 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Delhi & NCR','Operational','National'),
+	 ('404','11','GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Delhi & NCR','Operational','National'),
+	 ('404','14','GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Spice, IDEA','Punjab','Operational','National'),
+	 ('404','15','GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Uttar Pradesh (East)','Operational','National'),
+	 ('404','16','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India','Former Hexacom','North East','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('404','20','GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Hutchison Maxtouch, Orange, Hutch, Vodafone India','Mumbai','Operational','National'),
+	 ('404','22','GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300 / TD-LTE 2500','Vi India','IN','India','Former IDEA','Maharashtra & Goa','Operational','National'),
+	 ('404','30','GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India, Command, Hutch','Kolkata','Operational','National'),
+	 ('404','31','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / TD-LTE 2300','Airtel','IN','India',NULL,'Kolkata','Operational','National'),
+	 ('404','34','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Haryana','Operational','National'),
+	 ('404','36','LTE','Reliance','IN','India','Data-only as of 2020','Bihar & Jharkhand','Operational','National'),
+	 ('404','38','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Assam','Operational','National'),
+	 ('404','40','GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Chennai','Operational','National'),
+	 ('404','43','GSM 900 / UMTS 2100 / LTE 1800 / LTE 2100','Vi India','IN','India','Former Vodafone India','Tamil Nadu','Operational','National'),
+	 ('404','45','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Karnataka','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('404','46','GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE-2300 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Kerala','Operational','National'),
+	 ('404','49','GSM 900 / GSM 1800 / LTE 850 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Andhra Pradesh and Telangana','Operational','National'),
+	 ('404','50','LTE','Reliance','IN','India','Data-only as of 2020','North East','Operational','National'),
+	 ('404','51','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Himachal Pradesh','Operational','National'),
+	 ('404','53','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Punjab','Operational','National'),
+	 ('404','54','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Uttar Pradesh (West)','Operational','National'),
+	 ('404','55','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Uttar Pradesh (East)','Operational','National'),
+	 ('404','56','GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former IDEA','Uttar Pradesh (West)','Operational','National'),
+	 ('404','57','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Gujarat','Operational','National'),
+	 ('404','58','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Madhya Pradesh & Chhattisgarh','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('404','59','CDMA 850 / GSM 900 / UMTS 2100','BSNL Mobile','IN','India','Former CellOne','Rajasthan','Operational','National'),
+	 ('404','60','GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Rajasthan','Operational','National'),
+	 ('404','62','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Jammu & Kashmir','Operational','National'),
+	 ('404','64','GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Chennai','Operational','National'),
+	 ('404','66','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Maharashtra & Goa','Operational','National'),
+	 ('404','67','LTE','Reliance','IN','India','Data-only as of 2020','Madhya Pradesh & Chhattisgarh','Operational','National'),
+	 ('404','68','GSM 900 / UMTS 2100 / LTE 1800','MTNL','IN','India','To be merged with BSNL','Delhi & NCR','Operational','National'),
+	 ('404','69','GSM 900 / UMTS 2100','MTNL','IN','India','To be merged with BSNL','Mumbai','Operational','National'),
+	 ('404','70','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Rajasthan','Operational','National'),
+	 ('404','71','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Karnataka (Bangalore)','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('404','72','GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Kerala','Operational','National'),
+	 ('404','73','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Andhra Pradesh and Telangana','Operational','National'),
+	 ('404','74','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','West Bengal','Operational','National'),
+	 ('404','75','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Bihar','Operational','National'),
+	 ('404','76','GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Odisha','Operational','National'),
+	 ('404','77','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','North East','Operational','National'),
+	 ('404','78','GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300 / TD-LTE 2500','Vi India','IN','India','Former IDEA','Madhya Pradesh & Chattishgarh','Operational','National'),
+	 ('404','79','GSM 900 / UMTS 2100','BSNL Mobile','IN','India','Former CellOne','Andaman Nicobar','Operational','National'),
+	 ('404','80','GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Tamil Nadu','Operational','National'),
+	 ('404','81','GSM 900 / UMTS 2100 / LTE 2100','BSNL Mobile','IN','India','Former CellOne','Kolkata','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('404','82','GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former IDEA','Himachal Pradesh','Operational','National'),
+	 ('404','86','GSM 900 / LTE 900 / LTE 1800 / LTE 2100','Vi India','IN','India','Former Vodafone India','Karnataka','Operational','National'),
+	 ('404','90','GSM 1800 / LTE 850 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Maharashtra','Operational','National'),
+	 ('404','92','GSM 900 / GSM 1800 / LTE 850 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Mumbai','Operational','National'),
+	 ('404','93','GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Madhya Pradesh','Operational','National'),
+	 ('404','94','GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Tamil Nadu','Operational','National'),
+	 ('404','95','GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Kerala','Operational','National'),
+	 ('404','96','GSM 1800 / LTE 850 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Haryana','Operational','National'),
+	 ('404','97','GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Uttar Pradesh (West)','Operational','National'),
+	 ('404','98','GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Gujarat','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('405','03','LTE','Reliance','IN','India','Data-only as of 2020','Bihar','Operational','National'),
+	 ('405','04','LTE','Reliance','IN','India','Data-only as of 2020','Chennai','Operational','National'),
+	 ('405','05','LTE','Reliance','IN','India','Data-only as of 2020','Delhi & NCR','Operational','National'),
+	 ('405','06','LTE','Reliance','IN','India','Data-only as of 2020','Gujarat','Operational','National'),
+	 ('405','07','LTE','Reliance','IN','India','Data-only as of 2020','Haryana','Operational','National'),
+	 ('405','08','LTE','Reliance','IN','India','Data-only as of 2020','Himachal Pradesh','Operational','National'),
+	 ('405','09','LTE','Reliance','IN','India','Data-only as of 2020','Jammu & Kashmir','Operational','National'),
+	 ('405','10','LTE','Reliance','IN','India','Data-only as of 2020','Karnataka','Operational','National'),
+	 ('405','11','LTE','Reliance','IN','India','Data-only as of 2020','Kerala','Operational','National'),
+	 ('405','12','LTE','Reliance','IN','India','Data-only as of 2020','Kolkata','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('405','13','LTE','Reliance','IN','India','Data-only as of 2020','Maharashtra & Goa','Operational','National'),
+	 ('405','15','LTE','Reliance','IN','India','Data-only as of 2020','Mumbai','Operational','National'),
+	 ('405','17','LTE','Reliance','IN','India','Data-only as of 2020','Odisha','Operational','National'),
+	 ('405','18','LTE','Reliance','IN','India','Data-only as of 2020','Punjab','Operational','National'),
+	 ('405','19','LTE','Reliance','IN','India','Data-only as of 2020','Rajasthan','Operational','National'),
+	 ('405','20','LTE','Reliance','IN','India','Data-only as of 2020','Tamil Nadu','Operational','National'),
+	 ('405','21','LTE','Reliance','IN','India','Data-only as of 2020','Uttar Pradesh (East)','Operational','National'),
+	 ('405','22','LTE','Reliance','IN','India','Data-only as of 2020','Uttar Pradesh (West)','Operational','National'),
+	 ('405','23','LTE','Reliance','IN','India','Data-only as of 2020','West Bengal','Operational','National'),
+	 ('405','51','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'West Bengal','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('405','52','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Bihar & Jharkhand','Operational','National'),
+	 ('405','53','GSM 900 / GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Odisha','Operational','National'),
+	 ('405','54','GSM 900 / GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Uttar Pradesh (East)','Operational','National'),
+	 ('405','55','GSM 900 / GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Jammu & Kashmir','Operational','National'),
+	 ('405','56','GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300','Airtel','IN','India',NULL,'Assam','Operational','National'),
+	 ('405','67','GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','West Bengal','Operational','National'),
+	 ('405','70','GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former IDEA','Bihar & Jharkhand','Operational','National'),
+	 ('405','750','GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Jammu & Kashmir','Operational','National'),
+	 ('405','751','GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Assam','Operational','National'),
+	 ('405','753','GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','Odisha','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('405','755','GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former Vodafone India','North East','Operational','National'),
+	 ('405','840','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'West Bengal','Operational','National'),
+	 ('405','854','LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Andhra Pradesh','Operational','National'),
+	 ('405','855','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Assam','Operational','National'),
+	 ('405','856','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Bihar','Operational','National'),
+	 ('405','857','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Gujarat','Operational','National'),
+	 ('405','858','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Haryana','Operational','National'),
+	 ('405','859','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Himachal Pradesh','Operational','National'),
+	 ('405','860','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Jammu & Kashmir','Operational','National'),
+	 ('405','861','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Karnataka','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('405','862','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Kerala','Operational','National'),
+	 ('405','863','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Madhya Pradesh','Operational','National'),
+	 ('405','864','LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Maharashtra','Operational','National'),
+	 ('405','865','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'North East','Operational','National'),
+	 ('405','866','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Odisha','Operational','National'),
+	 ('405','867','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Punjab','Operational','National'),
+	 ('405','868','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Rajasthan','Operational','National'),
+	 ('405','869','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Tamil Nadu (incl. Chennai)','Operational','National'),
+	 ('405','870','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Uttar Pradesh (West)','Operational','National'),
+	 ('405','871','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Uttar Pradesh (East)','Operational','National');
+INSERT INTO network_operator (mcc,mnc,bands,brand,country_code,country_name,notes,operator,status,`type`) VALUES
+	 ('405','872','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Delhi','Operational','National'),
+	 ('405','873','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Kolkata','Operational','National'),
+	 ('405','874','LTE 850 / LTE 1800 / TD-LTE 2300','Jio','IN','India',NULL,'Mumbai','Operational','National'),
+	 ('405','908','GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500','Vi India','IN','India','Former IDEA','Andhra Pradesh and Telangana','Operational','National');

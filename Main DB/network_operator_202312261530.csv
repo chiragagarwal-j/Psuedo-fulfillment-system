@@ -1,0 +1,92 @@
+"id","bands","brand","country_code","country_name","mcc","mnc","notes","operator","status","type"
+1,GSM 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","01",Former Vodafone India,Haryana,Operational,National
+2,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","02",,Punjab,Operational,National
+3,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","03",,Himachal Pradesh,Operational,National
+4,GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","05","Former Hutch, Fascel, Vodafone India",Gujarat,Operational,National
+6,GSM 900 / GSM 1800 / LTE 850 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","10",,Delhi & NCR,Operational,National
+7,GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","11",Former Vodafone India,Delhi & NCR,Operational,National
+8,GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","14","Former Spice, IDEA",Punjab,Operational,National
+9,GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","15",Former Vodafone India,Uttar Pradesh (East),Operational,National
+10,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","16",Former Hexacom,North East,Operational,National
+11,GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","20","Former Hutchison Maxtouch, Orange, Hutch, Vodafone India",Mumbai,Operational,National
+12,GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300 / TD-LTE 2500,Vi India,IN,India,"404","22",Former IDEA,Maharashtra & Goa,Operational,National
+13,GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","30","Former Vodafone India, Command, Hutch",Kolkata,Operational,National
+14,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / TD-LTE 2300,Airtel,IN,India,"404","31",,Kolkata,Operational,National
+15,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","34",Former CellOne,Haryana,Operational,National
+17,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","38",Former CellOne,Assam,Operational,National
+18,GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","40",,Chennai,Operational,National
+19,GSM 900 / UMTS 2100 / LTE 1800 / LTE 2100,Vi India,IN,India,"404","43",Former Vodafone India,Tamil Nadu,Operational,National
+20,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","45",,Karnataka,Operational,National
+21,GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE-2300 / TD-LTE 2500,Vi India,IN,India,"404","46",Former Vodafone India,Kerala,Operational,National
+22,GSM 900 / GSM 1800 / LTE 850 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","49",,Andhra Pradesh and Telangana,Operational,National
+24,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","51",Former CellOne,Himachal Pradesh,Operational,National
+25,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","53",Former CellOne,Punjab,Operational,National
+26,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","54",Former CellOne,Uttar Pradesh (West),Operational,National
+27,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","55",Former CellOne,Uttar Pradesh (East),Operational,National
+28,GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","56",Former IDEA,Uttar Pradesh (West),Operational,National
+29,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","57",Former CellOne,Gujarat,Operational,National
+30,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","58",Former CellOne,Madhya Pradesh & Chhattisgarh,Operational,National
+31,CDMA 850 / GSM 900 / UMTS 2100,BSNL Mobile,IN,India,"404","59",Former CellOne,Rajasthan,Operational,National
+32,GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","60",Former Vodafone India,Rajasthan,Operational,National
+33,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","62",Former CellOne,Jammu & Kashmir,Operational,National
+34,GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","64",Former CellOne,Chennai,Operational,National
+35,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","66",Former CellOne,Maharashtra & Goa,Operational,National
+37,GSM 900 / UMTS 2100 / LTE 1800,MTNL,IN,India,"404","68",To be merged with BSNL,Delhi & NCR,Operational,National
+38,GSM 900 / UMTS 2100,MTNL,IN,India,"404","69",To be merged with BSNL,Mumbai,Operational,National
+39,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","70",,Rajasthan,Operational,National
+40,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","71",Former CellOne,Karnataka (Bangalore),Operational,National
+41,GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","72",Former CellOne,Kerala,Operational,National
+42,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","73",Former CellOne,Andhra Pradesh and Telangana,Operational,National
+43,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","74",Former CellOne,West Bengal,Operational,National
+44,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","75",Former CellOne,Bihar,Operational,National
+45,GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","76",Former CellOne,Odisha,Operational,National
+46,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","77",Former CellOne,North East,Operational,National
+47,GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300 / TD-LTE 2500,Vi India,IN,India,"404","78",Former IDEA,Madhya Pradesh & Chattishgarh,Operational,National
+48,GSM 900 / UMTS 2100,BSNL Mobile,IN,India,"404","79",Former CellOne,Andaman Nicobar,Operational,National
+49,GSM 900 / GSM 1800 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","80",Former CellOne,Tamil Nadu,Operational,National
+50,GSM 900 / UMTS 2100 / LTE 2100,BSNL Mobile,IN,India,"404","81",Former CellOne,Kolkata,Operational,National
+51,GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"404","82",Former IDEA,Himachal Pradesh,Operational,National
+52,GSM 900 / LTE 900 / LTE 1800 / LTE 2100,Vi India,IN,India,"404","86",Former Vodafone India,Karnataka,Operational,National
+53,GSM 1800 / LTE 850 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","90",,Maharashtra,Operational,National
+54,GSM 900 / GSM 1800 / LTE 850 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","92",,Mumbai,Operational,National
+55,GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","93",,Madhya Pradesh,Operational,National
+56,GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","94",,Tamil Nadu,Operational,National
+57,GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","95",,Kerala,Operational,National
+58,GSM 1800 / LTE 850 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","96",,Haryana,Operational,National
+59,GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","97",,Uttar Pradesh (West),Operational,National
+60,GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"404","98",,Gujarat,Operational,National
+80,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"405","51",,West Bengal,Operational,National
+81,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"405","52",,Bihar & Jharkhand,Operational,National
+82,GSM 900 / GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"405","53",,Odisha,Operational,National
+83,GSM 900 / GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"405","54",,Uttar Pradesh (East),Operational,National
+84,GSM 900 / GSM 1800 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"405","55",,Jammu & Kashmir,Operational,National
+85,GSM 900 / GSM 1800 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2300,Airtel,IN,India,"405","56",,Assam,Operational,National
+86,GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"405","67",Former Vodafone India,West Bengal,Operational,National
+87,GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"405","70",Former IDEA,Bihar & Jharkhand,Operational,National
+88,GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"405","750",Former Vodafone India,Jammu & Kashmir,Operational,National
+89,GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"405","751",Former Vodafone India,Assam,Operational,National
+90,GSM 900 / UMTS 2100 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"405","753",Former Vodafone India,Odisha,Operational,National
+91,GSM 1800 / UMTS 2100 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"405","755",Former Vodafone India,North East,Operational,National
+92,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","840",,West Bengal,Operational,National
+93,LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","854",,Andhra Pradesh,Operational,National
+94,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","855",,Assam,Operational,National
+95,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","856",,Bihar,Operational,National
+96,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","857",,Gujarat,Operational,National
+97,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","858",,Haryana,Operational,National
+98,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","859",,Himachal Pradesh,Operational,National
+99,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","860",,Jammu & Kashmir,Operational,National
+100,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","861",,Karnataka,Operational,National
+101,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","862",,Kerala,Operational,National
+102,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","863",,Madhya Pradesh,Operational,National
+103,LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","864",,Maharashtra,Operational,National
+104,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","865",,North East,Operational,National
+105,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","866",,Odisha,Operational,National
+106,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","867",,Punjab,Operational,National
+107,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","868",,Rajasthan,Operational,National
+108,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","869",,Tamil Nadu (incl. Chennai),Operational,National
+109,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","870",,Uttar Pradesh (West),Operational,National
+110,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","871",,Uttar Pradesh (East),Operational,National
+111,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","872",,Delhi,Operational,National
+112,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","873",,Kolkata,Operational,National
+113,LTE 850 / LTE 1800 / TD-LTE 2300,Jio,IN,India,"405","874",,Mumbai,Operational,National
+114,GSM 900 / LTE 900 / LTE 1800 / LTE 2100 / TD-LTE 2500,Vi India,IN,India,"405","908",Former IDEA,Andhra Pradesh and Telangana,Operational,National

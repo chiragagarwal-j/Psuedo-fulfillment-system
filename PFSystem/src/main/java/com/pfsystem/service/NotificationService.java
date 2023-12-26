@@ -9,7 +9,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.pfsystem.dto.NewSimOrderStatusDto;
-import com.twilio.Twilio;
+//import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 
 import jakarta.mail.MessagingException;
@@ -21,8 +21,8 @@ public class NotificationService {
     @Autowired
     private JavaMailSender sender;
 
-    
 
+    
     private static final Logger logger = Logger.getLogger(NotificationService.class.getName());
 
     public void sendEmail(String toEmail, String subject, String content) {
@@ -67,7 +67,7 @@ public class NotificationService {
 
     public void sendOTP(String mobileNumber, String otp) {
 
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        //Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(
                 new com.twilio.type.PhoneNumber("+91" + mobileNumber),
                 new com.twilio.type.PhoneNumber("+13346038286"),
@@ -77,7 +77,7 @@ public class NotificationService {
     }
 
     public void sendSMSNotification(String mobileNumber, String messageInfo) {
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        //Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(
                 new com.twilio.type.PhoneNumber("+91" + mobileNumber),
                 new com.twilio.type.PhoneNumber("+13346038286"),

@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(OrderSimController.class)
-public class OrderSimControllerTest {
+class OrderSimControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
 
@@ -26,14 +26,14 @@ public class OrderSimControllerTest {
 	@MockBean
 	private OTPService otpService;
 
-	@Test
-	public void fetchNetworkOperatorDetails() throws Exception {
+    @Test
+    void fetchNetworkOperatorDetails() throws Exception {
 		this.mockMvc.perform(get("/ordersim/getOperator"))
 				.andExpect(status().isOk());
 	}
 
-	@Test
-	public void fetchOrderStatus() throws Exception {
+    @Test
+    void fetchOrderStatus() throws Exception {
 		this.mockMvc.perform(post("/ordersim/validateOTP")
 				.param("inputOtp", "abc")
 				.param("mobileNumber", "abc")
@@ -41,14 +41,14 @@ public class OrderSimControllerTest {
 				.andExpect(status().isOk());
 	}
 
-	@Test
-	public void generateOrderID() throws Exception {
+    @Test
+    void generateOrderID() throws Exception {
 		this.mockMvc.perform(get("/ordersim/createOrderID"))
 				.andExpect(status().isOk());
 	}
 
-	@Test
-	public void sendOTP() throws Exception {
+    @Test
+    void sendOTP() throws Exception {
 		this.mockMvc.perform(get("/ordersim/getOTPNewSim")
 				.param("orderID", "abc"))
 				.andExpect(status().isOk());

@@ -1,11 +1,12 @@
 package com.pfsystem.entities;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class AddressTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class AddressTest {
     @Test
-    public void testAddressFields() {
+    void addressFields() {
         Address address = new Address();
         address.setId(1L);
         address.setAddressLine1("123 Main St");

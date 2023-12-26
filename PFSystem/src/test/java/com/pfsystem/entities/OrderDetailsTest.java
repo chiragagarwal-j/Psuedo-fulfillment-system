@@ -1,12 +1,12 @@
 package com.pfsystem.entities;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class OrderDetailsTest {
+class OrderDetailsTest {
 
-	@Test
-	public void testDefaultValues() {
+    @Test
+    void defaultValues() {
 		OrderDetails orderDetails = new OrderDetails();
 
 		assertNull(orderDetails.getOrderID());
@@ -17,8 +17,8 @@ public class OrderDetailsTest {
 		assertEquals("Success", orderDetails.getStatus());
 	}
 
-	@Test
-	public void testSetterGetterMethods() {
+    @Test
+    void setterGetterMethods() {
 		OrderDetails orderDetails = new OrderDetails();
 
 		orderDetails.setPaidVia("Credit Card");
@@ -28,7 +28,7 @@ public class OrderDetailsTest {
 		assertEquals("Payment Information", orderDetails.getPaymentInfo());
 
 		orderDetails.setIsPending(true);
-		assertEquals(true, orderDetails.getIsPending());
+        assertTrue(orderDetails.getIsPending());
 
 		orderDetails.setStatus("Success");
 		assertEquals("Success", orderDetails.getStatus());
@@ -42,8 +42,8 @@ public class OrderDetailsTest {
 		assertEquals("Credit Card", orderDetails.getPaidVia());
 	}
 
-	@Test
-	public void generateRandomOrderId() {
+    @Test
+    void generateRandomOrderId() {
 		OrderDetails o = new OrderDetails();
 		String actual = o.generateRandomOrderId();
 		assertNotNull(actual);

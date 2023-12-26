@@ -1,12 +1,12 @@
 package com.pfsystem.entities;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-
-public class RechargeSimTest {
+class RechargeSimTest {
     @Test
-    public void testGetterSetters() {
+    void getterSetters() {
         RechargeSim rechargeSim = new RechargeSim();
 
         rechargeSim.setMobileNumber("1234567890");

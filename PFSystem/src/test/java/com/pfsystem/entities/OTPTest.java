@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDateTime;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class OTPTest {
+class OTPTest {
     @Test
-    public void testGetterSetters() {
+    void getterSetters() {
         OTP otp = new OTP();
 
         otp.setMobileNumber("1234567890");

@@ -1,12 +1,13 @@
 package com.pfsystem.entities;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import org.junit.Test;
 
-public class MSISDNTest {
+class MSISDNTest {
     @Test
-    public void testGettersAndSetters() {
+    void gettersAndSetters() {
 
         MSISDN msisdn = new MSISDN();
 
@@ -21,7 +22,7 @@ public class MSISDNTest {
     }
 
     @Test
-    public void testGenerateIndianMobileNumber() {
+    void generateIndianMobileNumber() {
         MSISDN msisdn = new MSISDN();
         String mobileNumber = msisdn.generateIndianMobileNumber();
         assertNotNull(mobileNumber);

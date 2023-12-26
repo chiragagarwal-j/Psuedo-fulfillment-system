@@ -11,7 +11,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(RechargeSimController.class)
-public class RechargeSimControllerTest {
+class RechargeSimControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
 
@@ -21,8 +21,8 @@ public class RechargeSimControllerTest {
 	@MockBean
 	private NotificationService notificationService;
 
-	@Test
-	public void creatingOrderID() throws Exception {
+    @Test
+    void creatingOrderID() throws Exception {
 		this.mockMvc.perform(get("/rechargesim/createOrderID"))
 				.andExpect(status().isOk());
 	}

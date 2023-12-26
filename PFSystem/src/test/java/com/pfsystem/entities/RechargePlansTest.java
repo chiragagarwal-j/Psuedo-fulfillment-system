@@ -1,12 +1,12 @@
 package com.pfsystem.entities;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-
-public class RechargePlansTest {
+class RechargePlansTest {
     @Test
-    public void testGetterSetters() {
+    void getterSetters() {
         RechargePlans rechargePlans = new RechargePlans();
 
         rechargePlans.setOperator("OperatorName");
